@@ -1,4 +1,4 @@
-# URBANO D'sign
+# URBAN Designer
 
 The live website can be viewed [here](https://xxxx.com/)      
 <img src="xxxxx" alt="mockup" target="_blank" rel="noopener" width="850">
@@ -35,7 +35,7 @@ The live website can be viewed [here](https://xxxx.com/)
     - [**Acknowledgements**](#acknowledgements)
 ---
 
-**URBANO D'sign** is Franco Faura Tellez UX Designer first e-commerce website. 
+**URBAN Designer** is Franco Faura Tellez UX Designer first e-commerce website. 
 He also has a Behance profile where he is always very active in updating new content. 
 With this page, he will be able to offer customers the possibility to buy his services packages. 
 The site includes a page for his services nut also his biography, portafolio and cv where people will be able to know more about him 
