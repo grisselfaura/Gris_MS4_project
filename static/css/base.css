@@ -11,6 +11,11 @@ body {
     font-family: 'Lato';
 }
 
+/* Nav*/
+.nav-item.active > a {
+    color: #d1002c;
+}
+
 /* from Bulma similar to bootstraap*/
 .icon {
     align-items: center;
@@ -51,6 +56,10 @@ body {
 
 .text-black {
     color: #000 !important;
+}
+
+.text-white {
+    color: white !important;
 }
 
 .border-black {
