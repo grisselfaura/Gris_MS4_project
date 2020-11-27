@@ -35,6 +35,10 @@ html {
     text-transform: uppercase;
 }
 
+.logo{
+    height: 5rem;
+}       
+
 .main-logo-link {
     width: fit-content;
 }
