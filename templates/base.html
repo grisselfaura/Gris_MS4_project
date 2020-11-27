@@ -38,14 +38,12 @@
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex"><!-- background white add some padding on large screen -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    
+                <a href="{% url 'home' %}" class="nav-link main-logo-link">    
                     <h2 class="logo-font text-black my-0"><strong>Urban</strong> Design</h2>
                 </a>
             </div>
-            
-        <!-- SEARCH BOX -->
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <!-- SEARCH BOX -->
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -109,8 +107,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
-                
+                {% include 'includes/main-nav.html' %}    
             </nav>
         </div>
     </header>       
@@ -124,14 +121,8 @@
     {% endblock %}
  
     <main>
-    <!-- Experience -->
-    <!-- Education -->
-    <!-- Brands -->
-
-        <!-- <a id="scroll-top-button"></a> -->
     {% block content %}
-    {% endblock %}
-    
+    {% endblock %}  
     </main>
 
     <!-- Sticky Footer -->

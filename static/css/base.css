@@ -36,7 +36,7 @@ html {
 }
 
 .logo{
-    height: 5rem;
+    height: 4rem;
 }       
 
 .main-logo-link {
@@ -142,4 +142,19 @@ main {
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     transition-timing-function: ease-in-out; 
+}
+
+
+/*Home*/
+.landing-image{
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    height: calc(100vh - 300px);
+    color: #00000;
+    font-family: 'Lato';
+}
+
+.landing-font{
+    text-transform: capitalize;
+    font-family: 'Nerko One', cursive;
 }
