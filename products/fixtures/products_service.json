@@ -1,7 +1,7 @@
 [
   {
     "pk": 1,
-    "model": "products.serviceitem",
+    "model": "products.service",
     "fields": {
       "name": "Starter package",
       "description": "Getting started is always difficult, let me help you with this starter package",
@@ -19,12 +19,10 @@
   },
   {
     "pk": 2,
-    "model": "products.serviceitem",
+    "model": "products.service",
     "fields": {
       "name": "Plus package",
-      "description": "Find out what people want and give it to them sounds so easy.
-                    However, that is actually the hardest part of creating a truly customer-centric service. 
-                    Luckily i can help you with that",
+      "description": "Find out what people want and give it to them sounds so easy. However, that is actually the hardest part of creating a truly customer-centric service. Luckily i can help you with that.",
       "research": "True",
       "design_sprint": "True",
       "usability_testing": "False",
@@ -39,7 +37,7 @@
   },
   {
     "pk": 3,
-    "model": "products.serviceitem",
+    "model": "products.service",
     "fields": {
       "name": "Premium package",
       "description": "To create a service that people love, you need to stay in touch with your users throughout the development process, from start to finish.",
