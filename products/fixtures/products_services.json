@@ -1,0 +1,58 @@
+[
+  {
+    "pk": 1,
+    "model": "products.serviceitem",
+    "fields": {
+      "name": "Starter package",
+      "description": "Getting started is always difficult, let me help you with this starter package",
+      "research": "True",
+      "design_sprint": "False",
+      "usability_testing": "False",
+      "price": 499.00,
+      "is_a_service": "True",
+      "duration": "1 week",
+      "revision": "1x",
+      "image_url": "https://i.postimg.cc/nCbR0J0j/starter-package.jpg",
+      "image": "images/services/starter_package.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.serviceitem",
+    "fields": {
+      "name": "Plus package",
+      "description": "Find out what people want and give it to them sounds so easy.
+                    However, that is actually the hardest part of creating a truly customer-centric service. 
+                    Luckily i can help you with that",
+      "research": "True",
+      "design_sprint": "True",
+      "usability_testing": "False",
+      "price": 999.00,
+      "is_a_service": "True",
+      "duration": "2 week",
+      "revision": "2x",
+      "image_url": "https://i.postimg.cc/H85SdZsk/plus-package.jpg",
+      "image": "images/services/plus_package.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.serviceitem",
+    "fields": {
+      "name": "Premium package",
+      "description": "To create a service that people love, you need to stay in touch with your users throughout the development process, from start to finish.",
+      "research": "True",
+      "design_sprint": "True",
+      "usability_testing": "True",
+      "price": 1499.00,
+      "is_a_service": "True",
+      "duration": "4 week",
+      "revision": "3x",
+      "image_url": "https://i.postimg.cc/gr6tVJqb/premium-package.jpg",
+      "image": "images/services/premium_package.jpg",
+      "discontinued": "False"
+    }
+  }
+]

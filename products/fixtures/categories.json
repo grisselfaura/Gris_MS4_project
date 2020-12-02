@@ -1,0 +1,26 @@
+[
+  {
+    "pk": 1,
+    "model": "product.category",
+    "fields": {
+      "name": "starter",
+      "friendly_name": "Starter"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "product.category",
+    "fields": {
+      "name": "plus",
+      "friendly_name": "Plus"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "product.category",
+    "fields": {
+      "name": "premium",
+      "friendly_name": "Premium"
+    }
+  }
+]
