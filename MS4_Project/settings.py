@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',
-    'services',
+    'products',
     'blog.apps.BlogConfig',
 ]
 
