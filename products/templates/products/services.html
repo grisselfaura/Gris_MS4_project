@@ -42,7 +42,7 @@
                 <div class="item col-xs-4 col-lg-4 mb-3">
                     <div class="thumbnail card">
                         <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="{{ instance.image_url }}" alt="{{ instance.name }}" />
+                            <img class="card-img-top group list-group-image img-fluid" src="{{ instance.image_url }}" alt="{{ instance.name }}" />
                         </div>
                         <div class="caption card-body">
                             <h4 class="group card-title inner list-group-item-heading">
@@ -53,11 +53,11 @@
                             <div class="row">
                                 <!--Read More Button-->
                                 <div class="col-xs-6">
-                                    <a class="btn btn-primary" href="{% url 'service_detail' instance.id %}">Read more</a>
+                                    <a class="btn btn-primary read-space" href="{% url 'service_detail' instance.id %}">Read more</a>
                                 </div>
                                 <!--Add to cart Button-->
                                 <div class="col-xs-6">
-                                    <a class="btn btn-success" href="">Add to cart</a>
+                                    <a class="btn btn-success " href="">Add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -69,6 +69,16 @@
 
 {% endblock %}
 
+{% block extra_js %}
+<!-- Code from https://bootsnipp.com/snippets/35OOB -->
+<script type="text/javascript">
+    // Generates a list or grid view when the respective buttons are clicked
+    $(document).ready(function() {
+        $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+        $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+    });
+</script>
+{% endblock %}
 
 <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
