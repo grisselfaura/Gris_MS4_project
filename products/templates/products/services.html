@@ -12,23 +12,12 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col mt-5">
-                {{ services }}
-                {% for instance in services %}
-                    {{ instance.name }}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
 <!-- Template from https://bootsnipp.com/snippets/35OOB    -->
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
+                <h2 class="logo-font">Services</h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
@@ -57,16 +46,18 @@
                         </div>
                         <div class="caption card-body">
                             <h4 class="group card-title inner list-group-item-heading">
-                                {{ instance.name }}</h4>
+                                    {{ instance.name }}</h4>
+                            <p class="lead text-right"> <strong>$ {{ instance.price }}</strong></p>
                             <p class="group inner list-group-item-text">
                                 {{ instance.description }}</p>
                             <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $ {{ instance.price }}</p>
+                                <!--Read More Button-->
+                                <div class="col-xs-6">
+                                    <a class="btn btn-primary" href="{% url 'service_detail' service.id %}">Read more</a>
                                 </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                <!--Add to cart Button-->
+                                <div class="col-xs-6">
+                                    <a class="btn btn-success" href="">Add to cart</a>
                                 </div>
                             </div>
                         </div>
