@@ -23,5 +23,4 @@ def service_detail(request, service_id):
     context = {
         'service': service_detail,
     }
-
     return render(request, 'products/service_detail.html', context)
