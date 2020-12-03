@@ -12,18 +12,56 @@
 {% endblock %}
 
 {% block content %}
-<!-- Template from https://bootsnipp.com/snippets/35OOB    -->
+<!-- Template https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=gadget-store-product-details-page    -->
     <div class="overlay"></div>
     <div class="container">
-    <div class="row">
-        <div class="span5">
-            <!--product image-->
+        <div class="row">
+            <div class="span5">
+                <!--product image-->
+                <img class="card-img-top group list-group-image img-fluid" src="{{ instance.image_url }}" alt="{{ instance.name }}" />
+            </div>
+            <div class="span7">
+                <!--product  description-->
+                <h2>Lenovo Desktop</h2>
+                <h4 class="muted">Thinner, Lighter, Faster. All in One Desktop</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa.</p>
+                <hr>
+                <h3>Price - <del class="text-error">$699</del> $499</h3>
+                <p class="muted">Inclusive of all taxes. Free home delivery.</p>
+                <br>
+                <p><a href="#" class="btn btn-success btn-large">Buy Online Now</a></p>
+            </div>
         </div>
-        <div class="span7">
-            <!--product  description-->
-        </div>
+        <div class="row product-info">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#tab-1">Specification</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade in active">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th>Brand</th>
+                                    <td>Lenovo</td>
+                                </tr>
+                                <tr>
+                                    <th>OS</th>
+                                    <td>Windows 8</td>
+                                </tr>
+                                <tr>
+                                    <th>Processor</th>
+                                    <td>1.5 GHz Dual Core</td>
+                                </tr>
+                                <tr>
+                                    <th>Memory</th>
+                                    <td>2 GB RAM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
     </div>
-</div>
 {% endblock %}
 
 
