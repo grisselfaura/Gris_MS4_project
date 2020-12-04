@@ -2,6 +2,9 @@
 {% load static %}
 {% block extra_title %}- Services{% endblock %}
 
+{% block extra_css %}
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&amp;display=swap" rel="stylesheet">
+{% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -45,10 +48,10 @@
                             <img class="card-img-top group list-group-image img-fluid" src="{{ instance.image_url }}" alt="{{ instance.name }}" />
                         </div>
                         <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
+                            <h4 class="group card-title inner list-group-item-heading service-title">
                                 {{ instance.name }}</h4>
                             <p class="lead text-right"> <strong>$ {{ instance.price }}</strong></p>
-                            <p class="group inner list-group-item-text">
+                            <p class="group inner list-group-item-text service-description">
                                 {{ instance.description }}</p>
                             <div class="row">
                                 <!--Read More Button-->
@@ -57,7 +60,7 @@
                                 </div>
                                 <!--Add to cart Button-->
                                 <div class="col-xs-6">
-                                    <a class="btn btn-success " href="">Add to cart</a>
+                                    <a class="btn btn-success" href="">Add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -79,13 +82,3 @@
     });
 </script>
 {% endblock %}
-
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<!------ Include the above in your HEAD tag ---------->
-
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-<!------ Include the above in your HEAD tag ---------->

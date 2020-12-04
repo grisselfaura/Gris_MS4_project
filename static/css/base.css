@@ -363,8 +363,7 @@ i {
     margin-left: 2rem;
     margin-bottom: 0rem;
 }
-.item.list-group-item
-{
+.item.list-group-item{
     float: none;
     width: 100%;
     background-color: #fff;
@@ -375,34 +374,64 @@ i {
     padding: 0 1rem;
     border: 0;
 }
-.item.list-group-item .img-event {
+.item.list-group-item .img-event{
     float: left;
     width: 30%;
 }
 
-.item.list-group-item .list-group-image
-{
+.item.list-group-item .list-group-image{
     margin-right: 10px;
 }
-.item.list-group-item .thumbnail
-{
+
+.item.list-group-item .thumbnail{
     margin-bottom: 0px;
     display: inline-block;
 }
-.item.list-group-item .caption
-{
+
+.item.list-group-item .caption{
     float: left;
     width: 70%;
     margin: 0;
 }
 
-.item.list-group-item:before, .item.list-group-item:after
-{
+.item.list-group-item:before, .item.list-group-item:after{
     display: table;
     content: " ";
 }
 
-.item.list-group-item:after
-{
+.item.list-group-item:after{
     clear: both;
+}
+
+/*Service detail*/
+
+.img-polaroid {
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.service-img-size {
+    width: 500px;
+}
+.service-title{
+    font-family: "Fredericka the Great", cursive;
+    font-weight: 300;
+}
+
+.service-description{
+    font-family: "";
+   
+}
+
+.muted {
+    color: #999;
+}
+
+.span12 {
+    width: 940px;
 }

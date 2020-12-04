@@ -2,6 +2,11 @@
 {% load static %}
 {% block extra_title %}- Services{% endblock %}
 
+{% block extra_css %}
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&amp;display=swap" rel="stylesheet">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+{% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -12,60 +17,97 @@
 {% endblock %}
 
 {% block content %}
-<!-- Template https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=gadget-store-product-details-page    -->
+<!-- Inspired in template https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=gadget-store-product-details-page    -->
     <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-5">
+                <h2 class="logo-font">Services</h2>
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
-            <div class="span5">
-                <!--product image-->
-                <img class="card-img-top group list-group-image img-fluid" src="{{ instance.image_url }}" alt="{{ instance.name }}" />
+            <div class="col-md-6">
+                <img class="img-polaroid img-fluid service-img-size" src="{{ service.image_url }}" alt="{{ service.name }}" />
             </div>
-            <div class="span7">
-                <!--product  description-->
-                <h2>Lenovo Desktop</h2>
-                <h4 class="muted">Thinner, Lighter, Faster. All in One Desktop</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa.</p>
+            <div class="col-md-6">
+                <h2 class="service-title">{{ service.name }}</h2>
+                <p class="service-description">{{ service.description }}</p>
                 <hr>
-                <h3>Price - <del class="text-error">$699</del> $499</h3>
-                <p class="muted">Inclusive of all taxes. Free home delivery.</p>
+                <h4>Price  <strong>$ {{ service.price }}</strong></h4>
+                <p class="muted">Inclusive of all taxes.</p>
                 <br>
-                <p><a href="#" class="btn btn-success btn-large">Buy Online Now</a></p>
+                <!-- Date picker -->
+                <h4>Select desired approach call date</h4>
+                <div class = "form-group">
+                    <div class = "input-group">
+                        <input type = "text" id="datetimepicker" class= "form-control">
+                        <span class = "input-group-addon">
+                            <i class = "fa fa-calendar-alt"></i>
+                        </span>
+                    </div>  
+                </div>
+                <p class="muted small mt-2">
+                    The confirmation of your desired date and chosen service will 
+                    be sent to your email together with the next steps for a successful collaboration.
+                </p>
+                <p class="text-right"><a href="#" class="btn btn-success btn-large">Add to cart now</a></p>
             </div>
         </div>
         <div class="row product-info">
-            <div class="span12">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#tab-1">Specification</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade in active">
-                        <table class="table table-striped">
-                            <tbody>
-                                <tr>
-                                    <th>Brand</th>
-                                    <td>Lenovo</td>
-                                </tr>
-                                <tr>
-                                    <th>OS</th>
-                                    <td>Windows 8</td>
-                                </tr>
-                                <tr>
-                                    <th>Processor</th>
-                                    <td>1.5 GHz Dual Core</td>
-                                </tr>
-                                <tr>
-                                    <th>Memory</th>
-                                    <td>2 GB RAM</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
+            <div class="col-10 offset-1">
+                <h4 class="muted">Service Specification</h4>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>Research</th>
+                            {% if service.research %}
+                                <td>Included</td>
+                             {% else %}
+                                <td>Not included</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <th>Design sprint</th>
+                            {% if service.design_sprint %}
+                                <td>Included</td>
+                             {% else %}
+                                <td>Not included</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <th>Usability testing</th>
+                            {% if service.usability_testing %}
+                                <td>Included</td>
+                             {% else %}
+                                <td>Not included</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <th>Duration</th>
+                            <td>{{ service.duration }}</td>
+                        </tr>
+                            <tr>
+                            <th>Revision</th>
+                            <td>{{ service.revision }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
-
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-<!------ Include the above in your HEAD tag ---------->
+{% block extra_js %}
+<!-- Date picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+    // Generates a list or grid view when the respective buttons are clicked
+    $(function() {
+        $('#datetimepicker').datetimepicker();
+    })
+</script>
+{% endblock %}
