@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Service
+from .models import Service, Category
 
 # Create your views here.
 
@@ -12,6 +12,14 @@ def all_services(request):
     all_services = Service.objects.all()
     # query and categories will be set to empty when page is first load to avoid errors
     query = None
+    catego  = None
+
+    # When more services are added by the website owner this functionality will help the end users.
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            all_services = all_services.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
     if request.GET:
         if 'q' in request.GET:
@@ -29,6 +37,7 @@ def all_services(request):
     context = {
         'services': all_services,
         'search_word': query,
+        'current_categories': categories,
     }
     return render(request, 'products/services.html', context)
 
