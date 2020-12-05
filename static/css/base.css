@@ -1,3 +1,4 @@
+/* Global style settings*/
 html {
     height: 100%;
 }
@@ -89,6 +90,11 @@ html {
         z-index: 1030;
     }
 
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
@@ -97,10 +103,6 @@ html {
 
     body {
         height: calc(100vh - 116px);
-    }
-}
-    .header-container {
-        padding-top: 164px;
     }
 }
 
@@ -186,6 +188,7 @@ main {
 /*Home - Experience section*/
 .text-year{
     font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
 }
 
 .job-title{
@@ -194,7 +197,7 @@ main {
 
 .text-light {
     font-family: 'PT Sans Narrow', sans-serif;
-    color: #949393eb!important;
+    color: #949393c7!important;
 }
 
 /*Home - Education section*/
@@ -290,10 +293,11 @@ main {
     }
 }
 
-i {
+/* when doing this section this should be given different name */
+/* i {
     background-color: rgb(223, 56, 89);
     padding: 1.4rem
-}
+} */
 
 @media(max-width:767px) {
     i {
@@ -363,6 +367,7 @@ i {
     margin-left: 2rem;
     margin-bottom: 0rem;
 }
+
 .item.list-group-item{
     float: none;
     width: 100%;
@@ -421,17 +426,22 @@ i {
 .service-title{
     font-family: "Fredericka the Great", cursive;
     font-weight: 300;
+    font-weight: bold;
+    margin-top: 1.5rem;
 }
 
 .service-description{
-    font-family: "";
-   
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.price-text{
+    font-family: 'Paytone One', sans-serif;
 }
 
 .muted {
     color: #999;
 }
 
-.span12 {
-    width: 940px;
+.date-font{
+    font-family: 'Architects Daughter', cursive;
 }

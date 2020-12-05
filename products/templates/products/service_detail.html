@@ -3,7 +3,6 @@
 {% block extra_title %}- Services{% endblock %}
 
 {% block extra_css %}
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&amp;display=swap" rel="stylesheet">
     <!-- Date Picker -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 {% endblock %}
@@ -36,17 +35,19 @@
                 <h2 class="service-title">{{ service.name }}</h2>
                 <p class="service-description">{{ service.description }}</p>
                 <hr>
-                <h4>Price  <strong>$ {{ service.price }}</strong></h4>
+                <h4 class="price-text">Price  <strong>$ {{ service.price }}</strong></h4>
                 <p class="muted">Inclusive of all taxes.</p>
                 <br>
                 <!-- Date picker -->
-                <h4>Select desired approach call date</h4>
+                <h4 class="date-font">Select desired approach call date</h4>
                 <div class = "form-group">
-                    <div class = "input-group">
-                        <input type = "text" id="datetimepicker" class= "form-control">
-                        <span class = "input-group-addon">
+                    <div class = "input-group" id="datetimepicker">
+                        <input type = "text"  class= "form-control">
+                        <!-- <label for="datetimepicker">Choose a date</label> -->
+                        <!-- <span class = "input-group-addon">
+                            <span class="glyphicon glyphicon-print"></span>
                             <i class = "fa fa-calendar-alt"></i>
-                        </span>
+                        </span> -->
                     </div>  
                 </div>
                 <p class="muted small mt-2">
@@ -101,13 +102,13 @@
 {% endblock %}
 
 {% block extra_js %}
-<!-- Date picker -->
+<!-- Date picker  https://www.youtube.com/watch?v=weOHpT2w1Bg-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
-    // Generates a list or grid view when the respective buttons are clicked
+    // Generates a date picker
     $(function() {
         $('#datetimepicker').datetimepicker();
-    })
+    });
 </script>
 {% endblock %}

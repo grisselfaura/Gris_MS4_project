@@ -3,7 +3,6 @@
 {% block extra_title %}- Services{% endblock %}
 
 {% block extra_css %}
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&amp;display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block page_header %}
@@ -50,7 +49,7 @@
                         <div class="caption card-body">
                             <h4 class="group card-title inner list-group-item-heading service-title">
                                 {{ instance.name }}</h4>
-                            <p class="lead text-right"> <strong>$ {{ instance.price }}</strong></p>
+                            <p class="lead text-right price-text"> <strong>$ {{ instance.price }}</strong></p>
                             <p class="group inner list-group-item-text service-description">
                                 {{ instance.description }}</p>
                             <div class="row">
