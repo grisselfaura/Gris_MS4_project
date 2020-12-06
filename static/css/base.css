@@ -25,6 +25,7 @@ html {
 
 .logo-font {
     text-transform: uppercase;
+    font-family: 'Miriam Libre', sans-serif;
 }
 
 .logo{
@@ -74,6 +75,19 @@ html {
 a.category-badge > span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
+}
+
+/* -------------------------------- Back to top */
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
 }
 
 /* -------------------------------- Media Queries */

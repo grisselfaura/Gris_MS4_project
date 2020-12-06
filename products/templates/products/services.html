@@ -108,13 +108,37 @@
 
 {% endblock %}
 
-{% block extra_js %}
-<!-- Code from https://bootsnipp.com/snippets/35OOB -->
-<script type="text/javascript">
-    // Generates a list or grid view when the respective buttons are clicked
-    $(document).ready(function() {
-        $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
-        $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
-    });
-</script>
+{% block postloadjs %}
+    {{ block.super }}
+    <!-- Code from https://bootsnipp.com/snippets/35OOB -->
+    <script type="text/javascript">
+        // Generates a list or grid view when the respective buttons are clicked
+        $(document).ready(function() {
+            $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+            $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+        });
+    </script>
+   
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}
