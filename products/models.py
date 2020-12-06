@@ -25,6 +25,7 @@ class Service(models.Model):
     usability_testing = models.BooleanField(default=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     is_a_service = models.BooleanField(default=False)
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True) #not used in the database(testing adding to field at a later stage)
     duration = models.TextField()
     revision = models.TextField()
     image_url = models.URLField(max_length=1024, null=True, blank=True)
