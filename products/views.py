@@ -12,10 +12,26 @@ def all_services(request):
     all_services = Service.objects.all()
     # query and categories will be set to empty when page is first load to avoid errors
     query = None
-    catego  = None
+    categories = None
+    sort = None
+    direction = None
 
     # When more services are added by the website owner this functionality will help the end users.
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                all_services = all_services.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            all_services = all_services.order_by(sortkey)
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             all_services = all_services.filter(category__name__in=categories)
@@ -34,11 +50,15 @@ def all_services(request):
             # pass the query to the filter method in order to filter products
             all_services = all_services.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'services': all_services,
         'search_word': query,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
+
     return render(request, 'products/services.html', context)
 
 

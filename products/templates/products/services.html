@@ -18,13 +18,44 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-5">
+            <div class="col text-center mt-3">
                 <h2 class="logo-font">Services</h2>
+                {% for c in current_categories %}
+                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
                 <hr class="w-50 mb-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2">
+                    <!-- Filter box functioanality -->
+                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-50">
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Search box -->
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted mt-3 text-center text-md-left">
+                            {% if search_word or current_categories or current_sorting != 'None_None' %}
+                                <span class="small"><a href="{% url 'products' %}">Service Home</a> | </span>
+                            {% endif %}
+                            {{ services|length }} Products{% if search_word %} found for <strong>"{{ search_word }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
+        <!-- Views options -->
         <div class="row">
             <div class="col-lg-12 my-3">
                 <div class="pull-right">
@@ -47,11 +78,17 @@
                             <img class="card-img-top group list-group-image img-fluid" src="{{ instance.image_url }}" alt="{{ instance.name }}" />
                         </div>
                         <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading service-title">
-                                {{ instance.name }}</h4>
+                            <h4 class="group card-title inner list-group-item-heading service-title">{{ instance.name }}</h4>
+                            {% if instance.category %}
+                                <p class="small mt-1 mb-0">
+                                    <!-- Link to search for specific category -->
+                                    <a class="text-muted" href="{% url 'products' %}?category={{ instance.category.name }}"> 
+                                        <i class="fas fa-tag mr-1"></i>{{ instance.category.friendly_name }}
+                                    </a>
+                                </p>
+                            {% endif %}
                             <p class="lead text-right price-text"> <strong>$ {{ instance.price }}</strong></p>
-                            <p class="group inner list-group-item-text service-description">
-                                {{ instance.description }}</p>
+                            <p class="group inner list-group-item-text service-description">{{ instance.description }}</p>
                             <div class="row">
                                 <!--Read More Button-->
                                 <div class="col-xs-6">
