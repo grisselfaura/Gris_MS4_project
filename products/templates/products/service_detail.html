@@ -161,9 +161,10 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
 {{ block.super}}
 {% include 'products/includes/quantity_increase_decrease_btns_script.html' %}
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
 {% endblock %}
 
 
