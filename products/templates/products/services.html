@@ -118,16 +118,16 @@
             $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
         });
     </script>
-   
+    <!--Javascript inspired by CI Boutique Ado module-->
     <script type="text/javascript">
         $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
+            let selector = $(this);
+            let currentUrl = new URL(window.location);
 
-            var selectedVal = selector.val();
+            let selectedVal = selector.val();
             if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+                let sort = selectedVal.split("_")[0];
+                let direction = selectedVal.split("_")[1];
 
                 currentUrl.searchParams.set("sort", sort);
                 currentUrl.searchParams.set("direction", direction);
