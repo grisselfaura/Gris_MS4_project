@@ -139,7 +139,7 @@
     $('.remove-item').click(function(e) {
         let csrfToken = "{{ csrf_token }}";
         let itemId = $(this).attr('id').split('remove_')[1];
-        print(itemId)
+        console.log(itemId)
         let url = `/bag/remove/${itemId}/`;
         let data = {'csrfmiddlewaretoken': csrfToken};
 
