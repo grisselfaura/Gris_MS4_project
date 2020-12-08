@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'home',
     'products',
     'bag',
-    'blog.apps.BlogConfig',
+    'checkout',
+    'about',
+    'portafolio',
+    'blog',
 ]
 
 MIDDLEWARE = [
