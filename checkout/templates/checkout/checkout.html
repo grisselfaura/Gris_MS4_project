@@ -29,7 +29,10 @@
 
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
-                <p class="text-muted">Order Summary ({{ product_count }})</p>
+                <p class="text-muted">Order Summary 
+                <span class="price">
+                    <i class="fa fa-shopping-cart black"> ({{ product_count }}) </i>
+                </span></p>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small text-muted">Item name</p>
@@ -58,7 +61,7 @@
                 <hr class="my-0">
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">
-                        <p class="my-0">Order Total:</p>
+                        <p class="my-0 black"><strong>Total:</strong></p>
                     </div>
                     <div class="col-3">
                         <p class="my-0"><strong>${{ total | floatformat:2 }}</strong></p>
@@ -70,18 +73,27 @@
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                        <legend class="fieldset-label text-black px-2 w-auto">Details</legend>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
                         {{ order_form.full_name | as_crispy_field }}
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                        <legend class="fieldset-label  text-black px-2 w-auto">Billing Address</legend>
+                        <label for="phone"><i class="fa fa-phone"></i> Phone number</label>
                         {{ order_form.phone_number | as_crispy_field }}
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
                         {{ order_form.town_or_city | as_crispy_field }}
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address 1</label>
                         {{ order_form.street_address1 | as_crispy_field }}
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address 2</label>
                         {{ order_form.street_address2 | as_crispy_field }}
+                        <label for="zip">Postcode</label>
                         {{ order_form.postcode | as_crispy_field }}
+                        <label for="state">County</label>
                         {{ order_form.county | as_crispy_field }}
+                        <label for="country">County</label>
                         {{ order_form.country | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
 							{% if user.is_authenticated %}
@@ -96,12 +108,20 @@
 						</div>
                     </fieldset>
                     <fieldset class="px-3">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                        <legend class="fieldset-label text-black px-2 w-auto">Payment</legend>
+                        
                         <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
 
                         <!-- Used to display form errors -->
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                        <label for="fname">Accepted Cards</label>
+                            <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2">                    
@@ -117,7 +137,7 @@
 								<i class="fas fa-lock"></i>
 							</span>
 						</button>
-						<p class="small text-danger my-0">
+						<p class="small text-danger my-0 mt-2">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
