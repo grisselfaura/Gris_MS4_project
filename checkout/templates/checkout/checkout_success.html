@@ -16,7 +16,6 @@
 {% endblock %}
 
 {% block content %}
-    <!-- <div class="overlay"></div> -->
     <div class="container">
         <div class="row">
             <div class="col">
@@ -154,12 +153,12 @@
                         <div class="col-12 col-sm-6">
                             <img class="w-100" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
                         </div>
-                        <div class="col-12 col-sm-3">
+                        <div class="col-12 col-sm-3 text-md-center m-auto">
                             <p class="small mb-0 text-black font-weight-bold">
                                 {{ item.service.name }}
                             </p>
                         </div>
-                        <div class="col-12 col-sm-3 text-md-right">
+                        <div class="col-12 col-sm-3 text-md-right m-auto">
                             <p class="small mb-0">{{ item.quantity }} @ ${{ item.service.price }} each</p>
                         </div>
                     </div>
