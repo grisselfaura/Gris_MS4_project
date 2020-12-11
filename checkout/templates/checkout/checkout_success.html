@@ -27,13 +27,13 @@
             </div>
         </div>
         
-        <div class="order-confirmation-wrapper p-2 border">
+        <div class="order-confirmation-wrapper p-4 border wrapper-color">
             <div class="row">
                 <!-- SUMMARY -->
                 <div class="col-12 col-lg-6">
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col">
-                            <small class="text-muted">SUMMARY</small>
+                            <h6 class="text-muted">SUMMARY</h6>
                         </div>
                     </div>
                     <div class="row">
@@ -63,9 +63,9 @@
                 </div>
                 <!-- BILLING INFO -->
                 <div class="col-12 col-lg-6">
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col">
-                            <small class="text-muted">BILLING ADDRESS:</small>
+                            <h6 class="text-muted">BILLING ADDRESS:</h6>
                         </div>
                     </div>
                     <div class="row">
@@ -145,21 +145,21 @@
                 <div class="col-12 col-lg-7">
                     <div class="row">
                         <div class="col">
-                            <small class="text-muted">ORDER DETAILS:</small>
+                            <h6 class="text-muted">ORDER DETAILS:</h6>
                         </div>
                     </div>
                     {% for item in order.lineitems.all %}
                     <hr>
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-6">
                             <img class="w-100" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <p class="small mb-0 text-black font-weight-bold">
                                 {{ item.service.name }}
                             </p>
                         </div>
-                        <div class="col-12 col-md-4 text-md-right">
+                        <div class="col-12 col-md-3 text-md-right">
                             <p class="small mb-0">{{ item.quantity }} @ ${{ item.service.price }} each</p>
                         </div>
                     </div>
