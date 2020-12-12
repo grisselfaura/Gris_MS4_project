@@ -3,6 +3,8 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 
+from django_countries.fields import CountryField
+
 from products.models import Service
 
 
@@ -17,7 +19,7 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
-    country = models.CharField(max_length=40, null=False, blank=False)
+    country = CountryField(blank_label='Country *', null=False, blank=False)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=True, blank=False, default='')

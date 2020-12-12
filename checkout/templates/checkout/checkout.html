@@ -82,12 +82,12 @@
                         <legend class="fieldset-label  text-black px-2 w-auto">Billing Address</legend>
                         <label for="phone"><i class="fa fa-phone"></i> Phone number</label>
                         {{ order_form.phone_number | as_crispy_field }}
-                        <label for="city"><i class="fa fa-institution"></i> City</label>
-                        {{ order_form.town_or_city | as_crispy_field }}
                         <label for="adr"><i class="fa fa-address-card-o"></i> Address 1</label>
                         {{ order_form.street_address1 | as_crispy_field }}
                         <label for="adr"><i class="fa fa-address-card-o"></i> Address 2</label>
                         {{ order_form.street_address2 | as_crispy_field }}
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                        {{ order_form.town_or_city | as_crispy_field }}
                         <label for="zip">Postcode</label>
                         {{ order_form.postcode | as_crispy_field }}
                         <label for="state">County</label>
