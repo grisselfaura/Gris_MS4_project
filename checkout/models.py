@@ -7,6 +7,7 @@ from django_countries.fields import CountryField
 
 from products.models import Service
 from profiles.models import UserProfile
+# check if the user profile  needs to be imported
 
 
 class Order(models.Model):
