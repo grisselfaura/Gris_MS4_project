@@ -1,0 +1,19 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your order at Urban Designer. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+Meeting call:{{ order.date }}.
+Order Total: ${{ order.order_total }}
+
+I've got the following phone number on file as {{ order.phone_number }} and I will contact you on 
+the selected date above to get acquainted and talk about your project.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+
+Urban Designer
