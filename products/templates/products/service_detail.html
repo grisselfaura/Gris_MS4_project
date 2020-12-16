@@ -34,7 +34,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img class="img-polaroid img-fluid service-img-size" src="{{ service.image_url }}" alt="{{ service.name }}" />
+                {% if service.image %}
+                    <img class="img-polaroid img-fluid service-img-size" src="{{ service.image_url }}" alt="{{ service.name }}">
+                {% else %}
+                    <img class="img-polaroid img-fluid service-img-size" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ instance.name }}">
+                    <!-- <img class="img-polaroid img-fluid service-img-size" src="/media/sorrynoimage.jpg" alt="{{ service.name }}"> -->
+                {% endif %}
             </div>
             <div class="col-md-6">
                 <h2 class="service-title">{{ service.name }}</h2>
