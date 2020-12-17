@@ -44,8 +44,13 @@
                     <div class="row">
                         <div class="col-2 mb-3">
                             <a href="{% url 'service_detail' item.service.id %}">
-                                <img class="w-100" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
-                         
+                                {% if item.service.image_url %}
+                                    <img class="w-100" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
+                                {% elif item.service.image %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}{{ item.service.image }}" alt="{{ item.service.name }}">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ item.service.name }}">
+                                {% endif %} 
                             </a>
                         </div>
                         <div class="col-7">

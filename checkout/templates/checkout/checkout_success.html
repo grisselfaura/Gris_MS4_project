@@ -150,15 +150,21 @@
                     {% for item in order.lineitems.all %}
                     <hr>
                     <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <img class="w-100" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
+                        <div class="col-12 offset-2 col-sm-4 offset-sm-0">
+                            {% if item.service.image_url %}
+                                <img class="img-fluid rounded" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
+                            {% elif item.service.image %}
+                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{ item.service.image }}" alt="{{ item.service.name }}">
+                            {% else %}
+                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ item.service.name }}">
+                            {% endif %}    
                         </div>
-                        <div class="col-12 col-sm-3 text-md-center m-auto">
+                        <div class="col-12 offset-2 col-sm-4 offset-sm-0 text-md-center m-auto">
                             <p class="small mb-0 text-black font-weight-bold">
                                 {{ item.service.name }}
                             </p>
                         </div>
-                        <div class="col-12 col-sm-3 text-md-right m-auto">
+                        <div class="col-12 offset-2 col-sm-4 offset-sm-0 text-md-right m-auto">
                             <p class="small mb-0">{{ item.quantity }} @ ${{ item.service.price }} each</p>
                         </div>
                     </div>
