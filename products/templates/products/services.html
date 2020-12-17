@@ -95,12 +95,6 @@
                             {% endif %}
                             <p class="lead text-right price-text"> <strong>$ {{ instance.price }}</strong></p>
                             <p class="group inner list-group-item-text service-description">{{ instance.description }}</p>
-                            {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_product' service_id %}">Edit</a> | 
-                                    <a class="text-danger" href="{% url 'delete_product' service_id %}">Delete</a>
-                                </small>
-                            {% endif %}
                             <div class="row">
                                 <!--Read More Button-->
                                 <div class="col-xs-6">
@@ -111,6 +105,15 @@
                                     <a class="btn btn-success" href="{% url 'service_detail' instance.id %}">Add to cart</a>
                                 </div>
                             </div>
+                            <div class="row float-right">
+                            {% if request.user.is_superuser %}
+                                <small class="ml-3 mt-3 mb-0">
+                                    <a href="{% url 'edit_product' instance.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_product' instance.id %}">Delete</a>
+                                </small>
+                            {% endif %}      
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

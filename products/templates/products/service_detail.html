@@ -53,6 +53,14 @@
                     </p>
                 {% endif %}
                 <p class="service-description">{{ service.description }}</p>
+                <p class="float-right">
+                    {% if request.user.is_superuser %}
+                        <small class="mr-3 mt-3 mb-0">
+                            <a href="{% url 'edit_product' service.id %}">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' service.id %}">Delete</a>
+                        </small>
+                    {% endif %}      
+                </p>
                 <hr>
                 <h4 class="price-text">Price  <strong>$ {{ service.price }}</strong></h4>
                 <p class="muted">Inclusive of all taxes.</p>
