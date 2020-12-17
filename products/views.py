@@ -82,16 +82,40 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Product added successfully!')
+            messages.success(request, 'Service added successfully!')
             return redirect(reverse('add_product'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add service. Please ensure the form is valid.')
     else:
         form = ProductForm()
 
-    template = 'products/add_product.html'
+    template = 'products/add_service.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_product(request, service_id):
+    """ Edit a product in the store """
+    service = get_object_or_404(Service, pk=service_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=service)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated service!')
+            return redirect(reverse('service_detail', args=[service.id]))
+        else:
+            messages.error(request, 'Failed to update service. Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=service)
+        messages.info(request, f'You are editing {service.name}')
+
+    template = 'products/edit_service.html'
+    context = {
+        'form': form,
+        'service': service,
     }
 
     return render(request, template, context)
