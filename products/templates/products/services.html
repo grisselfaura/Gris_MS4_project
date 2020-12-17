@@ -76,10 +76,9 @@
                     <div class="thumbnail card">
                         <div class="img-event">
                             {% if instance.image %}
-                                <img class="card-img-top group list-group-image img-fluid" src="{{ instance.image_url }}" alt="{{ instance.name }}">
+                                <img class="card-img-top group list-group-image img-fluid" src="{{ service.image_url }}" alt="{{ instance.name }}">
                             {% else %}
                                 <img class="card-img-top group list-group-image img-fluid" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ instance.name }}">
-                                <!-- <img class="card-img-top group list-group-image img-fluid" src="/media/sorrynoimage.jpg" alt="{{ instance.name }}"> -->
                             {% endif %}
                         </div>
                         <div class="caption card-body">
