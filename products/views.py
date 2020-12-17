@@ -81,9 +81,9 @@ def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            service = form.save()
             messages.success(request, 'Service added successfully!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('service_detail', args=[service.id]))
         else:
             messages.error(request, 'Failed to add service. Please ensure the form is valid.')
     else:
@@ -119,3 +119,11 @@ def edit_product(request, service_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, service_id):
+    """ Delete a product from the store """
+    service = get_object_or_404(Service, pk=service_id)
+    service.delete()
+    messages.success(request, 'Service deleted!')
+    return redirect(reverse('products'))
