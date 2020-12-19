@@ -15,17 +15,24 @@
 
 {% block content %}
 <!-- Template from https://bootsnipp.com/snippets/35OOB    -->
-    <div class="overlay"></div>
-    <div class="container-fluid">
+    <!-- <div class="overlay"></div> -->
+    <div class="container">
         <div class="row">
             <div class="col text-center mt-3">
+                <hr>
                 <h2 class="logo-font">Services</h2>
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
-                <hr class="w-50 mb-1">
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <hr class="mb-2">
             </div>
         </div>
         <div class="row">

@@ -18,9 +18,15 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col text-center mt-3">
                 <hr>
-                <h2 class="logo-font mb-4">Thank You for your Order!</h2>
+                <h2 class="logo-font">Thank You for your Order!</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
                 <hr>
                 <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }} for further instructions </strong>.</p>
             </div>
