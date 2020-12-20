@@ -6,7 +6,7 @@ def about(request):
     """ A view that renders the about me page """
     return render(request, 'about/about.html', {'title': 'About'})
 
-def portafolio(request):
+def portfolio(request):
     """ A view that renders the portafolio page """
     return render(request, 'about/my_portafolio.html', {'title': 'Portafolio'})
 
