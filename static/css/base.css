@@ -657,3 +657,16 @@ main {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+/* About page */
+.module-fancy-heading .themify-text-left, .tb-align-left {
+    text-align: left;
+}
+
+.module-fancy-heading .sub-head:before {
+    content: "";
+    border-top: 3px solid;
+    width: 2em;
+    display: block;
+    padding-top: .2em;
+}
