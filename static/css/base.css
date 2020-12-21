@@ -68,7 +68,14 @@ html {
 
 @media screen and (max-width: 991px) {
   .text-red {
-    color: red;
+    color: rgba(255, 0, 0, 1)
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .no-padding {
+        padding-right: 0rem!important;
+        padding-left: 0rem!important;
     }
 }
 
@@ -215,9 +222,9 @@ input[name='q']::placeholder {
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 991px) {
+@media (min-width: 354px) and (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 90px;
     }
 
     body {
@@ -225,7 +232,13 @@ input[name='q']::placeholder {
     }
 }
 
+@media screen and (max-width: 353px) {
+    .header-container {
+        padding-top: 170px;
+    }
 
+
+}
 /* --------------------------------  Footer */
 /*sticky footer*/
 
@@ -294,8 +307,6 @@ main {
     background-attachment: fixed;
     background-position: 50% 0%; 
     background-repeat: no-repeat; 
-    background-color: #cccccc;
-    opacity: 0.65;
     /* Set a specific height */
     min-height: 100%;
     height: 500px;
@@ -355,7 +366,7 @@ main {
 
 /*Home - reviews*/
 #demo {
-    background: linear-gradient(112deg, #000000 50%, #a96102 50%);
+    background: linear-gradient(112deg, #000000 50%, #a90202 50%);
     max-width: 900px;
     margin: auto
 }
@@ -382,7 +393,7 @@ main {
         position: initial;
         z-index: 10;
         padding: 3rem 2rem;
-        color: rgba(78, 77, 77, 0.856);
+        color: rgb(255, 255, 255);
         text-align: center;
         font-size: 0.7rem;
         font-style: italic;
