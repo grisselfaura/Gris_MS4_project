@@ -43,7 +43,6 @@ html {
     min-width: 260px;
 }
 
-/* Brands div */
 .btn-black {
     background: black;
     color: white;
@@ -55,9 +54,6 @@ html {
     border: 1px solid black;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
@@ -67,7 +63,13 @@ html {
 /* FOR THE SERVICES REUSE if need it check if used for something else section ends here*/
 
 .text-black {
-    color: #000 !important;
+    color: #000000;
+}
+
+@media screen and (max-width: 991px) {
+  .text-red {
+    color: red;
+    }
 }
 
 .text-white {
