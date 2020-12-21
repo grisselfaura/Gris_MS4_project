@@ -358,7 +358,7 @@ main {
     margin: auto
 }
 
-.carousel-caption {
+.carousel-caption-reviews {
     position: initial;
     z-index: 10;
     padding: 5rem 8rem;
@@ -371,7 +371,7 @@ main {
 }
 
 @media(max-width:767px) {
-    .carousel-caption {
+    .carousel-caption-reviews {
         position: initial;
         z-index: 10;
         padding: 3rem 2rem;
@@ -676,11 +676,22 @@ main {
     padding-top: .2em;
 }
 
-.img-fluid {
+.img-fluid-brand {
     max-width: 100%;
     width: 90%;
     height: auto;
 }
 .brand-logo{
     padding: 0px 15px;
+}
+
+/* .img-fluid- {
+    max-width: 100%;
+    height: auto;
+} */
+
+.img-fluid-custom{
+  width:100%;
+  height: 600px;
+  min-height:100%;
 }
