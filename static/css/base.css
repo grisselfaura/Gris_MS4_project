@@ -670,3 +670,12 @@ main {
     display: block;
     padding-top: .2em;
 }
+
+.img-fluid {
+    max-width: 100%;
+    width: 90%;
+    height: auto;
+}
+.brand-logo{
+    padding: 0px 15px;
+}
