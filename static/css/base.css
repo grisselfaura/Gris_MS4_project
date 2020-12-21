@@ -353,21 +353,26 @@ main {
 
 /*Home - reviews*/
 #demo {
-    background: linear-gradient(112deg, #ffffff 50%, antiquewhite 50%);
+    background: linear-gradient(112deg, #000000 50%, #a96102 50%);
     max-width: 900px;
     margin: auto
+}
+
+.img-fluid-reviews {
+    height: 150px;
 }
 
 .carousel-caption-reviews {
     position: initial;
     z-index: 10;
     padding: 5rem 8rem;
-    color: rgba(78, 77, 77, 0.856);
+    color: rgb(255, 255, 255);
     text-align: center;
     font-size: 1.2rem;
     font-style: italic;
     font-weight: bold;
-    line-height: 2rem
+    line-height: 2rem;
+    font-family: 'Barlow', sans-serif;
 }
 
 @media(max-width:767px) {
@@ -424,13 +429,13 @@ main {
     }
 }
 
-.carousel-control-prev {
+/* .carousel-control-prev {
     justify-content: flex-start
 }
 
 .carousel-control-next {
     justify-content: flex-end
-}
+} */
 
 .carousel-control-prev,
 .carousel-control-next {
