@@ -450,6 +450,11 @@ main {
 	background: white;
 	z-index: -1;
 }
+
+.txt-size-modal {
+    font-size: .75rem;
+    padding: 0;
+}
 /*Services - grid/list*/
 .view-group {
     display: -ms-flexbox;
