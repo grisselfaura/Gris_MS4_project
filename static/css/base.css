@@ -798,3 +798,12 @@ main {
         display: none;
     }
 }
+
+/* Portafolio page */
+.bg-color {
+  background-color: rgb(0, 0, 0);
+}
+
+.pointer {
+    cursor: pointer;
+}
