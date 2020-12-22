@@ -22,12 +22,12 @@ def portfolio_detail(request):
     return render(request, 'about/my_portafolio_slide_show.html',
                     {'title': 'Portfolio_detail'})
 
-# def portafolio_detail(request, portafolio_id):
+# def portfolio_detail(request, portfolio_id):
 #     """ A view that renders the indiviadual portafolio project details """
 
-#     portafolio_detail = get_object_or_404(Portafolio, pk=portafolio_id)
+#     portfolio_detail = get_object_or_404(Portafolio, pk=portafolio_id)
 
 #     context = {
-#         'portafolio': portafolio_detail,
+#         'portfolio': portfolio_detail,
 #     }
 #     return render(request, 'about/my_portafolio_slide_show.html', context)

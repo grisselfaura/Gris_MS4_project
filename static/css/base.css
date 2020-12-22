@@ -840,11 +840,11 @@ main {
 	display: inline-block;
 }
 
-.card-portfolio:hover .edit {
+.card-portfolio:hover .portafolioslide {
 	display: block;
 }
 
-.edit {
+.portafolioslide {
 	padding-top: 7px;	
 	padding-right: 7px;
 	position: absolute;
@@ -853,6 +853,6 @@ main {
 	display: none;
 }
 
-.edit a {
-	color: #000;
+.portafolioslide a {
+	color: rgb(255, 255, 255);
 }
