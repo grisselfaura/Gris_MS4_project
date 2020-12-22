@@ -5,4 +5,7 @@ urlpatterns = [
     path('', views.about, name='about'),
     path('portafolio/', views.portfolio, name='my_portafolio'),
     path('connect/', views.connect, name='lets_connect'),
+    path('testportfoliodetalio/', views.portfolio_detail, name='portfolio_slide'),
 ]
+
+# path('<int:portafolio_id>/', views.portfolio_detail, name='portfolio_detail'),

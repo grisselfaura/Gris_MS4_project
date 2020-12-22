@@ -36,13 +36,16 @@
         <div class="row">
             <div class="row bg-color pointer" data-aos="fade-up" data-aos-delay="100">
                 <!-- Portfolio Item 1-->
-                <div class="col-md-6 col-lg-4 mb-5 portfolio-item filter-app">
-                    <div class="portfolio-wrap mx-auto">
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="card-portfolio mx-auto">
                         <img class="img-fluid" src="/static/images/portafolio_cover/portafolio_cover_1.png" alt="First slide">
-                        <div class="portfolio-links">
-                            <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-                            <a href="my_portafolio_slide_show.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
+                        <div class="edit"><a href="{% url 'portfolio_slide' %}"><i class="fa fa-pencil fa-lg"></i></a></div>
+                        <!-- <div class="overlay-img-reveal"></div> 
+                        <div class="card-img-overlay bg-dark text-white">
+                             <span class="card-title">Card Title</span> 
+                            <a href="my_portafolio_slide_show.html" data-gall="portfolioGallery" class="venobox" title="More Details"><i class="fa fa-plus"></i></a>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+                        </div> -->
                         
                     </div>
                 </div>
