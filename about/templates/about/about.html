@@ -20,7 +20,6 @@
 {% endblock %}
 
 {% block content %}
-    <!-- <div class="overlay"></div> -->
     <div class="container">
         <div class="row">
             <div class="col text-center mt-3">
@@ -39,29 +38,29 @@
     <div class="container-fluid">
         <!-- About-me -->
         <div class="row justify-content-md-center">
-            <div class="col-md-4">
+            <div class="side">
                 <!-- about-me image -->
-                <div class="module module-image">
-                    <div class="image-wrap">
+                <div class="about-side-image">
+                    <div class="about-img">
                         <img src="{{ MEDIA_URL }}francofaura.jpg" class="rounded-circle" alt="Franco Faura photo"/>            
                     </div> 
                 </div>
                 <!-- about-me heading -->
-                <div  class="module module-fancy-heading fancy-heading">
-                    <h1 class="fancy-heading tb-align-left">
-                        <span  class="main-head">
+                <div class="about-side-fancy-heading">
+                    <h1 class="fancy-heading text-left">
+                        <span class="main-head">
                             Hi, I'm Franco</span>
                         <span class="sub-head">
                             User experience designer from Lima</span>
                     </h1>
                 </div>
                 <!-- about-me text -->
-                <div class="module module-text">
-                    <div  class="tb_text_wrap">
-                    <p style="text-align: left;">I help businesses to validate innovative opportunities and create experiences that solve real life problems. Feel free to browse through my 
+                <div class="about-side-text">
+                    <div class="text_wrap">
+                    <p class="text-left">I help businesses to validate innovative opportunities and create experiences that solve real life problems. Feel free to browse through my 
                         <a href="https://www.behance.net/francofaura/projects" target="_blank">previous projects</a> at Promart, USIL, Volkswagen and more. </p>
-                    <p style="text-align: left;">Interested to hear how I can help you? Use the button below to say hi, or reach out via LinkedIn.</p>
-                    <p><strong>I’m currently available for a new challenge. </strong></p>    
+                    <p class="text-left">Interested to hear how I can help you? Use the button below to say hi, or reach out via LinkedIn.</p>
+                    <p><strong>I’m currently available for new challenges. </strong></p>    
                     </div>
                 </div>
                 <!-- Buttons -->
@@ -82,7 +81,7 @@
                 <br>
             </div>
             <!-- About-me slider-->
-            <div class="col-md-8">
+            <div class="main-slider">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -93,31 +92,31 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100 img-fluid-custom" src="/static/images/portafolio_cover/portafolio_cover_1.png" alt="First slide">
+                            <img class="d-block img-fluid img-height" src="/static/images/portafolio_cover/portafolio_cover_1.png" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100 img-fluid-custom" src="/static/images/portafolio_cover/portafolio_cover_2.png" alt="Second slide">
+                            <img class="d-block img-fluid img-height" src="/static/images/portafolio_cover/portafolio_cover_2.png" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block ">
+                                <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid img-height" src="/static/images/portafolio_cover/portafolio_cover_3.png" alt="Third slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100 img-fluid-custom" src="/static/images/portafolio_cover/portafolio_cover_3.png" alt="Third slide">
+                            <img class="d-block img-fluid img-height" src="/static/images/portafolio_cover/portafolio_cover_4.png" alt="Fourth slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100 img-fluid-custom" src="/static/images/portafolio_cover/portafolio_cover_4.png" alt="Third slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100 img-fluid-custom" src="/static/images/portafolio_cover/portafolio_cover_5.png" alt="Third slide">
+                            <img class="d-block img-fluid img-height" src="/static/images/portafolio_cover/portafolio_cover_5.png" alt="Fifth slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
                             </div>
