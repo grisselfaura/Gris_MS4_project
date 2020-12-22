@@ -752,24 +752,36 @@ main {
 
 @media(min-width:1501px) and (max-width:2652px) {
     .img-height {
-        height: 960px;
+        height: 730px;
         width: 100%;
     }
 }
 
-@media(min-width:1025px) and (max-width:1500px) {
+@media(min-width:1223px) and (max-width:1500px) {
     .img-height {
        height: 760px;
        width: 100%;
     }
 }
 
-@media(min-width:999px) and (max-width:1024px) {
+@media(min-width:1182px) and (max-width:1222px) {
+    .img-height {
+       height: 850px;
+       width: 100%;
+    }
+    .special-margin {
+        margin: 8px;
+    }
+}
+
+@media(min-width:999px) and (max-width:1181px) {
     .img-height {
        height: 1000px;
        width: 100%;
     }
-    /* add margin of buttons here */
+    .special-margin {
+        margin: 8px;
+    }
 }
 
 @media(min-width:768px) and (max-width:998px) {
