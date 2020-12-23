@@ -28,7 +28,6 @@
             <div class="col text-center mt-5">
                 <hr>
                 <h2 class="logo-font">Services</h2>
-                <hr>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -40,8 +39,9 @@
         </div>
     </div>
     <div class="container">
+        <!-- Service image -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-10 text-center">
                 {% if service.image_url %}
                     <img class="img-polaroid img-fluid service-img-size" src="{{ service.image_url }}" alt="{{ service.name }}">
                 {% elif service.image %}
@@ -50,8 +50,38 @@
                     <img class="img-polaroid img-fluid service-img-size" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ instance.name }}">
                 {% endif %}
             </div>
+            <div class="col-2 mt-5">
+                <p class="float-right">
+                        {% if request.user.is_superuser %}
+                            <small class="mr-3 mt-3 mb-0">
+                                <a href="{% url 'edit_product' service.id %}">Edit</a> | 
+                                <!--Defensive Programming Bootstraap for User to reconfirm DELETE action-->
+                                <a href="" class="text-danger btn modal-trigger txt-size-modal"
+                                    data-toggle="modal" data-target="#exampleModal"> Delete</a>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-circle text-danger"></i>
+                                                    Do you want to delete this <br/><span class="font-weight-bold">{{ service.name }}</span>?</h5>
+                                                <br>
+                                                <a href="{% url 'delete_product' service.id %}" class="btn btn-danger btn-small red modal-close">Delete</a>
+                                                <a href="#" class="btn btn-small btn-dark" data-dismiss="modal">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </small>
+                        {% endif %}
+                </p>    
+            </div>
+            
+        </div>
+        <!-- Service information -->
+        <hr>
+        <div class="row mt-5">
             <div class="col-md-6 text-justify">
-                <h2 class="service-title text-center">{{ service.name }}</h2>
+                <h2 class="service-title">{{ service.name }}</h2>
                 {% if service.category %}
                     <p class="small mt-1 mb-0">
                         <!-- Link to search for specific category -->
@@ -61,38 +91,55 @@
                     </p>
                 {% endif %}
                 <p class="service-description">{{ service.description }}</p>
-                <p class="float-right">
-                    {% if request.user.is_superuser %}
-                        <small class="mr-3 mt-3 mb-0">
-                            <a href="{% url 'edit_product' service.id %}">Edit</a> | 
-                            <!--Defensive Programming Bootstraap for User to reconfirm DELETE action-->
-                            <a href="" class="text-danger btn modal-trigger txt-size-modal"
-                                data-toggle="modal" data-target="#exampleModal"> Delete</a>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-circle text-danger"></i>
-                                                Do you want to delete this <br/><span class="font-weight-bold">{{ service.name }}</span>?</h5>
-                                            <br>
-                                            <a href="{% url 'delete_product' service.id %}" class="btn btn-danger btn-small red modal-close">Delete</a>
-                                            <a href="#" class="btn btn-small btn-dark" data-dismiss="modal">Cancel</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </small>
-                    {% endif %}
-                </p>
-                <hr>
-                <h4 class="price-text">Price  <strong>$ {{ service.price }}</strong></h4>
-                <p class="muted">Inclusive of all taxes.</p>
-                <br>
+                <br>  
+                <h4 class="muted service-includes">Includes</h4>
+                <div class="table-style mx-auto">
+                    <table class="table table-striped service-includes">
+                        <tbody>
+                            <tr>
+                                <th>Research</th>
+                                {% if service.research %}
+                                    <td>Included</td>
+                                {% else %}
+                                    <td>Not included</td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <th>Design sprint</th>
+                                {% if service.design_sprint %}
+                                    <td>Included</td>
+                                {% else %}
+                                    <td>Not included</td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <th>Usability testing</th>
+                                {% if service.usability_testing %}
+                                    <td>Included</td>
+                                {% else %}
+                                    <td>Not included</td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <th>Duration</th>
+                                <td>{{ service.duration }}</td>
+                            </tr>
+                                <tr>
+                                <th>Revision</th>
+                                <td>{{ service.revision }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="price-text text-right mt-2">Price  <strong>$ {{ service.price }}</strong></h4>
+                <p class="muted text-right">Inclusive of all taxes.</p>
                 <!-- Date picker -->
                 <h4 class="date-font">Select desired approach call date</h4>
-                <div class = "form-group">
-                    <form class = "col s12">
-                        <div class = "row">               
+                <div class= "form-group">
+                    <form class= "col s12">
+                        <div class= "row">               
                             <label>Chooce a date  </label>              
                             <input type = "date" class = "datepicker" />    
                         </div>            
@@ -137,61 +184,21 @@
                             </div>
                         </div>
                         <!--Buttons -->
-                        <div class="col-12 ">
+                        <div class="col-12 mt-2">
                             <!--Keep shopping btn -->
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
                             <!--Add to cart btn -->
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag now">
+                            <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag now">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
-            </div>
-        </div>
-        <div class="row product-info">
-            <div class="col-10 offset-1">
-                <h4 class="muted">Service Specification</h4>
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <th>Research</th>
-                            {% if service.research %}
-                                <td>Included</td>
-                             {% else %}
-                                <td>Not included</td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <th>Design sprint</th>
-                            {% if service.design_sprint %}
-                                <td>Included</td>
-                             {% else %}
-                                <td>Not included</td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <th>Usability testing</th>
-                            {% if service.usability_testing %}
-                                <td>Included</td>
-                             {% else %}
-                                <td>Not included</td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <th>Duration</th>
-                            <td>{{ service.duration }}</td>
-                        </tr>
-                            <tr>
-                            <th>Revision</th>
-                            <td>{{ service.revision }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <br>  
             </div>
         </div>
     </div>

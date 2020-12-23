@@ -573,17 +573,17 @@ main {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.service-img-size {
-    width: 500px;
+.service-img-position {
+   
 }
 .service-title{
     font-family: "Fredericka the Great", cursive;
     font-weight: 300;
     font-weight: bold;
-    margin-top: 1.5rem;
 }
 
-.service-description{
+.service-description
+.service-includes {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -597,6 +597,20 @@ main {
 
 .date-font{
     font-family: 'Architects Daughter', cursive;
+}
+
+.table-style {
+    overflow-x:auto;    
+}
+
+.table-striped {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
 }
 
 /* Allauth form formatting */
