@@ -15,7 +15,6 @@
 
 {% block content %}
 <!-- Template from https://bootsnipp.com/snippets/35OOB    -->
-    <!-- <div class="overlay"></div> -->
     <div class="container">
         <div class="row">
             <div class="col text-center mt-3">
@@ -81,17 +80,17 @@
             {% for instance in services %}
                 <div class="item col-xs-4 col-lg-4 mb-3">
                     <div class="thumbnail card">
-                        <div class="img-event">
+                        <div class="img-event card-img">
                             {% if instance.image_url %}
-                                <img class="card-img-top group list-group-image img-fluid" src="{{ instance.image_url }}" alt="{{ instance.name }}">
+                                <img class="img-fluid list-group-image img-height-service" src="{{ instance.image_url }}" alt="{{ instance.name }}">
                             {% elif instance.image %}
-                                <img class="card-img-top group list-group-image img-fluid" src="{{ MEDIA_URL }}{{ instance.image }}" alt="{{ service.name }}">    
+                                <img class="img-fluid list-group-image img-height-service" src="{{ MEDIA_URL }}{{ instance.image }}" alt="{{ service.name }}">    
                             {% else %}
-                                <img class="card-img-top group list-group-image img-fluid" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ instance.name }}">
+                                <img class="img-fluid list-group-image img-height-service" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ instance.name }}">
                             {% endif %}
                         </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading service-title">{{ instance.name }}</h4>
+                        <div class="caption card-body mx-auto">
+                            <h4 class="group card-title inner list-group-item-heading service-title mt-1">{{ instance.name }}</h4>
                             {% if instance.category %}
                                 <p class="small mt-1 mb-0">
                                     <!-- Link to search for specific category -->
@@ -100,8 +99,8 @@
                                     </a>
                                 </p>
                             {% endif %}
-                            <p class="lead text-right price-text"> <strong>$ {{ instance.price }}</strong></p>
-                            <p class="group inner list-group-item-text service-description">{{ instance.description }}</p>
+                            <p class="lead text-right price-text mr-3"> <strong>$ {{ instance.price }}</strong></p>
+                            <p class="group inner list-group-item-text service-description mr-3">{{ instance.description }}</p>
                             <div class="row">
                                 <!--Read More Button-->
                                 <div class="col-xs-6">
@@ -112,7 +111,7 @@
                                     <a class="btn btn-success" href="{% url 'service_detail' instance.id %}">Add to cart</a>
                                 </div>
                             </div>
-                            <div class="row float-right">
+                            <div class="row float-right mr-3">
                             {% if request.user.is_superuser %}
                                 <small class="ml-3 mt-3 mb-0">
                                     <a href="{% url 'edit_product' instance.id %}">Edit</a> | 

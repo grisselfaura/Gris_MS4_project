@@ -42,13 +42,15 @@
         <!-- Service image -->
         <div class="row">
             <div class="col-10 text-center">
-                {% if service.image_url %}
-                    <img class="img-polaroid img-fluid service-img-size" src="{{ service.image_url }}" alt="{{ service.name }}">
-                {% elif service.image %}
-                    <img class="img-polaroid img-fluid service-img-size" src="{{ MEDIA_URL }}{{ service.image }}" alt="{{ service.name }}">
-                {% else %}
-                    <img class="img-polaroid img-fluid service-img-size" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ instance.name }}">
-                {% endif %}
+                <div class="card-img">
+                    {% if service.image_url %}
+                        <img class="img-polaroid img-fluid image-size" src="{{ service.image_url }}" alt="{{ service.name }}">
+                    {% elif service.image %}
+                        <img class="img-polaroid img-fluid image-size" src="{{ MEDIA_URL }}{{ service.image }}" alt="{{ service.name }}">
+                    {% else %}
+                        <img class="img-polaroid img-fluid image-size" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ instance.name }}">
+                    {% endif %}
+                </div>
             </div>
             <div class="col-2 mt-5">
                 <p class="float-right">

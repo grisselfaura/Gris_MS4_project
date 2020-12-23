@@ -12,8 +12,8 @@
       "is_a_service": "True",
       "duration": "1 week",
       "revision": "1x",
-      "image_url": "https://i.postimg.cc/nCbR0J0j/starter-package.jpg",
-      "image": "images/services/starter_package.jpg",
+      "image_url": "https://i.postimg.cc/PpkqsmW5/starter-service2.jpg",
+      "image": "images/services/starter_service2.jpg",
       "discontinued": "False"
     }
   },
@@ -30,8 +30,8 @@
       "is_a_service": "True",
       "duration": "2 week",
       "revision": "2x",
-      "image_url": "https://i.postimg.cc/H85SdZsk/plus-package.jpg",
-      "image": "images/services/plus_package.jpg",
+      "image_url": "https://i.postimg.cc/NyX0zNrn/plus-service2.png",
+      "image": "images/services/plus-service2.png",
       "discontinued": "False"
     }
   },
@@ -48,8 +48,8 @@
       "is_a_service": "True",
       "duration": "4 week",
       "revision": "3x",
-      "image_url": "https://i.postimg.cc/gr6tVJqb/premium-package.jpg",
-      "image": "images/services/premium_package.jpg",
+      "image_url": "https://i.postimg.cc/Q9kdXHmk/premium-service2.jpg",
+      "image": "images/services/premium-service2.jpg",
       "discontinued": "False"
     }
   }

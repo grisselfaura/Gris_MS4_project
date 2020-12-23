@@ -495,8 +495,12 @@ main {
     min-width: 100%;
 }
 
-.card-img-top{
-    max-height: 150px;
+.card-img {
+    max-height: 600px;
+}
+
+.img-height-service {
+    min-height: 350px;
 }
 
 .card-body{
@@ -573,9 +577,11 @@ main {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.service-img-position {
-   
+.image-size {
+    min-height: 400px;
 }
+
+
 .service-title{
     font-family: "Fredericka the Great", cursive;
     font-weight: 300;
