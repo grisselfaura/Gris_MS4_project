@@ -1,0 +1,10 @@
+.container-scroller {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #f9f9f9;
+}
+
+.parallax {
+    background: transparent no-repeat center;
+    min-height: 500px;
+}

@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'about/css/about.css' %}">
 {% endblock %}
 
 {% block extra_title %}- My Portfolio Slide Show {% endblock %}
@@ -31,10 +32,14 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-scroller">
         <!-- Portafolio -->
-        <div class="row">
-
+        <div class="parallax">
+            <div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="/static/images/portafolio_cover/portafolio_cover_1.png"></div>
+        </div>
+        <div class="parallax">
+            <div class="parallax" data-parallax="scroll" data-z-index="2" data-image-src="/static/images/portafolio_cover/portafolio_cover_2.png"></div>
+        </div>
         </div>
 
     </div>
