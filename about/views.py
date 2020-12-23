@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
+from .models import Portfolio
+
 # Create your views here.
 
 def about(request):
@@ -18,9 +20,10 @@ def connect(request):
 
 
 def portfolio_detail(request):
-    """ A view that renders the indiviadual portafolio project details  """
+    """ A view that renders the individual portafolio project details  """
     return render(request, 'about/my_portafolio_slide_show.html',
                     {'title': 'Portfolio_detail'})
+
 
 # def portfolio_detail(request, portfolio_id):
 #     """ A view that renders the indiviadual portafolio project details """
