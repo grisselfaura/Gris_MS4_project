@@ -777,10 +777,8 @@ th, td {
     }
     .brand-logo{
     padding: 0px 10px;
+    }
 }
-}
-
-
 
 @media(min-width:1501px) and (max-width:2652px) {
     .img-height {
