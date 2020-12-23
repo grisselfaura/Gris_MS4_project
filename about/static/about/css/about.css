@@ -1,3 +1,207 @@
+/* About page */
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px 50px;
+}
+
+/* Main column */
+.main-slider {
+  flex: 70%;
+  background-color: rgb(0, 0, 0);
+}
+
+.about-side-image {
+    padding-bottom: 25px;
+}
+
+.about-img {
+    width: auto;
+    max-width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.about-side-fancy-heading {
+    letter-spacing: -.03em;
+    padding-bottom: 1rem;
+}
+
+.about-side-fancy-heading span {
+    display: block;
+}
+
+.about-side-fancy-heading .sub-head {
+    position: relative;
+    padding-top: .6em;
+    font-size: 70%;
+}
+
+.about-side-fancy-heading .sub-head:before {
+    content: "";
+    border-top: 3px solid;
+    width: 2em;
+    display: block;
+    padding-top: .2em;
+}
+
+@media screen and (max-width: 760px) {
+    .about-side-fancy-heading {
+        font-size: 1.8em;
+    }
+}
+
+.about-side-text {
+    position: relative;
+    font-size: 1.0rem;
+}
+
+@media (min-width: 764px) and (max-width: 1440px) {
+    .title {
+        font-size: .75rem;
+    }
+}
+
+.img-fluid-brand {
+    max-width: 100%;
+    height: auto; 
+}
+
+.brand-logo{
+    padding: 0px 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .img-fluid-brand {
+        min-height: 30px;
+        min-width: 100px;
+    }
+    .brand-logo{
+    padding: 0px 10px;
+    }
+}
+
+@media(min-width:1501px) and (max-width:2652px) {
+    .img-height {
+        height: 730px;
+        width: 100%;
+    }
+    .brand-logo {
+        padding: auto;
+        margin: 0;
+    }
+}
+
+@media(min-width:1223px) and (max-width:1500px) {
+    .img-height {
+       height: 760px;
+       width: 100%;
+    }
+}
+
+@media(min-width:1182px) and (max-width:1222px) {
+    .img-height {
+       height: 850px;
+       width: 100%;
+    }
+    .special-margin {
+        margin: 8px;
+    }
+}
+
+@media(min-width:999px) and (max-width:1181px) {
+    .img-height {
+       height: 1000px;
+       width: 100%;
+    }
+    .special-margin {
+        margin: 8px;
+    }
+}
+
+@media(min-width:768px) and (max-width:998px) {
+    .img-height {
+       height: 400px;
+       width: 100%;
+    }
+}
+
+@media(min-width:450px) and (max-width:767px) {
+    .img-height {
+       height: 300px;
+       width: 100%;
+    }
+}
+
+@media(min-width:315px) and (max-width:450px) {
+    .img-height {
+       height: 200px;
+       width: 100%;
+    }
+}
+
+@media(max-width:315px) {
+    .main-slider {
+        display: none;
+    }
+}
+
+/* Portafolio page */
+.bg-color {
+  background-color: rgb(0, 0, 0);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.card-portfolio {
+	position: relative;
+	display: inline-block;
+}
+
+.card-portfolio:hover .portafolio-slide {
+	display: block;
+}
+
+.img-effect {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.portafolio-slide {
+	padding-bottom: 12px;	
+	position: absolute;
+    left: 50%;
+    bottom: 5%;
+    text-align: center;
+    display: none;
+    transition: .5s ease;
+    opacity: 0;
+    /* transform: translate(5%, -50%);
+    -ms-transform: translate(5%, -50%); */
+}
+
+.portafolio-slide a {
+    color: rgb(255, 255, 255);
+}
+
+.card-portfolio:hover .img-effect {
+  opacity: 0.5;
+}
+
+.card-portfolio:hover .portafolio-slide {
+  opacity: 1;
+}
+
+/* porfaolio details testing css */
+
 /* .container-scroller {
     max-width: 960px;
     margin: 0 auto;
@@ -35,3 +239,46 @@ body, html {
 .img2 { 
     background-image: url("/static/images/portafolio_cover/portafolio_cover_2.png"); 
 }
+
+/* Connect page */
+.connect-bg-image {
+    background-image: url('/static/images/homepage_background_color.jpg');
+    /* min-height: 380px; */
+    min-height: 650px;
+    /* Center and scale the image nicely */
+    background-position: 50% 0%; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transform: scale(1,1);
+}
+
+.connect-form-container {
+    position: absolute;
+    left: 0;
+    margin: 50px;
+    max-width: 500px;
+    padding: 16px;
+    background-color: white;
+    /* background-attachment: scroll; */
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+
+
+
