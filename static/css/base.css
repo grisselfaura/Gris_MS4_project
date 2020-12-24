@@ -36,13 +36,13 @@ html {
     width: fit-content;
 }
 
-/* FOR THE SERVICES REUSE if need it check if used for something else */
+/* check where this is used */
 .shop-now-button {
     background: black;
     color: white;
     min-width: 260px;
 }
-/* used in connect form for sure S*/
+
 .btn-black {
     background: black;
     color: white;
@@ -60,7 +60,6 @@ html {
     background: #222;
     color: white;
 }
-/* FOR THE SERVICES REUSE if need it check if used for something else section ends here*/
 
 .text-black {
     color: #000000;

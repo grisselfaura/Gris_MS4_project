@@ -42,9 +42,9 @@
 </li>
 <li class="list-inline-item no-padding">
     <a class="{% if total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link no-padding d-block d-lg-none" href="{% url 'view_bag' %}">
-        <div class="text-center text-red">
+        <div class="text-center text-white bag-icon-nav">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-            <p class="my-0 text-red">
+            <p class="my-0 text-white">
                 {% if total %}
                     ${{ total|floatformat:2 }}
                 {% else %}
