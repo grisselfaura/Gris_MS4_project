@@ -15,7 +15,7 @@ posts = [
     }
 ]
 
-def home(request):
+def blog(request):
     context = {
         'posts': posts
     }
