@@ -3,7 +3,7 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'about/css/about.css' %}">
-    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="{% static 'about/css/slider.css' %}">
 {% endblock %}
 
 {% block extra_title %}- My Portfolio Slide Show {% endblock %}
@@ -32,8 +32,8 @@
             </div>
         </div>
     </div>  
-    <div id="fullPage mb-3">
-        <section class="vertical-scrolling">
+    <div id="slides mb-3">
+        <section id="Slide_cover">
             <!-- <h2>fullPage.js</h2>
             <h3>This is the first section</h3> -->
             <!-- <div class="scroll-icon">
@@ -42,28 +42,28 @@
             </div> -->
             <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_1.png" alt="Show slide">
         </section>
-        <section class="vertical-scrolling">
+        <section id="Slide_1" class="vertical-scrolling">
             <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_1.png" alt="Show slide">
         </section>
-        <section class="vertical-scrolling">
+        <section id="Slide_2" class="vertical-scrolling">
             <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_2.png" alt="Show slide">
         </section>
-        <section class="vertical-scrolling">
+        <section id="Slide_3" class="vertical-scrolling">
             <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_3.png" alt="Show slide">
         </section>  
-        <section class="vertical-scrolling">
+        <section id="Slide_4" class="vertical-scrolling">
             <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_4.png" alt="Show slide">
         </section> 
-        <section class="vertical-scrolling">
+        <section id="Slide_5" class="vertical-scrolling">
             <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_5.png" alt="Show slide">
         </section> 
-        <section class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="images/portafolio_cover/portfolio_example_1/Example_1_slide_6.png" alt="Show slide">
+        <section id="Slide_6" class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_6.png" alt="Show slide">
         </section> 
-        <section class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="images/portafolio_cover/portfolio_example_1/Example_1_slide_7.png" alt="Show slide">
+        <section id="Slide_7" class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_7.png" alt="Show slide">
         </section> 
-        <section class="vertical-scrolling">
+        <section id="Slide_8" class="vertical-scrolling">
             <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_8.png" alt="Show slide">
         </section> 
     </div>
@@ -73,13 +73,10 @@
 {% endblock %}
 
 {% block postloadjs %}
+<script src="{% static 'about/js/slider.js' %}"></script>   
 <script type="text/javascript">
-    // Vertical slider
-    $('.update-link').click(function(e) {
-        let form = $(this).prev('.update-form');
-        form.submit();
-    })
-</script>    
+    var mySlider = slider('.slides');
+</script>
 {% endblock %}
 
 <!-- <div class="container-scroller">

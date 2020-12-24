@@ -202,43 +202,17 @@
 
 /* porfaolio details testing css */
 
-/* .container-scroller {
-    max-width: 960px;
-    margin: 0 auto;
-    background: #f9f9f9;
-}
+section > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7vw;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    }
 
-.parallax {
-    background: transparent no-repeat center;
-    min-height: 500px;
-} */
-
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.bg-image {
-  /* Full height */
-  height: 50%; 
-  
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.img1 { 
-    background-image: url("/static/images/portafolio_cover/portafolio_cover_1.png"); 
-}
-.img2 { 
-    background-image: url("/static/images/portafolio_cover/portafolio_cover_2.png"); 
-}
 
 /* Connect page */
 .connect-bg-image {
