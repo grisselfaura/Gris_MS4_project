@@ -7,15 +7,15 @@
       "name_client": "Air Life Aerolinea",
       "likes": "64",
       "views": "584",
-      "image_url_cover": "https://i.postimg.cc/kXvmKhDS/portafolio-cover-1.png",
-      "image_url_slide_1": "https://i.postimg.cc/yxnp1NmY/Example-1-slide-1.png",
-      "image_url_slide_2": "https://i.postimg.cc/wxWkjnKv/Example-1-slide-2.png",
-      "image_url_slide_3": "https://i.postimg.cc/PxjS1DK5/Example-1-slide-3.png",
-      "image_url_slide_4": "https://i.postimg.cc/3JRnjYjm/Example-1-slide-4.png",
-      "image_url_slide_5": "https://i.postimg.cc/GtSPgTPY/Example-1-slide-5.png",
-      "image_url_slide_6": "https://i.postimg.cc/NfS71Tjv/Example-1-slide-6.png",
-      "image_url_slide_7": "https://i.postimg.cc/htm8MjXz/Example-1-slide-7.png",
-      "image_url_slide_8": "https://i.postimg.cc/tTqhXN2W/Example-1-slide-8.png",
+      "image_cover": "/images/portafolio_cover/portafolio_cover_1.png",
+      "image_slide_1": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_1.png",
+      "image_slide_2": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_2.png",
+      "image_slide_3": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_3.png",
+      "image_slide_4": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_4.png",
+      "image_slide_5": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_5.png",
+      "image_slide_6": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_6.png",
+      "image_slide_7": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_7.png",
+      "image_slide_8": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_8.png",
     }
   },
   {
@@ -25,7 +25,7 @@
       "name": "Example_2",
       "name_client": "Honda",
       "likes": "1x",
-      "image_url_cover": "https://i.postimg.cc/0j1TJpsZ/portafolio-cover-2.png",
+      "image_cover": "/images/portafolio_cover/portafolio_cover_2.png",
     }
   },
   {
@@ -35,7 +35,7 @@
       "name": "Example_3",
       "name_client": "Promart - Service design",
       "likes": "1x",
-      "image_url_cover": "https://i.postimg.cc/CKzpyh7C/portafolio-cover-3.png",
+      "image_cover": "/images/portafolio_cover/portafolio_cover_3.png",
     }    
   },
   {
@@ -45,7 +45,7 @@
       "name": "Example_4",
       "name_client": "Promart - Prototyping",
       "likes": "1x",
-      "image_url_cover": "https://i.postimg.cc/9QxHNRdF/portafolio-cover-4.png",
+      "image_cover": "/images/portafolio_cover/portafolio_cover_4.png",
     }    
   },
   {
@@ -55,7 +55,7 @@
       "name": "Example_5",
       "name_client": "Redi",
       "likes": "1x",
-      "image_url_cover": "https://i.postimg.cc/1z2hsk7k/portafolio-cover-5.png",
+      "image_cover": "/images/portafolio_cover/portafolio_cover_5.png",
     }    
   },
   {
@@ -65,7 +65,7 @@
       "name": "Example_6",
       "name_client": "Logo Collection",
       "likes": "1x",
-      "image_url_cover": "https://i.postimg.cc/y86zPXSb/portafolio-cover-6.jpg",
+      "image_cover": "images/portafolio_cover/portafolio_cover_6.jpg",
     }    
   },
 ]

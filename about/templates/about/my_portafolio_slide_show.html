@@ -3,6 +3,7 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'about/css/about.css' %}">
+    <link rel="stylesheet" href="slider.css">
 {% endblock %}
 
 {% block extra_title %}- My Portfolio Slide Show {% endblock %}
@@ -16,7 +17,6 @@
 {% endblock %}
 
 {% block content %}
-    <!-- <div class="overlay"></div> -->
     <div class="container">
         <div class="row">
             <div class="col text-center mt-3">
@@ -31,9 +31,58 @@
                 <hr>
             </div>
         </div>
+    </div>  
+    <div id="fullPage mb-3">
+        <section class="vertical-scrolling">
+            <!-- <h2>fullPage.js</h2>
+            <h3>This is the first section</h3> -->
+            <!-- <div class="scroll-icon">
+                <p>Jump into the last slide</p>
+                <a href="#fifthSection/1" class="icon-up-open-big"></a>
+            </div> -->
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_1.png" alt="Show slide">
+        </section>
+        <section class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_1.png" alt="Show slide">
+        </section>
+        <section class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_2.png" alt="Show slide">
+        </section>
+        <section class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_3.png" alt="Show slide">
+        </section>  
+        <section class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_4.png" alt="Show slide">
+        </section> 
+        <section class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_5.png" alt="Show slide">
+        </section> 
+        <section class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="images/portafolio_cover/portfolio_example_1/Example_1_slide_6.png" alt="Show slide">
+        </section> 
+        <section class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="images/portafolio_cover/portfolio_example_1/Example_1_slide_7.png" alt="Show slide">
+        </section> 
+        <section class="vertical-scrolling">
+            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_8.png" alt="Show slide">
+        </section> 
     </div>
+    <br>
 
-    <!-- <div class="container-scroller">
+    
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    // Vertical slider
+    $('.update-link').click(function(e) {
+        let form = $(this).prev('.update-form');
+        form.submit();
+    })
+</script>    
+{% endblock %}
+
+<!-- <div class="container-scroller">
          Portafolio -->
         <!-- <div class="parallax">
             <div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="/static/images/portafolio_cover/portafolio_cover_1.png"></div>
@@ -41,32 +90,3 @@
         <div class="parallax">
             <div class="parallax" data-parallax="scroll" data-z-index="2" data-image-src="/static/images/portafolio_cover/portafolio_cover_2.png"></div>
         </div> -->
-    <div id="fullPage">
-        <section class="vertical-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the first section</h3>
-            <div class="scroll-icon">
-                <p>Jump into the last slide</p>
-                <a href="#fifthSection/1" class="icon-up-open-big"></a>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <!-- content here -->
-        </section>
-        <section class="vertical-scrolling">
-            <!-- content here -->
-        </section>
-        <section class="vertical-scrolling">
-            <!-- content here -->
-        </section>  
-        <section class="vertical-scrolling">
-            <!-- content here -->
-        </section> 
-    </div>
-
-    
-{% endblock %}
-
-{% block postloadjs %}
-    
-{% endblock %}
