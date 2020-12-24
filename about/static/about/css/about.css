@@ -212,7 +212,45 @@ section > span {
     text-transform: uppercase;
     color: #fff;
     }
+.bg-portfolio-slide {
+    background-repeat: no repeat;
+}
 
+#cover {
+    background-image: url('/static/images/portafolio_cover/portafolio_cover_1.png');
+} 
+
+#slide-1 {
+    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_1.png');
+} 
+
+#slide-2 {
+    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_2.png');
+}
+
+#slide-3 {
+    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_3.png');
+}
+
+#slide-4 {
+    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_4.png');
+}
+
+#slide-5 {
+    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_5.png');
+}
+
+#slide-6 {
+    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_6.png');
+}
+
+#slide-7 {
+    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_7.png');
+}
+
+#slide-8 {
+    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_8.png');
+}
 
 /* Connect page */
 .connect-bg-image {

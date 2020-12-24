@@ -32,40 +32,25 @@
             </div>
         </div>
     </div>  
-    <div id="slides mb-3">
-        <section id="Slide_cover">
-            <!-- <h2>fullPage.js</h2>
-            <h3>This is the first section</h3> -->
-            <!-- <div class="scroll-icon">
-                <p>Jump into the last slide</p>
-                <a href="#fifthSection/1" class="icon-up-open-big"></a>
-            </div> -->
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_1.png" alt="Show slide">
+    <div class="slides mb-3 bg-portfolio-slide">
+        <section id="cover">
         </section>
-        <section id="Slide_1" class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_1.png" alt="Show slide">
+        <section id="slide-1">
         </section>
-        <section id="Slide_2" class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_2.png" alt="Show slide">
+        <section id="slide-2">
         </section>
-        <section id="Slide_3" class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_3.png" alt="Show slide">
+        <section id="slide-3">
+        </section>
+        <section id="slide-4">
+        </section>
+        <section id="slide-5">
+        </section>
+        <section id="slide-6">
+        </section>
+        <section id="slide-7">
+        </section>
+        <section id="slide-8">
         </section>  
-        <section id="Slide_4" class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_4.png" alt="Show slide">
-        </section> 
-        <section id="Slide_5" class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_5.png" alt="Show slide">
-        </section> 
-        <section id="Slide_6" class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_6.png" alt="Show slide">
-        </section> 
-        <section id="Slide_7" class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_7.png" alt="Show slide">
-        </section> 
-        <section id="Slide_8" class="vertical-scrolling">
-            <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_8.png" alt="Show slide">
-        </section> 
     </div>
     <br>
 
@@ -73,6 +58,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+<!-- Code inspired from https://github.com/kevinoes/page-slider-js -->
 <script src="{% static 'about/js/slider.js' %}"></script>   
 <script type="text/javascript">
     var mySlider = slider('.slides');
