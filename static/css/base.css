@@ -699,3 +699,21 @@ th, td {
     border-radius: 0;
 }
 
+/* Bag */
+#right-align {
+    text-align: right;
+}
+
+.bag-item-line {
+    background:  #e2e5e859;
+    border: 1px solid #dee2e6;
+}
+
+.bag-fake-card {
+    background: transparent;
+    border-style:none;
+}
+.item-name {
+    font-size: 1rem;
+    font-weight: 100;
+}

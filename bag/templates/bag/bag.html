@@ -35,27 +35,29 @@
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
-                                    <th scope="col">Service Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th scope="col mx-auto">Service Info</th>
+                                    <th scope="col mx-auto">Price</th>
+                                    <th scope="col mx-auto">Qty</th>
+                                    <th scope="col mx-auto"></th>
+                                    <th scope="col" id="right-align">Subtotal</th>
                                 </tr>
                             </thead>
 
                             {% for item in bag_items %}
-                                <tr>
+                                <tr class= "bag-item-line">
                                     <td class="p-3 w-25">
-                                        {% if item.service.image_url %}
-                                            <img class="img-fluid rounded" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
-                                        {% elif item.service.image %}
-                                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{ item.service.image }}" alt="{{ item.service.name }}">
+                                        <div class="card bag-fake-card">
+                                            <div class="card-body py-1">
+                                                <p class="item-name">{{ item.service.name }}</p>
+                                            </div>
+                                        {% if item.service.image %}
+                                            <img class="img-fluid rounded" src="{% static item.service.image %}" alt="{{ item.service.name }}">
+                                        {% elif item.service.image_url %}
+                                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{ item.service.image_url }}" alt="{{ item.service.name }}">
                                         {% else %}
-                                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}sorrynoimage.jpg" alt="{{ item.service.name }}">
+                                            <img class="img-fluid rounded" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ item.service.name }}">
                                         {% endif %}
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.service.name }}</strong></p>
+                                        </div>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
@@ -69,7 +71,7 @@
                                                         <button class="decrement-qty btn btn-sm btn-black rounded-0" 
                                                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                             <span>
-                                                                <i class="fas fa-minus fa-sm"></i>
+                                                                <a class="update-link"><i class="fas fa-minus fa-sm"></i></a>
                                                             </span>
                                                         </button>
                                                     </div>
@@ -87,17 +89,22 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                        </form> 
+                                        <div class="d-flex align-content-center flex-wrap">
+                                            <a class="update-link text-danger"><small>Update </small></a>
+                                            <i class="fas fa-grip-lines-vertical mx-auto"></i>
+                                            <a class="remove-item text-black float-right" id="remove_{{ item.item_id }}"> <i class="fas fa-trash-alt fa-sm"><small> Remove</small></i></a>          
+                                        </div>  
                                     </td>
-                                    <td class="py-3">
+                                    <td>
+                                    </td>
+                                    <td class="py-3 float-right">
                                         <p class="my-0">${{ item.service.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="pt-5 text-right">
+                                <td colspan="5" class="pt-3 text-right">
                                     <h4 class="mt-4"><strong> Total: ${{ total|floatformat:2 }}</strong></h4>
                                 </td>
                             </tr>
