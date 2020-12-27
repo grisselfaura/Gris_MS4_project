@@ -8,7 +8,7 @@ var slider = function (sliderElement) {
 
   var init = function () {
 
-    document.body.classList.add('slider__body');
+    document.getElementById("myDIportfolio-bgV").classList.add('slider__body');
 
     // control scrolling
     whatWheel = 'onwheel' in document.createElement('div') ? 'wheel' : document.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
