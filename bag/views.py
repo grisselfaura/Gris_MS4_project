@@ -18,19 +18,31 @@ def add_to_bag(request, item_id):
 
     all_services = get_object_or_404(Service, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    select_date = request.POST('datetimepicker-selected')
+    # select_date = request.POST.get('datetime-selected')
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
+    select_date = None
+    if 'select_date' in request.POST:
+        select_date = request.POST['select_date']
 
+    # Most clients customers would order one service at the time,
     if select_date:
         if item_id in list(bag.keys()):
-            if select_date in bag[item_id] += quantity
-            messages.success(request, f'Updated {all_services.name} quantity to {bag[item_id]}')
+            if select_date in bag[item_id]['items_by_date'].keys():
+                messages.error(request, f' {all_services.name} scheduled for {select_date} already in your cart! \
+                    Please book a different timeslot for your next order.')
+                return redirect(redirect_url)
+            else:
+                bag[item_id]['items_by_date'][select_date] = quantity
+                messages.success(request, f'Added {all_services.name} scheduled for {select_date} to your bag')
         else:
-            bag[item_id] = quantity
-            messages.success(request, f'Added {all_services.name} to your bag')
+            bag[item_id] = {'items_by_date': {select_date: quantity}}
+            messages.success(request, f'Added {all_services.name} scheduled for {select_date} to your bag')
     else:
-        
+        messages.error(request, f' Please select a date to discuss your project! \
+            Check your cart to continue booking.')
+        return redirect(redirect_url)
+
     request.session['bag'] = bag
     return redirect(redirect_url)
 
