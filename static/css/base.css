@@ -49,11 +49,24 @@ html {
 } 
 
 .btn-outline-black {
-    background: white;
+    background:  white;
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
+@media screen  and (max-width: 402px) {
+    .resize-btns{
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+} 
+
+@media (min-width: 767px) and (max-width: 992px) {
+    .resize-btns{
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+} 
 .btn-outline-dark {
     background: #fbe4e4c4;
     color: black !important; /* use important to override link colors for <a> elements */

@@ -127,11 +127,15 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 ml-0">
                 <h4 class="price-text text-right mt-2">Price  <strong>$ {{ service.price }}</strong></h4>
                 <p class="muted text-right">Inclusive of all taxes.</p>
-                <!-- Date picker -->
-                <h4 class="date-font">Select date to discuss project</h4>
+                <!-- Form to add product to bag -->
+                <form class="form" action="{% url 'add_to_bag' service.id %}" method="POST">
+                    <!-- Django cross-site request forgery protection -->
+                    {% csrf_token %} 
+                    <!-- Date picker -->
+                    <h4 class="date-font"><strong>Select date to discuss project: </strong></h4>
                     <div class="col-sm-9">
                         <div class= "form-group">
                             <div class="input-group date" id="datetimepicker-demo" data-target-input="nearest">
@@ -142,65 +146,48 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <form class= "col s12">
-                        <div class= "row">                        
-                            my date picker from materialize
-                            <input type="text" name="datetime" class="form-control datetimepicker-input" data-target="#datetime" required/>
-                        </div>            
-                    </form>             
-                </div> -->
-                <p class="muted small mt-2">
-                    The confirmation of your desired date and chosen service will 
-                    be sent to your email together with the next steps for a successful collaboration.
-                </p>
-                <!-- Add product to bag -->
-                <form class="form" action="{% url 'add_to_bag' service.id %}" method="POST">
-                    <!-- Django cross-site request forgery protection -->
-                    {% csrf_token %} 
-                    <div class="form-row">
-                        <!-- Quantity input -->
-                        <div class="col-12">
-                            <p class="mt-2"><strong>Quantity:</strong></p>
-                            <div class="form-group w-50">
-                                <div class="input-group">
-                                    <!-- Increment/Decrement buttons -->
-                                    <div class="input-group-prepend">
-                                        <button class="decrement-qty btn btn-black rounded-0" 
-                                            data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
-                                            <span class="icon">
-                                                <i class="fas fa-minus"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <input class="form-control qty_input" type="number" 
-                                        name="quantity" value="1" min="1" max="99" 
-                                        data-item_id="{{ service.id }}" 
-                                        id="id_qty_{{ service.id }}">
-                                    <div class="input-group-append">
-                                        <button class="increment-qty btn btn-black rounded-0"
-                                            data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
-                                            <span class="icon">
-                                                <i class="fas fa-plus"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Buttons -->
-                        <div class="col-12 mt-2">
-                            <!--Keep shopping btn -->
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
+                    <p class="muted small mt-2">
+                        The confirmation of your desired date and chosen service will 
+                        be sent to your email together with the next steps for a successful collaboration.
+                    </p>
+                    <!-- Quantity input -->
+                    <h4 class="date-font"><strong>Quantity:  </strong></h4>
+                    <div class="input-group w-50">
+                        <!-- Increment/Decrement buttons -->
+                        <div class="input-group-prepend">
+                            <button class="decrement-qty btn btn-black rounded-0" 
+                                data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
                                 <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
+                                    <i class="fas fa-minus"></i>
                                 </span>
-                                <span class="text-uppercase">Keep Shopping</span>
-                            </a>
-                            <!--Add to cart btn -->
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag now">
+                            </button>
                         </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <input class="form-control qty_input" type="number" 
+                            name="quantity" value="1" min="1" max="99" 
+                            data-item_id="{{ service.id }}" 
+                            id="id_qty_{{ service.id }}">
+                        <div class="input-group-append">
+                            <button class="increment-qty btn btn-black rounded-0"
+                                data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
+                                <span class="icon">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
+                    <!--Buttons -->
+                    <div class="col-12 mt-4 mb-4 text-left ">
+                        <!--Keep shopping btn -->
+                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 resize-btns">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        <!--Add to cart btn -->
+                        <input type="submit" class="btn btn-black rounded-0 text-uppercase resize-btns" value="Add to Bag now">
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
                 <br>  
             </div>
