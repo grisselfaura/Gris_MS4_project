@@ -111,9 +111,11 @@
                                     <a class="btn btn-black btn-space" href="{% url 'service_detail' instance.id %}"><i class="fas fa-shopping-bag"></i> Add to cart</a>
                                 </div>
                             </div>
+                        </div>
+                        {% if request.user.is_superuser %}
+                        <div class="card-body-superuser">
                             <div class="row float-right mr-3">
-                            {% if request.user.is_superuser %}
-                                <small class="ml-3 mt-3 mb-0">
+                                <small class="ml-3 mt-3 mb-2">
                                     <a href="{% url 'edit_product' instance.id %}">Edit</a> | 
                                     <!--Defensive Programming Bootstraap for User to reconfirm DELETE action-->
                                     <a href="" class="text-danger btn modal-trigger txt-size-modal"
@@ -132,10 +134,9 @@
                                         </div>
                                     </div>
                                 </small>
-                            {% endif %}      
                             </div>
-                            
                         </div>
+                        {% endif %}         
                     </div>
                 </div>
             {% endfor %}
