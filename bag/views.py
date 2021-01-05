@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, \
+ reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
 
 from products.models import Service
@@ -17,19 +18,19 @@ def add_to_bag(request, item_id):
 
     all_services = get_object_or_404(Service, pk=item_id)
     quantity = int(request.POST.get('quantity'))
+    select_date = request.POST('datetimepicker-selected')
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
-    datetime = None
-    if 'datetime' in request.POST:
-        datetime = request.POST['datetime']
 
-    if item_id in list(bag.keys()):
-        bag[item_id] += quantity
-        messages.success(request, f'Updated {all_services.name} quantity to {bag[item_id]}')
+    if select_date:
+        if item_id in list(bag.keys()):
+            if select_date in bag[item_id] += quantity
+            messages.success(request, f'Updated {all_services.name} quantity to {bag[item_id]}')
+        else:
+            bag[item_id] = quantity
+            messages.success(request, f'Added {all_services.name} to your bag')
     else:
-        bag[item_id] = quantity
-        messages.success(request, f'Added {all_services.name} to your bag')
-
+        
     request.session['bag'] = bag
     return redirect(redirect_url)
 
