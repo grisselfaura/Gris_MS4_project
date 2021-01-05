@@ -1,9 +1,8 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
@@ -12,7 +11,6 @@
 
     {% block extra_meta %}
     {% endblock %}
-
 
     {% block corecss %}
         {% include 'includes/fonts.html' %}
@@ -139,22 +137,21 @@
     {% endblock %}
  
     <main>
-    {% block content %}
-    {% endblock %}  
+        {% block content %}
+        {% endblock %}  
     </main>
 
     <!-- Sticky Footer -->
     <footer class ="page-footer">
-    {% include 'includes/footer.html' %}
+        {% include 'includes/footer.html' %}
     </footer>
 
     {% block postloadjs %}
     <!--Javascript inspired by CI Boutique Ado module-->
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
-    {% endblock %}
-
+        <script type="text/javascript">
+            $('.toast').toast('show');
+        </script>
+        {% endblock %}
 
   </body>
 </html>
