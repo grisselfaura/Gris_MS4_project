@@ -502,8 +502,27 @@ main {
     max-height: 600px;
 }
 
-.img-height-service {
-    min-height: 350px;
+@media(min-width:990px) and (max-width: 1440px){
+    .img-height-service {
+        min-height: 250px;
+    }
+}
+@media(min-width:990px) and (max-width: 1439px){
+    .card-body{
+        height: 400px;
+    }
+}
+
+@media(min-width:1441px){
+    .img-height-service {
+        min-height: 300px;
+    }
+}
+
+@media(min-width:1440px){
+    .card-body{
+        height: 300px;
+    }
 }
 
 .card-body{
@@ -582,8 +601,10 @@ main {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.image-size {
-    height: 600px;
+ @media(min-width:1250px) {
+    .image-size {
+        height: 600px;
+    }
 }
 
 
