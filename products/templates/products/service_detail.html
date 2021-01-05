@@ -135,14 +135,12 @@
                     <!-- Django cross-site request forgery protection -->
                     {% csrf_token %} 
                     <!-- Date picker -->
-                    <h4 class="date-font"><strong>Select date to discuss project: </strong></h4>
-                    <div class="col-sm-9">
-                        <div class= "form-group">
-                            <div class="input-group date" id="datetimepicker-demo" data-target-input="nearest">
-                                <input type="text" name="datetimepicker1" class="form-control datetimepicker-input" data-target="#datetimepicker-demo" required/>
-                                <div class="input-group-append" data-target="#datetimepicker-demo" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
+                    <div class= "form-group col-sm-8">
+                        <h4 class="date-font"><strong>Select date to discuss project: </strong></h4>
+                        <div class="input-group date" id="datetimepicker-demo" data-target-input="nearest">
+                            <input type="text" name="datetimepicker-demo" class="form-control datetimepicker-input" data-target="#datetimepicker-demo" required/>
+                            <div class="input-group-append" data-target="#datetimepicker-demo" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>
                         </div>
                     </div>
@@ -151,28 +149,30 @@
                         be sent to your email together with the next steps for a successful collaboration.
                     </p>
                     <!-- Quantity input -->
-                    <h4 class="date-font"><strong>Quantity:  </strong></h4>
-                    <div class="input-group w-50">
-                        <!-- Increment/Decrement buttons -->
-                        <div class="input-group-prepend">
-                            <button class="decrement-qty btn btn-black rounded-0" 
-                                data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
-                                <span class="icon">
-                                    <i class="fas fa-minus"></i>
-                                </span>
-                            </button>
-                        </div>
-                        <input class="form-control qty_input" type="number" 
-                            name="quantity" value="1" min="1" max="99" 
-                            data-item_id="{{ service.id }}" 
-                            id="id_qty_{{ service.id }}">
-                        <div class="input-group-append">
-                            <button class="increment-qty btn btn-black rounded-0"
-                                data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
-                                <span class="icon">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </button>
+                    <div class="form-group col-sm-8">
+                        <h4 class="date-font"><strong>Quantity: </strong></h4>
+                        <div class="input-group">
+                            <!-- Increment/Decrement buttons -->
+                            <div class="input-group-prepend">
+                                <button class="decrement-qty btn btn-black rounded-0" 
+                                    data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
+                                    <span class="icon">
+                                        <i class="fas fa-minus"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <input class="form-control qty_input" type="number" 
+                                name="quantity" value="1" min="1" max="99" 
+                                data-item_id="{{ service.id }}" 
+                                id="id_qty_{{ service.id }}">
+                            <div class="input-group-append">
+                                <button class="increment-qty btn btn-black rounded-0"
+                                    data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
+                                    <span class="icon">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <!--Buttons -->

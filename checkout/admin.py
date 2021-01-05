@@ -14,14 +14,15 @@ class OrderAdmin(admin.ModelAdmin):
                        'order_total', 'original_bag',
                        'stripe_pid',)
 
-    fields = ('order_number', 'user_profile', 'date', 'full_name',
+    fields = ('order_number', 'select_date', 'date',
+              'user_profile', 'full_name',
               'email', 'phone_number', 'town_or_city',
               'street_address1', 'street_address2',
               'postcode', 'county', 'country',
               'order_total', 'original_bag',
               'stripe_pid',)
 
-    list_display = ('order_number', 'date', 'full_name',
+    list_display = ('order_number', 'select_date', 'date', 'full_name',
                     'order_total',)
 
     ordering = ('-date',)

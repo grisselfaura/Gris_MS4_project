@@ -7,14 +7,14 @@ from django_countries.fields import CountryField
 
 from products.models import Service
 from profiles.models import UserProfile
-# check if the user profile  needs to be imported
 
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, 
-                                     null=True, blank=True, related_name='orders')
-    date = models.DateTimeField(auto_now_add=True)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
+    select_date = models.DateTimeField("Selected Date (mm/dd/yyyy)", auto_now_add=False, auto_now=False, 
+                                    blank=True)
+    date = models.DateField(auto_now_add=True, auto_now=False, blank=True)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
