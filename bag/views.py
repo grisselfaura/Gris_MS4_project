@@ -34,12 +34,13 @@ def add_to_bag(request, item_id):
                 return redirect(redirect_url)
             else:
                 bag[item_id]['items_by_date'][select_date] = quantity
-                messages.success(request, f'Added {all_services.name} scheduled for {select_date} to your bag')
+                messages.success(request,
+                                 f'Added {all_services.name} to your bag')
         else:
             bag[item_id] = {'items_by_date': {select_date: quantity}}
-            messages.success(request, f'Added {all_services.name} scheduled for {select_date} to your bag')
+            messages.success(request, f'Added {all_services.name} to your bag')
     else:
-        messages.error(request, f' Please select a date to discuss your project! \
+        messages.error(request, f'Please select a date to discuss your project! \
             Check your cart to continue booking.')
         return redirect(redirect_url)
 
@@ -56,7 +57,8 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'Updated {all_services.name} quantity to {bag[item_id]}')
+        messages.success(
+            request, f'Updated {all_services.name} quantity to {bag[item_id]}')
     else:
         bag.pop(item_id)
         messages.success(request, f'Removed {all_services.name} from your bag')
