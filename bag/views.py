@@ -35,9 +35,15 @@ def add_to_bag(request, item_id):
                 messages.error(request, f'{all_services.name} already in your bag! \
                     Please give me a call to discuss the posibilities')
                 return redirect(redirect_url)
-        else: 
+        else:
             bag[item_id] = {'items_by_date': {select_date: quantity}}
             messages.success(request, f'Added {all_services.name} to your bag')
+    else: 
+        if item_id in list(bag.keys()):
+            messages.error(request, f' other service scheduled for {select_date} already in your bag! \
+                Please book a different timeslot for your next order')
+            return redirect(redirect_url)
+        
     # else:
     #     if item_id in list(bag.keys()):
     #         messages.error(request, f'{all_services.name} already in your bag! \
