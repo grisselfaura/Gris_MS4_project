@@ -206,7 +206,15 @@
 <script type="text/javascript">
     // Generates a date picker
     $(function () {
-        $('#datetimepicker-demo').datetimepicker();
+        $('#datetimepicker-demo').datetimepicker({
+        // date format
+        format:"MMMM Do YYYY, hA",
+        dayViewHeaderFormat:'MMMM YYYY',
+        extraFormats:false,
+
+        // step size
+        stepping: 60,
+        });
     });
 </script>
 {% endblock %}
