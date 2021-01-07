@@ -37,6 +37,7 @@
                                 <tr>
                                     <th scope="col mx-auto">Service Info</th>
                                     <th scope="col mx-auto">Price</th>
+                                    <th scope="col mx-auto">Date to discuss your project(s):</th>
                                     <th scope="col mx-auto">Qty</th>
                                     <th scope="col mx-auto"></th>
                                     <th scope="col" id="right-align">Subtotal</th>
@@ -47,7 +48,7 @@
                                 <tr class= "bag-item-line">
                                     <td class="p-3 w-25">
                                         <div class="card bag-fake-card">
-                                            <div class="card-body py-1">
+                                            <div class="card-body-bag py-1">
                                                 <p class="item-name">{{ item.service.name }}</p>
                                             </div>
                                         {% if item.service.image %}
@@ -61,6 +62,19 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <form class="form update-form" method="POST" id="bag-form-{{ forloop.counter }}" action="{% url 'adjust_bag' item.item_id %}">
+                                            {% csrf_token %}
+                                            <div class= "form-group col-sm-8">
+                                                <div class="input-group date" id="datetimepicker-demo-{{ forloop.counter }}" data-value="{{ item.service.select_date }}" data-target-input="nearest">
+                                                    <input type="text" name="select_date" class="form-control datetimepicker-input"  value="{{ item.service.select_date }}" data-target="#datetimepicker-demo" required/>
+                                                    <div class="input-group-append" data-target="#datetimepicker-demo" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form> 
                                     </td>
                                     <td class="py-3 w-25">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">

@@ -136,7 +136,7 @@
                     {% csrf_token %} 
                     <!-- Date picker -->
                     <div class= "form-group col-sm-8">
-                        <h4 class="date-font"><strong>Select date to discuss project: </strong></h4>
+                        <h4 class="date-font"><strong>Select date to discuss your project(s): </strong></h4>
                         <div class="input-group date" id="datetimepicker-demo" data-target-input="nearest">
                             <input type="text" name="select_date" class="form-control datetimepicker-input" data-target="#datetimepicker-demo" required/>
                             <div class="input-group-append" data-target="#datetimepicker-demo" data-toggle="datetimepicker">
@@ -204,16 +204,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    // Generates a date picker
+    // Generates a date picker from the date after today
+    let tomorrow = moment().add(1, 'days');
+    let disabledDate = ['2021-03-29', '2021-07-28', '2021-07-29','2021-12-25'];
     $(function () {
         $('#datetimepicker-demo').datetimepicker({
         // date format
-        format:"MMMM Do YYYY, hA",
+        format:"MMMM Do YYYY, h:mm",
         dayViewHeaderFormat:'MMMM YYYY',
         extraFormats:false,
 
         // step size
         stepping: 60,
+
+        // min/max dates
+        minDate: moment(),
+        disabledDates: disabledDate,
+        daysOfWeekDisabled:[0,6],
+        disabledTimeIntervals: [
+            [moment().hour(0), moment().hour(9)],
+            [moment().hour(20), moment().hour(24)]
+        ]
+        
+
+        
+
+        // disables dates before today
+        
+
         });
     });
 </script>

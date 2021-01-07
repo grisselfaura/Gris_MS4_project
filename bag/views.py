@@ -25,51 +25,31 @@ def add_to_bag(request, item_id):
     if 'select_date' in request.POST:
         select_date = request.POST['select_date']
     # Most clients customers would order one service at the time
-    if select_date:
-        if item_id in list(bag.keys()):
-            # If same product and same time selected
-            if select_date == select_date in bag[item_id]['items_by_date'].keys():
-                messages.error(request, f'{all_services.name} scheduled for {select_date} already in your bag! \
-                    Please book a different timeslot for your next order')
-                return redirect(redirect_url)
-            # If same product and diferent time selected
-            else:
-                messages.info(request, f'{all_services.name} already in your bag! \
-                    Please give me a call to discuss the posibilities')
-                return redirect(redirect_url)
+    # if select_date:
+    if item_id in list(bag.keys()):
+        # If same product and same time selected
+        if select_date == select_date in bag[item_id]['items_by_date'].keys():
+            messages.error(request, f'{all_services.name} scheduled for {select_date} already in your bag! \
+                Please book a different timeslot for your next order')
+            return redirect(redirect_url)
+        # If same product and diferent time selected
         else:
-            if select_date in bag[item_id] == select_date:
-                messages.error(request, f' other service scheduled for {select_date} already in your bag! \
-                    Please book a different timeslot for your next order')
-                return redirect(redirect_url)
-            # if different product different time
-            else:
-                bag[item_id] = {'items_by_date': {select_date: quantity}}
-                messages.success(request, f'Added {all_services.name} to your bag')
-        #     
-        # else:
-        #     messages.info(request, f'{all_services.name} already in your bag! \
-        #         Please give me a call to discuss the posibilities')
-        #     return redirect(redirect_url)
+            messages.info(request, f'{all_services.name} already in your bag! \
+                Please give me a call to discuss the posibilities')
+            return redirect(redirect_url)
+        print(bag.keys())
+    else:
         # if different product same time
-        # else:
-        #     if item_id not in list(bag.keys()):
-        #         messages.error(request, f' other service scheduled for {select_date} already in your bag! \
-        #             Please book a different timeslot for your next order')
-        #         return redirect(redirect_url)
-    # if different product different time
-    #     bag[item_id] = {'items_by_date': {select_date: quantity}}
-    #     messages.success(request, f'Added {all_services.name} to your bag')
-
-    # else:
-    #     if item_id in list(bag.keys()):
-    #         messages.error(request, f'{all_services.name} already in your bag! \
-    #             Please give me a call to discuss the posibilities')
-    #         return redirect(redirect_url)
-    #     else:
-    #         bag[item_id]['items_by_date'][select_date] = quantity
-    #             messages.success(request,
-    #                              f'Added {all_services.name} to your bag')
+        # if select_date not in bag[item_id]['items_by_date'].keys():
+        if select_date == select_date in list(bag.keys()):
+            messages.error(request, f' other service scheduled for {select_date} already in your bag! \
+                Please book a different timeslot for your next order')
+            return redirect(redirect_url)
+        # different product different time
+        else:
+            bag[item_id] = {'items_by_date': {select_date: quantity}}
+            messages.success(request, f'Added {all_services.name} to your bag')
+    
     request.session['bag'] = bag
     return redirect(redirect_url)
 
@@ -83,7 +63,8 @@ def adjust_bag(request, item_id):
     select_date = None
     if 'select_date' in request.POST:
         select_date = request.POST['select_date']
-    if select_date:
+
+    if select_date == select_date in bag[item_id]['items_by_date'].keys():
         if quantity > 0:
             bag[item_id] = {'items_by_date': {select_date: quantity}}
             messages.success(
@@ -134,3 +115,28 @@ def remove_from_bag(request, item_id):
 
     # request.session['bag'] = bag
     # return redirect(redirect_url)
+
+        #     
+        # else:
+        #     messages.info(request, f'{all_services.name} already in your bag! \
+        #         Please give me a call to discuss the posibilities')
+        #     return redirect(redirect_url)
+        # if different product same time
+        # else:
+        #     if item_id not in list(bag.keys()):
+        #         messages.error(request, f' other service scheduled for {select_date} already in your bag! \
+        #             Please book a different timeslot for your next order')
+        #         return redirect(redirect_url)
+    # if different product different time
+    #     bag[item_id] = {'items_by_date': {select_date: quantity}}
+    #     messages.success(request, f'Added {all_services.name} to your bag')
+
+    # else:
+    #     if item_id in list(bag.keys()):
+    #         messages.error(request, f'{all_services.name} already in your bag! \
+    #             Please give me a call to discuss the posibilities')
+    #         return redirect(redirect_url)
+    #     else:
+    #         bag[item_id]['items_by_date'][select_date] = quantity
+    #             messages.success(request,
+    #                              f'Added {all_services.name} to your bag')
