@@ -380,3 +380,40 @@ I would like to thank everyone who has helped me throughout the development of t
 
 ## Disclaimer
 This site is made for **educational purposes** only.        
+
+## Issues
+- Colors styling to match mobile and desktop view after test-user feedback. 
+- Homogenize colors for primary/secondary btns across different tabs and for nav. 
+- Nav and Mobile-Top-header invading the main div in small screen sizes. Corrected via media queries.
+- Nav active feature implemented with if statement with the help of mentor.
+- About section: Implemented bootsrap slider for about me, reviews and portafolio.
+- About landing image fitted as hero-img css.
+- About me section implemented as per client's feedback.
+- About contact form implemented. 
+- PENDING: Pending to connect to the backend using xxxx.
+- Services grid/list implemented from online example when client want to add more products/services.
+- Service json files added rating feature from the terminal to text how to do it. 
+- PENDING to add rating to the service card information.
+- Service detail card original layout restyled as per UX design received feedback.
+- Quantity btn resize for small screen using media queris.
+- Implemented datepicker function using boostrap instead of materialize and connect with back end.
+- Bag view: add to bag. Implemented if/else logic for adding a service without duplicating date selection during session(bag shop) and preventing same service double purchase error.
+For future a calendar database should be implemented to avoid other clients booking on occupied timeslots.
+- PENDING datapicker for other apps: checkout Bag.
+- PENDING Shopping bag restyle as per test user feedback for user friendlyness.
+- Admin: defensive modal installed to prevent edit/delete a service by mistake using boostrap.
+- Admin: Date(Timestamp) and select_date(book_date) added to the Admin view. 
+- Services mages if conditioned improved to search for image in static folder, url_link or non-available image. Fix feature across all apps.
+Discover instrinsice property When images are uploaded from url-link which lowers the resolution of the image. For this reason prefered chooice to upload images from Folder.
+Improved image resolution and responsiveness.
+- My profile: implemented full name value pre-fill feature to the checkout order.
+- Portafolio full page vertical slider implemented with bootstrap instead of horizontal customized to fit between the NAV or footer.
+- PENDING: Portafolio images are quite heavy pending to reduce this.
+- Portafolio images uploaded to Portafolio database json. 
+- PENDING: portafolio json file, view, model, url pending to implement in order to re-use and optimize code.
+- Blog app requested from client. Pending to implement for this project due to timelines.
+- PENDING: to add entity selection relationship between databases for json files. 
+- Allauth templates customized for this project.
+- All images relocated to the correct folder of static as per mentor's feedback.
+*Images provided by Client and for the service part obtain from google images for the purpose of this exercise. 
+
