@@ -69,7 +69,7 @@
                                             <div class= "form-group col-sm-8">
                                                 <div class="input-group date" id="datetimepicker-demo-{{ forloop.counter }}" data-value="{{ item.service.select_date }}" data-target-input="nearest">
                                                     <input type="text" name="select_date" class="form-control datetimepicker-input"  value="{{ item.service.select_date }}" data-target="#datetimepicker-demo" required/>
-                                                    <div class="input-group-append" data-target="#datetimepicker-demo" data-toggle="datetimepicker">
+                                                    <div class="input-group-append" data-target="#datetimepicker-demo-{{ forloop.counter }}" data-toggle="datetimepicker">
                                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                     </div>
                                                 </div>

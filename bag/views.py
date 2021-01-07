@@ -18,7 +18,6 @@ def add_to_bag(request, item_id):
 
     all_services = get_object_or_404(Service, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    # select_date = request.POST.get('datetime-selected')
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
     select_date = None
@@ -27,7 +26,7 @@ def add_to_bag(request, item_id):
     # Most clients customers would order one service at the time
     if item_id in list(bag.keys()):
         # If same product and same time selected
-        if select_date == select_date in bag[item_id]['items_by_date'].keys():
+        if select_date in bag[item_id]['items_by_date'].keys():
             messages.error(request, f'{all_services.name} scheduled for {select_date} already in your bag! \
                 Please book a different timeslot for your next order')
             return redirect(redirect_url)
@@ -39,14 +38,21 @@ def add_to_bag(request, item_id):
     else:
         # if different product same time
         # if select_date not in bag[item_id]['items_by_date'].keys():
-        if select_date == select_date in list(bag.keys()):
-            messages.error(request, f' other service scheduled for {select_date} already in your bag! \
-                Please book a different timeslot for your next order')
-            return redirect(redirect_url)
-        # different product different time
+        if bag != {}:
+            print(bag)
+            for item in list(bag):
+                if select_date in bag[item]['items_by_date'].keys():
+                    messages.error(request, f' other service scheduled for {select_date} already in your bag! \
+                        Please book a different timeslot for your next order')
+                    return redirect(redirect_url)
+                # different product different time
+                else:
+                    bag[item_id] = {'items_by_date': {select_date: quantity}}
+                    messages.success(request, f'Added {all_services.name} to your bag')
         else:
             bag[item_id] = {'items_by_date': {select_date: quantity}}
             messages.success(request, f'Added {all_services.name} to your bag')
+
     
     request.session['bag'] = bag
     return redirect(redirect_url)
