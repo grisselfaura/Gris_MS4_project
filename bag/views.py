@@ -37,18 +37,19 @@ def add_to_bag(request, item_id):
             return redirect(redirect_url)
     else:
         if bag != {}:
-            for item in list(bag):
+            for item in list(bag.keys()):
                 # different product same time
                 if select_date in bag[item]['items_by_date'].keys():
                     messages.error(request, f' other service scheduled for {select_date} already in your bag! \
                         Please book a different timeslot for your next order')
                     return redirect(redirect_url)
-                # different product different time
-                else:
-                    bag[item_id] = {'items_by_date': {select_date: quantity}}
-                    messages.success(request, f'Added {all_services.name} to your bag')
+                # different product different time    
+            bag[item_id] = {'items_by_date': {select_date: quantity}}
+            # print("success 1")
+            messages.success(request, f'Added {all_services.name} to your bag')
         else:
             bag[item_id] = {'items_by_date': {select_date: quantity}}
+            # print("success 2")
             messages.success(request, f'Added {all_services.name} to your bag')
 
     request.session['bag'] = bag
@@ -61,11 +62,10 @@ def adjust_bag(request, item_id):
     all_services = get_object_or_404(Service, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
-    select_date = None
-    if 'select_date' in request.POST:
-        select_date = request.POST['select_date']
+    select_date = request.POST['select_date']
 
-    if select_date == select_date in bag[item_id]['items_by_date'].keys():
+    # if select_date == select_date in bag[item_id]['items_by_date'].keys():
+    if select_date in bag[item_id]['items_by_date'].keys():
         if quantity > 0:
             bag[item_id] = {'items_by_date': {select_date: quantity}}
             messages.success(
@@ -93,28 +93,3 @@ def remove_from_bag(request, item_id):
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
-
-
-
-# if select_date == select_date:
-#     if item_id in list(bag.keys()):
-#         # If same product and same time selected
-#         messages.error(request, f'{all_services.name} scheduled for {select_date} already in your bag! \
-#             Please book a different timeslot for your next order')
-#         return redirect(redirect_url)
-#         # If same product and diferent time selected
-#     else:
-#         messages.info(request, f'{all_services.name} already in your bag! \
-#             Please give me a call to discuss the posibilities')
-#         return redirect(redirect_url)
-# else:
-#     # if different product same time
-#     if item_id not in list(bag.keys()):
-#         messages.error(request, f' other service scheduled for {select_date} already in your bag! \
-#             Please book a different timeslot for your next order')
-#         return redirect(redirect_url)
-#     # different product different time
-#     else:
-#         bag[item_id] = {'items_by_date': {select_date: quantity}}
-#         messages.success(request, f'Added {all_services.name} to your bag')
-    
