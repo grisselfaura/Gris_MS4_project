@@ -39,7 +39,7 @@ def add_to_bag(request, item_id):
         # if different product same time
         # if select_date not in bag[item_id]['items_by_date'].keys():
         if bag != {}:
-            print(bag)
+            # print(bag)
             for item in list(bag):
                 if select_date in bag[item]['items_by_date'].keys():
                     messages.error(request, f' other service scheduled for {select_date} already in your bag! \
