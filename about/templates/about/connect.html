@@ -5,6 +5,17 @@
     <link rel="stylesheet" href="{% static 'about/css/about.css' %}">
 {% endblock %}
 
+{% block extra_js %}
+    <!-- Script dependancies for the email.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	<script type="text/javascript">
+		(function(){ // Script to initiate our email.js function //
+            emailjs.init("user_OSr6kDfhTLsPLbkel5gMY");
+        })(); 
+	</script>
+{% endblock %}
+
 {% block extra_title %}- Conect {% endblock %}
 
 {% block page_header %}
@@ -32,38 +43,40 @@
         </div>
     </div>
     <div class="container-fluid connect-bg-image">
-        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-        <form id="contactForm" class="connect-form-container" name="sentMessage" novalidate="novalidate">
+        <!-- Connect form easy set up using Email.js-->
+        <form id="connect-form" class="connect-form-container" name="sentMessage" onsubmit="return sendEmail(this);">
+            <!-- sendEmail function is invoke when the form is submitted -->
             <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                    <label><b>Name</b></label>
-                    <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
+                    <label for="exampleInputName"><b>Name</b></label>
+                    <input class="form-control" id="exampleInputName" type="text" placeholder="Name" maxlength="255" data-validation-required-message="Please enter your name." required>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                    <label for="exampleInputEmail"><b>Email Address</b></label>
+                    <input class="form-control" id="exampleInputEmail" type="email" placeholder="Email Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-validation-required-message="Please enter your email address." required>
                     <p class="help-block text-danger"></p>
                 </div>
             </div>
             <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                    <label><b>Email Address</b></label>
-                    <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
+                    <label for="exampleInputTel"><b>Phone Number</b></label>
+                    <input class="form-control" id="exampleInputTel" type="tel" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" data-validation-required-message="Please enter your phone number." required>
                     <p class="help-block text-danger"></p>
                 </div>
             </div>
             <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                    <label><b>Phone Number</b></label>
-                    <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
-                    <p class="help-block text-danger"></p>
-                </div>
-            </div>
-            <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                    <label><b>Message</b></label>
-                    <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                    <label for="exampleInputMessage"><b>Message</b></label>
+                    <textarea class="form-control" id="exampleInputMessage" rows="5" placeholder="Message" data-validation-required-message="Please enter a message." required></textarea>
                     <p class="help-block text-danger"></p>
                 </div>
             </div>
             <div id="success"></div>
-            <div class="form-group"><button class="btn btn-black btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+            <div class="form-group">
+                <button class="btn btn-black btn-xl" id="sendMessageButton" type="submit" value="Submit">Send</button>
+            </div>
         </form>
         <br>
     </div>
@@ -72,5 +85,43 @@
     {% endblock %}
 
 {% block postloadjs %}
+    <!-- Script sendEmail.js code as per the code course + LOADER
+    JS code below as you can't really use django templating language in an external javascript file-->
     
+    <script type="text/javascript">
+
+        function sendEmail(signInForm) {
+        //Code to show the loader similar to the code used in the course
+        let buttonElement = $("#sendMessageButton");
+        let buttonHtml = buttonElement.html();
+        buttonElement.html( 
+            `<div id="loader">
+                <img src="{% static 'images/loader.gif' %}" alt="loading..." />
+            </div>`
+        );
+
+        emailjs.send("service_bx9wmy4", "urbano_design", { //add parameters
+            "from_name": signInForm.exampleInputName.value,
+            "from_email": signInForm.exampleInputEmail.value,
+            "telephone": signInForm.exampleInputTel.value,
+            "message": signInForm.exampleInputMessage.value,
+            })
+            //Response code for the promise when the email is successfully sent
+            .then((response) => { 
+                    buttonElement.html(buttonHtml);
+                    alert("Your message is sent!", response); // success message
+                    console.log("SUCCESS!", response);
+                    $(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val(''); // control to check if the following values are not empty
+                },
+                //Response code for the promise when the email failed to sent
+                (error) => {
+                    buttonElement.html(buttonHtml);
+                    alert("Oops...", error); // error message
+                    console.log("FAILED...", error);
+                }
+            );
+        return false; // Prevent from loading a new page
+    } 
+    </script> 
+
 {% endblock %}
