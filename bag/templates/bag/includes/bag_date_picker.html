@@ -1,0 +1,15 @@
+<h6 class="mx-auto mb-3"><strong>Date to discuss your project(s):</strong></h6>
+<form class="form update-form" method="POST" id="bag-form-{{ forloop.counter }}" 
+    action="{% url 'adjust_bag' item.item_id %}">
+    {% csrf_token %}
+    <div class= "form-group">
+        <div class="input-group date w-100" id="datetimepicker-demo-{{ forloop.counter }}" 
+                data-value="{{ item.select_date }}" data-target-input="nearest">
+            <input type="text" name="select_date" class="form-control datetimepicker-input" 
+                value="{{ item.select_date }}" data-target="#datetimepicker-demo-{{ forloop.counter }}" required/>
+            <div class="input-group-append" data-target="#datetimepicker-demo-{{ forloop.counter }}" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+        </div>
+    </div>
+</form>

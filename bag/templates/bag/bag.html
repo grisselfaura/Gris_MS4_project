@@ -48,86 +48,23 @@
                                         <th scope="row"></th>
                                         {% comment %} Image space {% endcomment %}
                                         <td class="p-3 w-25">
-                                            <div class="card bag-fake-card">
-                                                <div class="card-body-bag py-1">
-                                                    <h6 class="item-name">{{ item.service.name }}</h6>
-                                                </div>
-                                            {% if item.service.image %}
-                                                <img class="w-100" src="{% static item.service.image %}" alt="{{ item.service.name }}">
-                                            {% elif item.service.image_url %}
-                                                <img class="w-100" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
-                                            {% else %}
-                                                <img class="w-100" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ item.service.name }}">
-                                            {% endif %}
-                                            </div>
+                                            {% include 'bag/includes/bag_image.html' %} 
                                         </td>
                                         {% comment %} Datepicker space {% endcomment %}
                                         <td class="py-3">
-                                            <h6 class="mx-auto mb-3"><strong>Date to discuss your project(s):</strong></h6>
-                                            <form class="form update-form" method="POST" id="bag-form-{{ forloop.counter }}" 
-                                                action="{% url 'adjust_bag' item.item_id %}">
-                                                {% csrf_token %}
-                                                <div class= "form-group">
-                                                    <div class="input-group date w-100" id="datetimepicker-demo-{{ forloop.counter }}" 
-                                                            data-value="{{ item.select_date }}" data-target-input="nearest">
-                                                        <input type="text" name="select_date" class="form-control datetimepicker-input" 
-                                                            value="{{ item.select_date }}" data-target="#datetimepicker-demo-{{ forloop.counter }}" required/>
-                                                        <div class="input-group-append" data-target="#datetimepicker-demo-{{ forloop.counter }}" data-toggle="datetimepicker">
-                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form> 
+                                            {% include 'bag/includes/bag_date_picker.html' %} 
                                         </td>
-                                        {% comment %} Price space {% endcomment %}
+                                        {% comment %} Price, Qty and Update space {% endcomment %}
                                         <td class="py-3">
-                                            <h6 class="mx-auto mb-3"><strong>Price</strong></h6>
-                                            <p class="my-0">${{ item.service.price }}</p>
-                                            <br>
-                                            <div class="mx-auto">
-                                                <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                                    {% csrf_token %}
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                                    <span>
-                                                                        <a class="update-link"><i class="fas fa-minus fa-sm"></i></a>
-                                                                    </span>
-                                                                </button>
-                                                            </div>
-                                                            <input class="form-control form-control-sm qty_input" type="number"
-                                                                name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                                data-item_id="{{ item.item_id }}"
-                                                                id="id_qty_{{ item.item_id }}">
-                                                            <div class="input-group-append">
-                                                                <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                                    <span>
-                                                                        <i class="fas fa-plus fa-sm"></i>
-                                                                    </span>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form> 
-                                            </div>
-                                            <div class="d-flex mx-auto flex-wrap float-right">
-                                                <button type="button" class="btn btn-outline-danger btn-sm">
-                                                    <a class="update-link "><small>Update </small></a>
-                                                </button>
-                                                {% comment %} <a class="update-link btn btn-outline-danger "><small>Update </small></a> {% endcomment %}
-                                            </div>  
+                                            {% include 'bag/includes/bag_price_qty_update.html' %}  
                                         </td>
                                         {% comment %} Subtotal space {% endcomment %}
                                         <td class="py-3">
-                                            <h6 class="mx-auto mb-3"><strong>Subtotal</strong></h6>
-                                            <p class="my-0">${{ item.service.price | calc_subtotal:item.quantity }}</p>
+                                            {% include 'bag/includes/bag_subtotal.html' %}      
                                         </td>
                                         {% comment %} Remove btn {% endcomment %}
                                         <td class="py-3 float-right mr-3">
-                                            <a class="remove-item text-black float-right" id="remove_{{ item.item_id }}"> <i class="fas fa-trash-alt lead text-danger"></i></a>
+                                            {% include 'bag/includes/bag_remove_link.html' %}      
                                         </td>
                                     </tr>
                                 {% endfor %}
@@ -141,18 +78,7 @@
                                     <tr>
                                         <th scope="row"></th>
                                         <td colspan="5" class="text-right">
-                                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                                <span class="icon">
-                                                    <i class="fas fa-chevron-left"></i>
-                                                </span>
-                                                <span class="text-uppercase">Keep Shopping</span>
-                                            </a>
-                                            <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                                <span class="text-uppercase">Secure Checkout</span>
-                                                <span class="icon">
-                                                    <i class="fas fa-lock"></i>
-                                                </span>
-                                            </a>
+                                            {% include 'bag/includes/bag_shopping_btn.html' %} 
                                         </td>
                                     </tr>
                             <tbody>
