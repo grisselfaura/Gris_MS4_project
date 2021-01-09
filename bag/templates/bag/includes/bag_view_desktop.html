@@ -1,0 +1,57 @@
+{% comment %} View below >768 {% endcomment %}
+
+<div class="d-none d-md-flex">
+    <div class="table-responsive-sm rounded">
+        <table class="table table-sm table-borderless">
+            <thead class="text-black">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>  
+                    <th scope="col"></th>  
+                    <th scope="col"></th>  
+                    <th scope="col"></th>    
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in bag_items %}
+                    <tr class= "bag-item-line">
+                        <th scope="row"></th>
+                        {% comment %} Image space {% endcomment %}
+                        <td class="p-3 w-25">
+                            {% include 'bag/includes/bag_image.html' %} 
+                        </td>
+                        {% comment %} Datepicker space {% endcomment %}
+                        <td class="py-3">
+                            {% include 'bag/includes/bag_date_picker.html' %} 
+                        </td>
+                        {% comment %} Price, Qty and Update space {% endcomment %}
+                        <td class="py-3">
+                            {% include 'bag/includes/bag_price_qty_update.html' %}  
+                        </td>
+                        {% comment %} Subtotal space {% endcomment %}
+                        <td class="py-3">
+                            {% include 'bag/includes/bag_subtotal.html' %}      
+                        </td>
+                        {% comment %} Remove btn {% endcomment %}
+                        <td class="py-3 float-right mr-3">
+                            {% include 'bag/includes/bag_remove_link.html' %}      
+                        </td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <th scope="row"></th>
+                        <td colspan="5" class="pt-3 text-right">
+                            <h4 class="mt-4"><strong> Total: ${{ total|floatformat:2 }}</strong></h4>
+                        </td>
+                    </tr>
+                <!-- Shopping buttons -->
+                    <tr>
+                        <th scope="row"></th>
+                        <td colspan="5" class="text-right">
+                            {% include 'bag/includes/bag_shopping_btn.html' %} 
+                        </td>
+                    </tr>
+            <tbody>
+        </table>
+    </div>
+</div>
