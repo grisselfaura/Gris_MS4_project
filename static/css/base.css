@@ -68,7 +68,7 @@ html {
     }
 } 
 .btn-outline-dark {
-    background: #fbe4e4c4;
+    background: #ebe1e147;
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
@@ -741,9 +741,6 @@ th, td {
 }
 
 /* Bag */
-#right-align {
-    text-align: right;
-}
 
 .bag-item-line {
     background:  #e2e5e859;

@@ -389,8 +389,7 @@ This site is made for **educational purposes** only.
 - About section: Implemented bootsrap slider for about me, reviews and portafolio.
 - About landing image fitted as hero-img css.
 - About me section implemented as per client's feedback.
-- About contact form implemented. 
-- PENDING: Pending to connect to the backend using xxxx.
+- About contact form implemented. Connected with Email.js. Difficulties implementing the code as the tutorial from the course is not updated. Load.gif was achieve using }{% static%}
 - Services grid/list implemented from online example when client want to add more products/services.
 - Service json files added rating feature from the terminal to text how to do it. 
 - PENDING to add rating to the service card information.
