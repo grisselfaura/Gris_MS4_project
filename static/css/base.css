@@ -37,11 +37,11 @@ html {
 }
 
 /* check where this is used */
-.shop-now-button {
+/* .shop-now-button {
     background: black;
     color: white;
     min-width: 260px;
-}
+} */
 
 .btn-black {
     background: black;
@@ -58,6 +58,16 @@ html {
     .resize-btns{
         text-align: center;
         margin-bottom: .5rem;
+        padding-right: 0.25rem;
+        padding-left: 0.25rem;
+    }
+} 
+
+@media screen  and (max-width: 768px) {
+    .bag-button{
+        text-align: center;
+        margin-bottom: .5rem;
+        font-size: 1rem;
     }
 } 
 
