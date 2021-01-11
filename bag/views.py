@@ -61,18 +61,43 @@ def adjust_bag(request, item_id):
 
     all_services = get_object_or_404(Service, pk=item_id)
     quantity = int(request.POST.get('quantity'))
+    select_date = None
+    if 'select_date' in request.POST:
+        select_date = request.POST['select_date']
+    
     bag = request.session.get('bag', {})
-    select_date = request.POST['select_date']
-
-    # if select_date == select_date in bag[item_id]['items_by_date'].keys():
-    if select_date in bag[item_id]['items_by_date'].keys():
-        if quantity > 0:
-            bag[item_id] = {'items_by_date': {select_date: quantity}}
-            messages.success(
-                request, f'Updated Successfully {all_services.name} quantity to {bag[item_id]}')
-        else:
+    print(bag)
+    if quantity > 0:
+        bag[item_id] = {'items_by_date': {select_date: quantity}}
+        messages.success(request,
+                            (f'Successfully Updated {all_services.name}'))
+        # print("success 1")
+    else:
+        del bag[item_id]['items_by_date'][select_date]
+        if not bag[item_id]['items_by_date']:
             bag.pop(item_id)
-            messages.success(request, f'Removed {all_services.name} from your bag')
+        messages.info(request,
+                        (f'Removed {all_services.name} from your cart'))
+
+    # if quantity > 0:
+    #     bag[item_id] = quantity
+    #     messages.success(request, f'Updated {all_services.name}  quantity to {bag[item_id]}')
+    # else:
+    #     bag.pop(item_id)
+    #     messages.success(request, f'Removed {all_services.name} from your bag')
+        
+        # if quantity > 0:
+        #     bag[item_id]['items_by_date'][select_date] = quantity
+        #     # bag[item_id] = {'items_by_date': {select_date: quantity}}
+        #     messages.success(
+        #         request, f'Updated Successfully {all_services.name} quantity to {bag[item_id]['items_by_date'][select_date]}')
+        # else:
+        #     # bag.pop(item_id)
+        #     # messages.success(request, f'Removed {all_services.name} from your bag')
+        #     del bag[item_id]['items_by_date'][select_date]
+        #     if not bag[item_id]['items_by_date']:
+        #         bag.pop(item_id)
+        #     messages.success(request, f'Removed {all_services.name} from your bag')
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))

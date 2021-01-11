@@ -765,3 +765,7 @@ th, td {
     font-size: 1rem;
     font-weight: 100;
 }
+
+.update-link {
+    color: white!important;
+}

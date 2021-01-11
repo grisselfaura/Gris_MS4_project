@@ -19,10 +19,18 @@ def connect(request):
     return render(request, 'about/connect.html', {'title': 'Connect'})
 
 
+def portfolio_test(request):
+    """ A view that renders the individual portafolio project details  """
+    return render(request, 'about/my_portafolio_copy.html',
+                    {'title': 'Portfolio_test'})
+
+
 def portfolio_detail(request):
     """ A view that renders the individual portafolio project details  """
     return render(request, 'about/my_portafolio_slide_show.html',
                     {'title': 'Portfolio_detail'})
+
+
 
 
 # def portfolio_detail(request, portfolio_id):

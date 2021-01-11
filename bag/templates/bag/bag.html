@@ -31,6 +31,10 @@
     <div class="container-fluid">
         <div class="">
             {% if bag_items %}
+                {{ bag_items }}
+                <br>
+                <br>
+                {{ request.session.bag}}
                 {% include 'bag/includes/bag_view_desktop.html' %} 
                 {% include 'bag/includes/bag_view_mobile.html' %} 
             {% else %}
@@ -56,7 +60,9 @@
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
-        let form = $(this).prev('.update-form');
+        let form = document.querySelector('.update-form'); 
+        {% comment %} let form = $(this).prev('.update-form'); {% endcomment %}
+        console.log("testing the script"); 
         form.submit();
     })
 

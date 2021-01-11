@@ -1,7 +1,7 @@
 [
   {
-    "pk": 1,
-    "model": "portfolio",
+    "pk": "1",
+    "model": "about.portfolio",
     "fields": {
       "name": "Example_1",
       "name_client": "Air Life Aerolinea",
@@ -15,26 +15,26 @@
       "image_slide_5": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_5.png",
       "image_slide_6": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_6.png",
       "image_slide_7": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_7.png",
-      "image_slide_8": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_8.png",
+      "image_slide_8": "/images/portafolio_cover/portfolio_example_1/Example_1_slide_8.png"
     }
   },
   {
-    "pk": 2,
-    "model": "portfolio",
+    "pk": "2",
+    "model": "about.portfolio",
     "fields": {
       "name": "Example_2",
       "name_client": "Honda",
-      "likes": "1x",
-      "image_cover": "/images/portafolio_cover/portafolio_cover_2.png",
+      "likes": "1",
+      "image_cover": "/images/portafolio_cover/portafolio_cover_2.png"
     }
   },
   {
-    "pk": 3,
-    "model": "portfolio",
+    "pk": "3",
+    "model": "about.portfolio",
     "fields": {
       "name": "Example_3",
       "name_client": "Promart - Service design",
-      "likes": "1x",
+      "likes": "1",
       "image_cover": "/images/portafolio_cover/portfolio_example_3/Example_3_slide_1.jpg",
       "image_slide_1": "/images/portafolio_cover/portfolio_example_3/Example_3_slide_1.jpg",
       "image_slide_2": "/images/portafolio_cover/portfolio_example_3/Example_3_slide_2.jpg",
@@ -43,26 +43,26 @@
       "image_slide_5": "/images/portafolio_cover/portfolio_example_3/Example_3_slide_5.png",
       "image_slide_6": "/images/portafolio_cover/portfolio_example_3/Example_3_slide_6.png",
       "image_slide_7": "/images/portafolio_cover/portfolio_example_3/Example_3_slide_7.png",
-      "image_slide_8": "/images/portafolio_cover/portfolio_example_3/Example_3_slide_8.png",
+      "image_slide_8": "/images/portafolio_cover/portfolio_example_3/Example_3_slide_8.png"
     }    
   },
   {
-    "pk": 4,
-    "model": "portfolio",
+    "pk": "4",
+    "model": "about.portfolio",
     "fields": {
       "name": "Example_4",
       "name_client": "Promart - Prototyping",
-      "likes": "1x",
-      "image_cover": "/images/portafolio_cover/portafolio_cover_4.png",
+      "likes": "1",
+      "image_cover": "/images/portafolio_cover/portafolio_cover_4.png"
     }    
   },
   {
-    "pk": 5,
-    "model": "portfolio",
+    "pk": "5",
+    "model": "about.portfolio",
     "fields": {
       "name": "Example_5",
       "name_client": "Redi",
-      "likes": "1x",
+      "likes": "1",
       "image_cover": "/images/portafolio_cover/portafolio_cover_5.png",
       "image_slide_1": "/images/portafolio_cover/portfolio_example_5/Example_5_slide_1.png",
       "image_slide_2": "/images/portafolio_cover/portfolio_example_5/Example_5_slide_2.png",
@@ -88,16 +88,16 @@
       "image_slide_22": "/images/portafolio_cover/portfolio_example_5/Example_5_slide_22.png",
       "image_slide_23": "/images/portafolio_cover/portfolio_example_5/Example_5_slide_23.png",
       "image_slide_24": "/images/portafolio_cover/portfolio_example_5/Example_5_slide_24.png",
-      "image_slide_25": "/images/portafolio_cover/portfolio_example_5/Example_5_slide_25.png",
+      "image_slide_25": "/images/portafolio_cover/portfolio_example_5/Example_5_slide_25.png"
     }    
   },
   {
-    "pk": 6,
-    "model": "portfolio",
+    "pk": "6",
+    "model": "about.portfolio",
     "fields": {
       "name": "Example_6",
       "name_client": "Logo Collection",
-      "likes": "1x",
+      "likes": "1",
       "image_cover": "images/portafolio_cover/portafolio_cover_6.jpg",
       "image_slide_1": "/images/portafolio_cover/portfolio_example_6/Example_6_slide_1.png",
       "image_slide_2": "/images/portafolio_cover/portfolio_example_6/Example_6_slide_2.png",
@@ -125,7 +125,7 @@
       "image_slide_24": "/images/portafolio_cover/portfolio_example_6/Example_6_slide_24.png",
       "image_slide_25": "/images/portafolio_cover/portfolio_example_6/Example_6_slide_25.png",
       "image_slide_26": "/images/portafolio_cover/portfolio_example_6/Example_6_slide_26.png",
-      "image_slide_27": "/images/portafolio_cover/portfolio_example_6/Example_6_slide_27.png",
+      "image_slide_27": "/images/portafolio_cover/portfolio_example_6/Example_6_slide_27.png"
     }    
   }
 ]

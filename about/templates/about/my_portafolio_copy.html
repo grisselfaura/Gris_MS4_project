@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'about/css/about.css' %}">
+{% endblock %}
+
+{% block extra_title %}- My Portfolio {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <!-- <div class="overlay"></div> -->
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <hr>
+                <h2 class="logo-font"> My Portfolio </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Portafolio -->
+        <div class="row">
+            <!-- <div class="row bg-color pointer" data-aos="fade-up" data-aos-delay="100"></div> -->
+            <div class="row bg-color pointer pt-5 px-2">
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="card-portfolio mx-auto">
+                        <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_1.png" alt="Show slide">
+                        <div class="portafolio-slide">
+                            <a href="{% url 'portfolio_slide_example' %}">
+                                <i class="fa fa-plus-square fa-4x"></i>
+                            </a>        
+                        </div>
+                    </div>
+                </div>
+                    <!-- Portfolio Item 2 -->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="card-portfolio mx-auto">
+                        <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_2.png" alt="Second slide">
+                        <div class="portafolio-slide">
+                            <a href="{% url 'portfolio_slide_example'  %}">
+                                <i class="fa fa-plus-square fa-4x"></i>
+                            </a>        
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 6-->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-portfolio mx-auto">
+                        <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_6.jpg" alt="">
+                        <div class="portafolio-slide">
+                            <a href="{% url 'portfolio_slide_example'  %}">
+                                <i class="fa fa-plus-square fa-4x"></i>
+                            </a>        
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="card-portfolio mx-auto">
+                        <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_3.png" alt="Third slide">
+                        <div class="portafolio-slide">
+                            <a href="{% url 'portfolio_slide_example' %}">
+                                <i class="fa fa-plus-square fa-4x"></i>
+                            </a>        
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="card-portfolio mx-auto">
+                        <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_4.png" alt="Fourth slide">
+                        <div class="portafolio-slide">
+                            <a href="{% url 'portfolio_slide_example' %}">
+                                <i class="fa fa-plus-square fa-4x"></i>
+                            </a>        
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 5-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="card-portfolio mx-auto">
+                        <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_5.png" alt="Fifth slide">
+                        <div class="portafolio-slide">
+                            <a href="{% url 'portfolio_slide_example' %}">
+                                <i class="fa fa-plus-square fa-4x"></i>
+                            </a>        
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <!-- Brands -->
+        <div class="row">
+            <div class="container-fluid d-flex align-items-center pb-4 pt-4">
+                <div class="title">
+                    <p class="d-none d-md-block mb-0 ml-3 pr-md-10 mr-lg-10 mb-10 mb-md-0 "> Trusted by <br>more and <br> more clients</p>
+                </div>
+                <div class="logos d-flex flex-1 align-items-center ml-5 mr-5">
+                    <div class="col brand-logo d-xs-block ml-xs-sm-1">
+                        <img src="/static/images/brands/Logos_1.jpg" class="img-fluid-brand px-3" alt="brand_logo">
+                    </div>
+                    <div class="col brand-logo d-xs-block">
+                        <img src="/static/images/brands/Logos_2.jpg" class="img-fluid-brand px-3" alt="brand_logo">
+                    </div>
+                    <div class="col brand-logo d-none d-sm-block">
+                        <img src="/static/images/brands/Logos_3.jpg" class="img-fluid-brand px-3" alt="brand_logo">
+                    </div>
+                    <div class="col d-none d-sm-block brand-logo">
+                        <img src="/static/images/brands/Logos_4.jpg" class="img-fluid-brand px-3" alt="brand_logo">
+                    </div>
+                    <div class="col d-none d-md-block brand-logo">
+                        <img src="/static/images/brands/Logos_5.jpg" class="img-fluid-brand px-3" alt="brand_logo">
+                    </div>
+                    <div class="col d-none d-lg-block brand-logo">
+                        <img src="/static/images/brands/Logos_6.jpg" class="img-fluid-brand px-3" alt="brand_logo">
+                    </div>
+                    <div class="col d-none d-xl-block brand-logo">
+                        <img src="/static/images/brands/Logos_7.jpg" class="img-fluid-brand px-3" alt="brand_logo">
+                    </div>
+                    <div class="col d-none d-xl-block brand-logo">
+                        <img src="/static/images/brands/Logos_8.jpg" class="img-fluid-brand px-3" alt="brand_logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}
