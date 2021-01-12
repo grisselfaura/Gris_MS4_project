@@ -1,8 +1,8 @@
-<h6 class="mx-auto mb-3"><strong>Date to discuss your project(s):</strong></h6>
-<form class="form update-form" method="POST" id="bag-form-{{ forloop.counter }}" 
-    action="{% url 'adjust_bag' item.item_id %}">
+<form class="update-form" method="POST" id="update-bag-form-{{ forloop.counter }}"
+        action="{% url 'adjust_bag' item.item_id %}">
+    <h6 class="mx-auto mb-3"><strong>Date to discuss your project(s):</strong></h6>
     {% csrf_token %}
-    <div class= "form-group">
+    <div class= "">
         <div class="input-group date w-100" id="datetimepicker-demo-{{ forloop.counter }}" 
                 data-value="{{ item.select_date }}" data-target-input="nearest">
             <input type="text" name="select_date" class="form-control datetimepicker-input" 
@@ -12,4 +12,35 @@
             </div>
         </div>
     </div>
+    <h6 class="mx-auto mb-3"><strong>Price</strong></h6>
+    <p class="my-0">${{ item.service.price }}</p>
+    <br>
+    <div class="">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                    <span>
+                        <i class="fas fa-minus fa-sm"></i></a>
+                    </span>
+                </button>
+            </div>
+            <input class="form-control form-control-sm qty_input" type="number"
+                name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                data-item_id="{{ item.item_id }}"
+                id="id_qty_{{ item.item_id }}">
+            <div class="input-group-append">
+                <button class="increment-qty btn btn-sm btn-black rounded-0"
+                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                    <span>
+                        <i class="fas fa-plus fa-sm"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
 </form>
+<a type="button" class="update-link btn btn-danger btn-sm mt-3" data-number="{{ forloop.counter }}"><small>Update </small></a>
+
+
+ 

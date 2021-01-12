@@ -38,9 +38,10 @@
             <!-- <div class="row bg-color pointer" data-aos="fade-up" data-aos-delay="100"></div> -->
             <div class="row bg-color pointer pt-5 px-2">
                 <!-- Portfolio Item 1-->
+                {% for portfolio in portfolios %}
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card-portfolio mx-auto">
-                        <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_1.png" alt="Show slide">
+                        <img class="img-fluid img-effect" src="{% static portfolio.image_cover %} /static/images/portafolio_cover/portafolio_cover_1.png" alt="Show slide">
                         <div class="portafolio-slide">
                             <a href="{% url 'portfolio_slide_example' %}">
                                 <i class="fa fa-plus-square fa-4x"></i>
@@ -48,7 +49,8 @@
                         </div>
                     </div>
                 </div>
-                    <!-- Portfolio Item 2 -->
+                {% endfor %}
+                    {% comment %} <!-- Portfolio Item 2 -->
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card-portfolio mx-auto">
                         <img class="img-fluid img-effect" src="/static/images/portafolio_cover/portafolio_cover_2.png" alt="Second slide">
@@ -102,7 +104,7 @@
                             </a>        
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>   
         </div>
         <!-- Brands -->

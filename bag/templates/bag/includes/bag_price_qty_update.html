@@ -1,4 +1,4 @@
-<h6 class="mx-auto mb-3"><strong>Price</strong></h6>
+{% comment %} <h6 class="mx-auto mb-3"><strong>Price</strong></h6>
 <p class="my-0">${{ item.service.price }}</p>
 <br>
 <div class="mx-auto">
@@ -9,11 +9,11 @@
             <div class="input-group">
                 <div class="input-group-prepend">
                     <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}"> {% endcomment %}
                         {% comment %} <span>
                             <a class="update-link"><i class="fas fa-minus fa-sm"></i></a>
                         </span> {% endcomment %}
-                        <span>
+                        {% comment %} <span>
                             <i class="fas fa-minus fa-sm"></i></a>
                         </span>
                     </button>
@@ -33,12 +33,12 @@
             </div>
         </div>
     </form>
-    <a type="button" class="update-link btn btn-danger btn-sm" data-number="{{ forloop.counter }}"><small>Update </small></a>
+    <a type="button" class="update-link btn btn-danger btn-sm" data-number="{{ forloop.counter }}"><small>Update </small></a> {% endcomment %}
     {% comment %} <div class="d-flex mx-auto flex-wrap float-right">
         <button type="button" class="btn btn-outline-danger btn-sm">
             <a class="update-link" data-number="{{ forloop.counter }}"><small>Update </small></a>
         </button>
         {% comment %} <a class="update-link btn btn-outline-danger"><small>Update </small></a>
     </div> {% endcomment %}
-</div>
- 
+{% comment %} </div>
+  {% endcomment %}

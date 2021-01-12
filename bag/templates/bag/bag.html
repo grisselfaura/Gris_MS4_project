@@ -60,8 +60,8 @@
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
-        let form = document.querySelector('.update-form'); 
-        {% comment %} let form = $(this).prev('.update-form'); {% endcomment %}
+        //let form = document.querySelector('.update-form');
+        let form = $(this).prev('.update-form'); 
         console.log("testing the script"); 
         form.submit();
     })

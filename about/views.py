@@ -19,8 +19,15 @@ def connect(request):
     return render(request, 'about/connect.html', {'title': 'Connect'})
 
 
-def portfolio_test(request):
+def portfolio_test(request, portfolio_id):
     """ A view that renders the individual portafolio project details  """
+    
+    # service_detail = get_object_or_404(Service, pk=service_id)
+
+    # context = {
+    #     'service': service_detail,
+    # }
+
     return render(request, 'about/my_portafolio_copy.html',
                     {'title': 'Portfolio_test'})
 
