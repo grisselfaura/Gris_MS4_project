@@ -59,12 +59,11 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
 
-    print(request.POST)  
+    # print(request.POST)  
     all_services = get_object_or_404(Service, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     
     bag = request.session.get('bag', {})
-    print(bag)
     select_date = None
     if 'select_date' in request.POST:
         select_date = request.POST['select_date']

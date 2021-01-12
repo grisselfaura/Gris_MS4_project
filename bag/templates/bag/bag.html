@@ -31,10 +31,6 @@
     <div class="container-fluid">
         <div class="">
             {% if bag_items %}
-                {{ bag_items }}
-                <br>
-                <br>
-                {{ request.session.bag}}
                 {% include 'bag/includes/bag_view_desktop.html' %} 
                 {% include 'bag/includes/bag_view_mobile.html' %} 
             {% else %}
