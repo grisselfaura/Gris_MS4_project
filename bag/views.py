@@ -59,25 +59,28 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
 
-    all_services = get_object_or_404(Service, pk=item_id)
     quantity = int(request.POST.get('quantity'))
+    print(request.POST) 
+    all_services = get_object_or_404(Service, pk=item_id)
+    
+    bag = request.session.get('bag', {})
+    print(bag)
     select_date = None
     if 'select_date' in request.POST:
         select_date = request.POST['select_date']
     
-    bag = request.session.get('bag', {})
-    print(bag)
-    if quantity > 0:
-        bag[item_id] = {'items_by_date': {select_date: quantity}}
-        messages.success(request,
-                            (f'Successfully Updated {all_services.name}'))
-        # print("success 1")
-    else:
-        del bag[item_id]['items_by_date'][select_date]
-        if not bag[item_id]['items_by_date']:
-            bag.pop(item_id)
-        messages.info(request,
-                        (f'Removed {all_services.name} from your cart'))
+    if select_date:
+        if quantity > 0:
+            bag[item_id] = {'items_by_date': {select_date: quantity}}
+            messages.success(request,
+                                (f'Successfully Updated {all_services.name}'))
+            print("success 1")
+        else:
+            del bag[item_id]['items_by_date'][select_date]
+            if not bag[item_id]['items_by_date']:
+                bag.pop(item_id)
+            messages.info(request,
+                            (f'Removed {all_services.name} from your cart'))
 
     # if quantity > 0:
     #     bag[item_id] = quantity
