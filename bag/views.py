@@ -81,26 +81,6 @@ def adjust_bag(request, item_id):
             messages.info(request,
                             (f'Removed {all_services.name} from your cart'))
 
-    # if quantity > 0:
-    #     bag[item_id] = quantity
-    #     messages.success(request, f'Updated {all_services.name}  quantity to {bag[item_id]}')
-    # else:
-    #     bag.pop(item_id)
-    #     messages.success(request, f'Removed {all_services.name} from your bag')
-        
-        # if quantity > 0:
-        #     bag[item_id]['items_by_date'][select_date] = quantity
-        #     # bag[item_id] = {'items_by_date': {select_date: quantity}}
-        #     messages.success(
-        #         request, f'Updated Successfully {all_services.name} quantity to {bag[item_id]['items_by_date'][select_date]}')
-        # else:
-        #     # bag.pop(item_id)
-        #     # messages.success(request, f'Removed {all_services.name} from your bag')
-        #     del bag[item_id]['items_by_date'][select_date]
-        #     if not bag[item_id]['items_by_date']:
-        #         bag.pop(item_id)
-        #     messages.success(request, f'Removed {all_services.name} from your bag')
-
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
 

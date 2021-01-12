@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% static "images" as baseUrl %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'about/css/about.css' %}">
@@ -16,7 +17,6 @@
 {% endblock %}
 
 {% block content %}
-    <!-- <div class="overlay"></div> -->
     <div class="container">
         <div class="row">
             <div class="col text-center mt-3">
@@ -37,18 +37,20 @@
         <div class="row">
             <!-- <div class="row bg-color pointer" data-aos="fade-up" data-aos-delay="100"></div> -->
             <div class="row bg-color pointer pt-5 px-2">
-                <!-- Portfolio Item 1-->
-                {% for portfolio in portfolios %}
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="card-portfolio mx-auto">
-                        <img class="img-fluid img-effect" src="{% static portfolio.image_cover %} /static/images/portafolio_cover/portafolio_cover_1.png" alt="Show slide">
-                        <div class="portafolio-slide">
-                            <a href="{% url 'portfolio_slide_example' %}">
-                                <i class="fa fa-plus-square fa-4x"></i>
-                            </a>        
+                <!-- Portfolio Item 1--> 
+                {% for item in portfolios %}
+                    {{ item.name_client }}
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="card-portfolio mx-auto">
+                            {% comment %} <img class="img-fluid img-effect" src="{{baseUrl}}/{% static portfolio.image_cover %}" alt="{{ portfolio.name_client }}"> {% endcomment %}
+                            <img class="img-fluid img-effect" src="{{ item.image_cover }}" alt="{{ item.name_client }}">
+                            <div class="portafolio-slide">
+                                <a href="{% url 'portfolio_slide_example' %}">
+                                    <i class="fa fa-plus-square fa-4x"></i>
+                                </a>        
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
                     {% comment %} <!-- Portfolio Item 2 -->
                 <div class="col-md-6 col-lg-4 mb-5">
