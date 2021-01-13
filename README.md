@@ -410,8 +410,9 @@ Improved image resolution and responsiveness.
 - Portafolio full page vertical slider implemented with bootstrap instead of horizontal customized to fit between the NAV or footer.
 - PENDING: Portafolio images are quite heavy pending to reduce this.
 - Portafolio images uploaded to Portafolio database json. Solved issue getting a DeserializationError when trying to load data from JSON to DB
--pending ofor the slider
 - Portafolio json file loaded, registered within the Admin view, model, url implemented for automatization.
+- Portafolio detail slider view and url implemented for automatization.
+For the purpose of this exercise i did not add all the 27 images to the slider as it was getting to long. Considering to swap for a scroll bar to be discussed with client.
 - Blog app requested from client. Pending to implement for this project due to timelines.
 - PENDING: to add entity selection relationship between databases for json files. 
 - Allauth templates customized for this project.

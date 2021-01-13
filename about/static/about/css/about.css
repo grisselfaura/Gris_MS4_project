@@ -200,7 +200,7 @@
   opacity: 1;
 }
 
-/* porfaolio details testing css */
+/* portfolio details testing css */
 
 
 .bg-portfolio-slide {
@@ -210,53 +210,16 @@
     background-size: cover;
 }
 
-#cover {
-    background-image: url('/static/images/portafolio_cover/portafolio_cover_1.png');
-} 
-
-#slide-1 {
-    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_1.png');
-} 
-
-#slide-2 {
-    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_2.png');
-}
-
-#slide-3 {
-    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_3.png');
-}
-
-#slide-4 {
-    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_4.png');
-}
-
-#slide-5 {
-    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_5.png');
-}
-
-#slide-6 {
-    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_6.png');
-}
-
-#slide-7 {
-    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_7.png');
-}
-
-#slide-8 {
-    background-image: url('/static/images/portafolio_cover/portfolio_example_1/Example_1_slide_8.png');
-}
-
-/* .carousel-indicators{
-position:absolute;
-top:0;
-bottom:0;
-margin:auto;
-height:20px;
-right:10px; left:auto;
-width:auto;
+/* carousel override */
+.carousel-indicators li {
+    width:15px!important;
 }
 .carousel-indicators li{display:block; margin-bottom:5px; border:1px solid #00a199; }
 .carousel-indicators li.active{margin-bottom:5px; background:#00a199;} */
+
+.portfolio-img {
+    height: 50vh!important;
+}
 
 /* Connect page */
 .portfolio-bg {
@@ -264,6 +227,7 @@ width:auto;
     margin-left: 0;
     overflow: hidden;
 }
+
 .connect-bg-image {
     background-image: url('/static/images/homepage_background_color.jpg');
     /* min-height: 380px; */
