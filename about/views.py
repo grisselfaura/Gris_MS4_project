@@ -4,6 +4,7 @@ from .models import Portfolio
 
 # Create your views here.
 
+
 def about(request):
     """ A view that renders the about me page """
     return render(request, 'about/about.html', {'title': 'About'})
@@ -22,10 +23,10 @@ def connect(request):
 def portfolio_test(request):
     """ A view that renders the individual portafolio project details  """
 
-    all_portfolios = Portfolio.objects.all()
+    portfolios = Portfolio.objects.all()
 
     context = {
-        'portfolio': all_portfolios,
+        'portfolios': portfolios,
     }
 
     return render(request, 'about/my_portafolio_copy.html', context)

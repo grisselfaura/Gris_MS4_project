@@ -37,13 +37,11 @@
         <div class="row">
             <!-- <div class="row bg-color pointer" data-aos="fade-up" data-aos-delay="100"></div> -->
             <div class="row bg-color pointer pt-5 px-2">
-                <!-- Portfolio Item 1--> 
-                {% for item in portfolios %}
-                    {{ item.name_client }}
+                <!-- Portfolio Items--> 
+                {% for portfolio in portfolios %}
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="card-portfolio mx-auto">
-                            {% comment %} <img class="img-fluid img-effect" src="{{baseUrl}}/{% static portfolio.image_cover %}" alt="{{ portfolio.name_client }}"> {% endcomment %}
-                            <img class="img-fluid img-effect" src="{{ item.image_cover }}" alt="{{ item.name_client }}">
+                        <div class="card-portfolio mx-auto"> 
+                            <img class="img-fluid img-effect" src="{% static portfolio.image_cover %}" alt="{{ portfolio.name_client }}">
                             <div class="portafolio-slide">
                                 <a href="{% url 'portfolio_slide_example' %}">
                                     <i class="fa fa-plus-square fa-4x"></i>
