@@ -35,7 +35,6 @@
     <div class="container-fluid">
         <!-- Portafolio -->
         <div class="row">
-            <!-- <div class="row bg-color pointer" data-aos="fade-up" data-aos-delay="100"></div> -->
             <div class="row bg-color pointer pt-5 px-2">
                 <!-- Portfolio Items--> 
                 {% for portfolio in portfolios %}
@@ -43,7 +42,7 @@
                         <div class="card-portfolio mx-auto"> 
                             <img class="img-fluid img-effect" src="{% static portfolio.image_cover %}" alt="{{ portfolio.name_client }}">
                             <div class="portafolio-slide">
-                                <a href="{% url 'portfolio_slide_example' %}">
+                                <a href="{% url 'my_portfolio_slider' portfolio.id %}">
                                     <i class="fa fa-plus-square fa-4x"></i>
                                 </a>        
                             </div>

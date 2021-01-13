@@ -89,11 +89,6 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}"
                                 class="{% if forloop.counter == 1 %}active{% endif %}"></li>
                         {% endfor %}    
-                        {% comment %} <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li> {% endcomment %}
-                        
                     </ol>
                     <!-- Portfolio Items--> 
                     <div class="carousel-inner">
@@ -105,30 +100,6 @@
                                 </div>
                             </div>
                         {% endfor %}
-                        {% comment %} <div class="carousel-item">
-                            <img class="d-block img-fluid img-height" src="/static/images/cover/cover_2.png" alt="Second slide">
-                            <div class="carousel-caption d-none d-md-block ">
-                                <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid img-height" src="/static/images/cover/cover_3.jpg" alt="Third slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid img-height" src="/static/images/cover/cover_4.png" alt="Fourth slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid img-height" src="/static/images/cover/cover_5.png" alt="Fifth slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
-                            </div>
-                        </div> {% endcomment %}
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
