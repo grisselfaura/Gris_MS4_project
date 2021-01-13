@@ -7,7 +7,14 @@ from .models import Portfolio
 
 def about(request):
     """ A view that renders the about me page """
-    return render(request, 'about/about.html', {'title': 'About'})
+
+    portfolios = Portfolio.objects.all()
+
+    context = {
+        'portfolios': portfolios,
+    }
+
+    return render(request, 'about/about.html', context)
 
 
 def portfolio(request):
