@@ -11,16 +11,6 @@ def about(request):
 
 
 def portfolio(request):
-    """ A view that renders the portafolio page """
-    return render(request, 'about/my_portafolio.html', {'title': 'Portafolio'})
-
-
-def connect(request):
-    """ A view that renders the portafolio page """
-    return render(request, 'about/connect.html', {'title': 'Connect'})
-
-
-def portfolio_test(request):
     """ A view that renders the individual portafolio project details  """
 
     portfolios = Portfolio.objects.all()
@@ -29,7 +19,19 @@ def portfolio_test(request):
         'portfolios': portfolios,
     }
 
-    return render(request, 'about/my_portafolio_copy.html', context)
+    return render(request, 'about/my_portafolio.html', context)
+
+
+def old_portfolio(request):
+    """ A view that renders the portafolio page """
+    return render(request, 'about/old_portafolio_code_delete.html', {'title': 'Portafolio'})
+
+
+def connect(request):
+    """ A view that renders the portafolio page """
+    return render(request, 'about/connect.html', {'title': 'Connect'})
+
+
 
 
 def portfolio_detail(request):
