@@ -17,7 +17,7 @@
 
 {% block materialize_css %}
     <!-- Carrousel compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> {% endcomment %}
 {% endblock %}
 
 {% block content %}
@@ -39,12 +39,11 @@
     <div class="container-fluid">
         <!-- About-me -->
         <div class="row justify-content-md-center">
-            <div class="side">
+            <div class="side mx-auto">
                 <!-- about-me image -->
                 <div class="about-side-image">
                     <div class="about-img">
-                        <img src="{% static 'images/francofaura.jpg' %}" class="rounded-circle" alt="Franco Faura photo"/>     
-                             
+                        <img src="{% static 'images/francofaura.jpg' %}" class="rounded-circle" alt="Franco Faura photo"/>         
                     </div> 
                 </div>
                 <!-- about-me heading -->
@@ -87,8 +86,8 @@
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         {% for portfolio in portfolios %} 
-                            <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1"}}"
-                            class="{% if forloop.counter == 1 %}active{% endif %}"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}"
+                                class="{% if forloop.counter == 1 %}active{% endif %}"></li>
                         {% endfor %}    
                         {% comment %} <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -99,7 +98,7 @@
                     <!-- Portfolio Items--> 
                     <div class="carousel-inner">
                         {% for portfolio in portfolios %}
-                            <div class="carousel-item active {% if forloop.counter == 1 %}active{% endif %}">
+                            <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
                                 <img class="d-block img-fluid img-height" src="{% static portfolio.image_cover %}" alt="{{ portfolio.name_client }}">
                                 <div class="carousel-caption d-none d-md-block">
                                     <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
@@ -180,7 +179,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-    <!-- Carrousel slider JavaScript -->
+    <!-- Carrousel slider JavaScript-->
     <script type="text/javascript">        
         $('.carousel').carousel({
             interval: 2000
