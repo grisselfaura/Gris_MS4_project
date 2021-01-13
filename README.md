@@ -97,7 +97,7 @@ It is used for creating features such as navbar, cards, forms, modals, as well a
 - [JQuery](https://jquery.com/) is used for initializing some Bootstrap components, as well as for custom functions, DOM manipulation.
 #### Colour Scheme
 One of the main goals in UI was to focus user's attention on the UX designer and his services. Therefore **clean**  but **emotives** colors and **different shades** of 
-one colour were mostly used accross the website's design.   
+one colour (black) were mostly used accross the website's design.   
 Different shades of grey colour and shadows allow us to create clean and neat backgrounds and volume effect accross the website.   
  
 ![Color Palette](wireframes/colour-palette.png) ASK FRANCO!
@@ -112,7 +112,7 @@ Icons are used widely, as they are good attention grabbers. They help users to f
 
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
-Original wireframes for desktop, tablet and mobile can be found [here](https://xxxxx).
+Original wireframes can be found [here](https://github.com/grisselfaura/Gris_MS4_project/tree/master/static/wireframes).
 **Note:** The website was changed and evolved through the development process and several improvements were applied.
 The wireframes served as guidelines but some details such as positioning, placement of images, buttons and other refinements diverge from the original wireframes.   
 
@@ -413,6 +413,7 @@ Improved image resolution and responsiveness.
 - Portafolio json file loaded, registered within the Admin view, model, url implemented for automatization.
 - Portafolio detail slider view and url implemented for automatization.
 For the purpose of this exercise i did not add all the 27 images to the slider as it was getting to long. Considering to swap for a scroll bar to be discussed with client.
+- Pending to implement a dinamic way to generate the slider with less conditional code.
 - Blog app requested from client. Pending to implement for this project due to timelines.
 - PENDING: to add entity selection relationship between databases for json files. 
 - Allauth templates customized for this project.
