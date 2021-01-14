@@ -14,11 +14,8 @@ class Order(models.Model):
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name='orders')
-    select_date = models.DateTimeField("Selected Date (mm/dd/yyyy)",
-                                       auto_now_add=False)
-                                    #    auto_now=False,
-                                    #    blank=False)
-    date = models.DateField(auto_now_add=False, auto_now=False, blank=True)
+    date = models.DateField(auto_now_add=True, auto_now=False,
+                            blank=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -67,7 +64,9 @@ class OrderLineItem(models.Model):
                               related_name='lineitems')
     service = models.ForeignKey(Service, null=False,
                                 blank=False, on_delete=models.CASCADE)
-    quantity = models.IntegerField(null=False, blank=False, default=0)
+    select_date = models.DateTimeField("Selected Date (mm/dd/yyyy)",
+                                       auto_now_add=False, auto_now=False,
+                                       blank=True, null=True,)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, blank=False,
                                          editable=False)

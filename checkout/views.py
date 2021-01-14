@@ -64,14 +64,22 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     service = Service.objects.get(id=item_id)
-                    if isinstance(item_data, int):
+                    for select_date, quantity in item_data['items_by_date'].items():
                         order_line_item = OrderLineItem(
                             order=order,
-                            # select_date=select_date,
                             service=service,
-                            quantity=item_data,
+                            select_date=select_date,
+                            quantity=quantity,
                         )
                         order_line_item.save()
+                    # service = Service.objects.get(id=item_id)
+                    # if isinstance(item_data, int):
+                    #     order_line_item = OrderLineItem(
+                    #         order=order,
+                    #         service=service,
+                    #         quantity=item_data,
+                    #     )
+                    #     order_line_item.save()
 
                 except Service.DoesNotExist:
                     messages.error(request, (
