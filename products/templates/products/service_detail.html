@@ -134,11 +134,11 @@
                 <form class="form" action="{% url 'add_to_bag' service.id %}" method="POST">
                     <!-- Django cross-site request forgery protection -->
                     {% csrf_token %} 
-                    <!-- Date picker -->
+                    <!-- Date picker add to input data-item_id="{{ form.date }}-->
                     <div class= "form-group col-sm-8">
                         <h4 class="date-font"><strong>Select date to discuss your project(s): </strong></h4>
                         <div class="input-group date" id="datetimepicker-demo" data-target-input="nearest">
-                            <input type="text" name="select_date" class="form-control datetimepicker-input" data-target="#datetimepicker-demo" required/>
+                            <input type="text" name="select_date" class="form-control datetimepicker-input" data-target="#datetimepicker-demo" required/> 
                             <div class="input-group-append" data-target="#datetimepicker-demo" data-toggle="datetimepicker">
                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>
@@ -211,7 +211,8 @@
         $('#datetimepicker-demo').datetimepicker({
         timeZone:'',
         // date format (YYYY-MM-dd hh:mm:ss.sss) 
-        format:"DD-MM-YYYY HH:mm:ss a",
+        format: 'DD/MM/YYYY HH:mm',
+        //format:"YYYY-MM-DD HH:mm a",
         //format:"MMMM Do YYYY, h:mm a", // working
         //dayViewHeaderFormat:'MMMM YYYY',
         extraFormats:false,
@@ -227,13 +228,8 @@
             [moment().hour(0), moment().hour(9)],
             [moment().hour(20), moment().hour(24)]
         ]
-        
-
-        
-
+    
         // disables dates before today
-        
-
         });
     });
 </script>

@@ -69,7 +69,7 @@ def checkout(request):
                         order_line_item = OrderLineItem(
                             order=order,
                             service=service,
-                            select_date=datetime.strftime(select_date, '%Y-%m-%d %H:%M:%S'),
+                            select_date=datetime.strptime(select_date, '%d/%m/%Y %H:%M'),
                             quantity=quantity,
                         )
                         order_line_item.save()
