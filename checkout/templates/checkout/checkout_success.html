@@ -156,7 +156,7 @@
                     {% for item in order.lineitems.all %}
                     <hr>
                     <div class="row">
-                        <div class="col-12 offset-2 col-sm-4 offset-sm-0">
+                        <div class="col-12 offset-2 col-sm-3 offset-sm-0">
                             {% if item.service.image %}
                                 <img class="img-fluid rounded" src="{% static item.service.image %}" alt="{{ item.service.name }}">
                             {% elif item.service.image_url %}
@@ -165,13 +165,19 @@
                                 <img class="img-fluid rounded" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ item.service.name }}">
                             {% endif %}                              
                         </div>
-                        <div class="col-12 offset-2 col-sm-4 offset-sm-0 text-md-center m-auto">
+                        <div class="col-12 offset-2 col-sm-3 offset-sm-0 text-md-center m-auto">
                             <p class="small mb-0 text-black font-weight-bold">
                                 {{ item.service.name }}
                             </p>
                         </div>
-                        <div class="col-12 offset-2 col-sm-4 offset-sm-0 text-md-right m-auto">
-                            <p class="small mb-0">{{ item.quantity }} @ ${{ item.service.price }} each</p>
+                        <div class="col-12 offset-2 col-sm-3 offset-sm-0 text-md-center m-auto">
+                            <p class="small mb-0 text-black font-weight-bold">
+                                Selected date :{{ item.select_date }}
+                                {{ item.service.select_date }}
+                            </p>
+                        </div>
+                        <div class="col-12 offset-2 col-sm-3 offset-sm-0 text-md-right m-auto">
+                            <p class="small mb-0">Qty {{ item.quantity }} @ ${{ item.service.price }} each</p>
                         </div>
                     </div>
                     {% endfor %}

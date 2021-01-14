@@ -62,6 +62,7 @@
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                            <p class="my-0 small text-muted">Selected date: {{ item.select_date }}</p>
                         </div>
                         <div class="col-3 text-right">
                             <p class="my-0 small text-muted">${{ item.service.price | calc_subtotal:item.quantity }}</p>

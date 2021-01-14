@@ -23,7 +23,7 @@ class ProductForm(forms.ModelForm):
 
 # class DateForm(forms.ModelForm):
 #     select_date = forms.DateTimeField(
-#         input_formats=['%Y/%m/%d %H:%M'],
+#         input_formats=['%d/%m/%Y %H:%M'],
 #         widget=forms.DateTimeInput(attrs={
 #             'class': 'form-control datetimepicker-input',
 #             'data-target': '#datetimepicker-demo'

@@ -7,6 +7,7 @@ from .models import Order, OrderLineItem
 from products.models import Service
 from profiles.models import UserProfile
 
+from datetime import datetime
 import json
 import time
 
@@ -127,11 +128,13 @@ class StripeWH_Handler:
                 )
                 for item_id, item_data in json.loads(bag).items():
                     service = Service.objects.get(id=item_id)
-                    if isinstance(item_data, int):
+                    for select_date, quantity in item_data['items_by_date'].items():
+                    #if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
                             service=service,
-                            quantity=item_data,
+                            select_date=datetime.strptime(select_date, '%d-%b-%Y %H:%M %p'),
+                            quantity=quantity,
                         )
                         order_line_item.save()
             except Exception as e:

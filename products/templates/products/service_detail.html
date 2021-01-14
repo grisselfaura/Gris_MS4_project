@@ -209,12 +209,10 @@
     let disabledDate = ['2021-03-29', '2021-07-28', '2021-07-29','2021-12-25'];
     $(function () {
         $('#datetimepicker-demo').datetimepicker({
-        timeZone:'',
-        // date format (YYYY-MM-dd hh:mm:ss.sss) 
-        format: 'DD/MM/YYYY HH:mm',
-        //format:"YYYY-MM-DD HH:mm a",
-        //format:"MMMM Do YYYY, h:mm a", // working
-        //dayViewHeaderFormat:'MMMM YYYY',
+        //timeZone:'',
+        format: 'DD-MMM-YYYY HH:mm A',
+        //format: 'DD-MM-YYYY HH:mm',
+        dayViewHeaderFormat:'MMMM YYYY',
         extraFormats:false,
 
         // step size
@@ -227,8 +225,8 @@
         disabledTimeIntervals: [
             [moment().hour(0), moment().hour(9)],
             [moment().hour(20), moment().hour(24)]
-        ]
-    
+        ],
+        sideBySide: true,
         // disables dates before today
         });
     });
