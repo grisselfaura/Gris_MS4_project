@@ -67,6 +67,7 @@ def checkout(request):
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
+                            # select_date=select_date,
                             service=service,
                             quantity=item_data,
                         )

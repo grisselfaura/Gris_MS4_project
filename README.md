@@ -120,44 +120,8 @@ For deployment(production), a **PostgreSQL** database is provided by Heroku as a
 - The **User model** used in this project is provided by Django as a part of defaults `django.contrib.auth.models`. More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/).
 
 ### Data Modelling
-#### Profile App
-##### Profile
+Database relationship can be found [here]().
 
-#### Products App
-##### Service
-##### Category
-
-#### Checkout App
-##### Order
-| **Name** | **Database Key** | **Field Type** | **Validation** |
---- | --- | --- | --- 
-Order Number | order_number | CharField | max_length=32, null=False, editable=False
-Profile | profile | ForeignKey 'Profile' | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
-Full Name | full_name | CharField | max_length=70, null=False, blank=False
-Email | email | EmailField | max_length=254, null=False, blank=False
-Phone number | phone_number | CharField | max_length=20, null=False, blank=False
-Address Line1 | address_line1 | CharField | max_length=60, null=False, blank=False
-Address Line2 | address_line2 | CharField | max_length=60, null=False, blank=False
-Town/City | town_or_city | CharField | max_length=50, null=False, blank=False
-County | county | CharField | max_length=50, null=True, blank=True
-Postcode | postcode | CharField | max_length=20, null=True, blank=True
-Country | country | CountryField | blank_label='Country*', null=False, blank=False
-Purchase Date | purchase_date | DateTimeField | auto_now_add=True
-Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0
-Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
-Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
-Original Cart | original_cart | TextField | null=False, blank=False, default=''
-Stripe Pid | stripe_pid | CharField | max_length=254, null=False, blank=False, default=''
-Comment | comment | TextField | max_length=254, null=True, blank=True
-
-##### Order Item Details 
-| **Name** | **Database Key** | **Field Type** | **Validation** |
---- | --- | --- | --- 
-Order | order | ForeignKey 'Order' | null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems'
-Product | product | ForeignKey 'Product' | null=False, blank=False, on_delete=models.PROTECT
-Quantity | quantity | IntegerField | null=False, blank=False, default=0
-Item Total | item_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
-Datetime | datetime | CharField | null=True, blank=True, max_length=20
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
@@ -175,8 +139,8 @@ URBANO D'sign website is composed by eight applications: `landing`, `about`, `Po
 
 #### Landing (home) pag
 
-The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality (book ceremony/buy products). 
-Smooth animation on scroll is apllied to almost all sections of the page(mostly to images and icons). Tha landing page consists of 9 sections:
+The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality (book services). 
+The application consists of 6 apps, 1 extra pending to develop and 9 sections:
 #### About page
 #### Portafolio page
 #### Login/Register page
@@ -197,14 +161,22 @@ Smooth animation on scroll is apllied to almost all sections of the page(mostly 
 Custom 404 and 500 pages contain heading, short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
 
 ### Features Left to Implement
-There are some features that I considered were of secondary importance and I have not implemented them yet due to time constraints, but intend to do so in future when I will be able to dedicate more time to them. Most of these features are displayed in my [original wireframes](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
-#### Star based  Rating and Reviews
-This will be the first priority feature I would like to implement in future. Users would be able to create, edit and delete their reviews for products and services. Rating would be displayd as stars(0-5) in the product details and service details pages. Also, in the landing page reviews section, the static reviews would be replaced with the real ones, displaying up to 5 random reviews from the database.
+#### Blog app and posibility to add ratings and Reviews
+There blog app I considered were of secondary importance and I have not implemented them yet due to time constraints, but intend to do so in future when I will be able to dedicate more time to them. Most of these features are displayed in my [original wireframes](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
+Users would be able to create, edit and delete their reviews for products and services. Rating would be displayd as stars(0-5) in the service details pages. Also, in the landing home page reviews section, the static reviews would be replaced with the real ones, displaying up to 5 random reviews from the database.
+#### Star based  Views and Likes
+Automatic counting forThis will be the first priority feature I would like to implement in future to the client can have more visibility of what the potential customers are searching. 
 ####  Social account login (Google and Facebook)
 This feature allows users to login using social networks accounts, Google and Facebook, that would enhance user experience and make the login process easier.
 
-Other small features are also considered to be implemented in feature, such as **Back to Top button** or/and **Pagination** in products, **Scroll down button** on the landing page, **Sorting products** by price/name, **Discout system**.     
-I would also like to add **more products** to the store.
+Other small features are also considered to be implemented in feature:
+
+For future display added rating to the service card information generated by reviewers.
+For future a calendar database should be implemented to avoid other clients booking on occupied timeslots.
+Portafolio images are quite heavy pending to reduce this.
+Slider images carrousel indicators considering to swap for a scroll bar to be discussed with client.
+Pending to implement a dinamic way to generate the slider with less conditional code.
+Blog app requested from client. Pending to implement for this project due to timelines. 
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
@@ -441,7 +413,7 @@ For future a calendar database should be implemented to avoid other clients book
 - Shopping bag restyle as per test user feedback for user friendlyness. Idea to use boostrap dnone to hide/show views depending on sizes, together with redistributions of code snip to different sections.
 - Admin: defensive modal installed to prevent edit/delete a service by mistake using boostrap.
 - Admin: Date(Timestamp) and select_date(book_date) added to the Admin view. 
-- Services images if conditioned improved to search for image in static folder, url_link or non-available image. Fix feature across all apps.
+- Services images if conditioned improved to search for image in static folder, url_link or non-available image. Fixed feature across all apps.
 Discovered instrinsice property When images are uploaded from url-link which lowers the resolution of the image. For this reason prefered chooice to upload images from Folder.
 Improved image resolution and responsiveness.
 - My profile: implemented full name value pre-fill feature to the checkout order.
@@ -452,8 +424,7 @@ Improved image resolution and responsiveness.
 - Portafolio detail slider view and url implemented for automatization.
 For the purpose of this exercise i did not add all the 27 images to the slider as it was getting to long. Considering to swap for a scroll bar to be discussed with client.
 - Pending to implement a dinamic way to generate the slider with less conditional code.
-- Blog app requested from client. Pending to implement for this project due to timelines.
-- PENDING: to add entity selection relationship between databases for json files. 
+- Blog app requested from client. Pending to implement for this project due to timelines. 
 - Allauth templates customized for this project.
 - All images relocated to the correct folder of static as per mentor's feedback.
 *Images provided by Client and for the service part obtain from google images for the purpose of this exercise. 
