@@ -3,6 +3,7 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django_countries.fields import CountryField
+from datetime import datetime
 
 from products.models import Service
 from profiles.models import UserProfile
@@ -63,7 +64,7 @@ class OrderLineItem(models.Model):
                               related_name='lineitems')
     service = models.ForeignKey(Service, null=False,
                                 blank=False, on_delete=models.CASCADE)
-    select_date = models.DateTimeField("Selected Date (mm/dd/yyyy)",
+    select_date = models.DateTimeField("Selected Date (dd-mm-yyyy H:m)",
                                        auto_now_add=False, auto_now=False,
                                        blank=True, null=True)
     quantity = models.IntegerField(null=False, blank=False, default=0)
