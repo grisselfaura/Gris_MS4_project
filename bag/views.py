@@ -4,8 +4,6 @@ from django.contrib import messages
 
 from products.models import Service
 
-# Create your views here.
-
 
 def view_bag(request):
     """ A view that renders the bag contents page """

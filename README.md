@@ -100,19 +100,17 @@ One of the main goals in UI was to focus user's attention on the UX designer and
 one colour (black) were mostly used accross the website's design.   
 Different shades of grey colour and shadows allow us to create clean and neat backgrounds and volume effect accross the website.   
  
-![Color Palette](wireframes/colour-palette.png) ASK FRANCO!
+![Color Palette](https://github.com/grisselfaura/Gris_MS4_project/blob/master/static/urbano_palette.png) 
 #### Typography
-There are three fonts used across the project that I find a good combination: 
-- [Open Sans](https://fonts.google.com/specimen/Open+Sans) used as the main body font, popular modern sans-serif typeface providing good readability.
-- [Marko One](https://fonts.google.com/specimen/Marko+One) - elegant, decorative and eye-catching font, used mostly for headings.  
-- [Sawarabi Mincho](https://fonts.google.com/specimen/Sawarabi+Mincho) - clean and simple font, perfectly fit to the "Art of Tea" and "East culture" theme, used for navbar elements and some headings.
+Original wireframes can be found [here](https://github.com/grisselfaura/Gris_MS4_project/blob/master/templates/includes/fonts.html).
+
 #### Icons
 Icons are used widely, as they are good attention grabbers. They help users to find and scan content quickly and easily. Another advantage of using them is to help to break language barriers. They create more user-friendly experience for people with non-native English by giving the visual clue about the subject.   
 - I used [FontAwesome](https://fontawesome.com/) as the main icon library across the project (e.g. for social media links, forms, cart, search and user icons in navigation).
 
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
-Original wireframes can be found [here](https://github.com/grisselfaura/Gris_MS4_project/tree/master/static/wireframes).
+Original desktop wireframes can be found [here](https://github.com/grisselfaura/Gris_MS4_project/tree/master/static/wireframes) which were modified accordingly for mobile views.
 **Note:** The website was changed and evolved through the development process and several improvements were applied.
 The wireframes served as guidelines but some details such as positioning, placement of images, buttons and other refinements diverge from the original wireframes.   
 
@@ -120,6 +118,46 @@ The wireframes served as guidelines but some details such as positioning, placem
 During the development phase I worked with **sqlite3** database which is installed with Django.   
 For deployment(production), a **PostgreSQL** database is provided by Heroku as an add-on.
 - The **User model** used in this project is provided by Django as a part of defaults `django.contrib.auth.models`. More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/).
+
+### Data Modelling
+#### Profile App
+##### Profile
+
+#### Products App
+##### Service
+##### Category
+
+#### Checkout App
+##### Order
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Order Number | order_number | CharField | max_length=32, null=False, editable=False
+Profile | profile | ForeignKey 'Profile' | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
+Full Name | full_name | CharField | max_length=70, null=False, blank=False
+Email | email | EmailField | max_length=254, null=False, blank=False
+Phone number | phone_number | CharField | max_length=20, null=False, blank=False
+Address Line1 | address_line1 | CharField | max_length=60, null=False, blank=False
+Address Line2 | address_line2 | CharField | max_length=60, null=False, blank=False
+Town/City | town_or_city | CharField | max_length=50, null=False, blank=False
+County | county | CharField | max_length=50, null=True, blank=True
+Postcode | postcode | CharField | max_length=20, null=True, blank=True
+Country | country | CountryField | blank_label='Country*', null=False, blank=False
+Purchase Date | purchase_date | DateTimeField | auto_now_add=True
+Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0
+Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+Original Cart | original_cart | TextField | null=False, blank=False, default=''
+Stripe Pid | stripe_pid | CharField | max_length=254, null=False, blank=False, default=''
+Comment | comment | TextField | max_length=254, null=True, blank=True
+
+##### Order Item Details 
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Order | order | ForeignKey 'Order' | null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems'
+Product | product | ForeignKey 'Product' | null=False, blank=False, on_delete=models.PROTECT
+Quantity | quantity | IntegerField | null=False, blank=False, default=0
+Item Total | item_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
+Datetime | datetime | CharField | null=True, blank=True, max_length=20
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>

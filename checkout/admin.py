@@ -13,7 +13,7 @@ class OrderAdmin(admin.ModelAdmin):
     readonly_fields = ('order_number', 'date',
                        'order_total', 'original_bag',
                        'stripe_pid',)
-
+    # fields allows to specify the order of the fields in the admin interface
     fields = ('order_number', 'select_date', 'date',
               'user_profile', 'full_name',
               'email', 'phone_number', 'town_or_city',
@@ -21,7 +21,7 @@ class OrderAdmin(admin.ModelAdmin):
               'postcode', 'county', 'country',
               'order_total', 'original_bag',
               'stripe_pid',)
-
+    # restrict the columns that show up in the order list to only few key items
     list_display = ('order_number', 'select_date', 'date', 'full_name',
                     'order_total',)
 
