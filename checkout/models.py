@@ -66,7 +66,7 @@ class OrderLineItem(models.Model):
                                 blank=False, on_delete=models.CASCADE)
     select_date = models.DateTimeField("Selected Date (mm/dd/yyyy)",
                                        auto_now_add=False, auto_now=False,
-                                       blank=True, null=True,)
+                                       blank=True, null=True)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, blank=False,
