@@ -129,7 +129,6 @@ class StripeWH_Handler:
                 for item_id, item_data in json.loads(bag).items():
                     service = Service.objects.get(id=item_id)
                     for select_date, quantity in item_data['items_by_date'].items():
-                    #if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
                             service=service,
