@@ -100,7 +100,7 @@ One of the main goals in UI was to focus user's attention on the UX designer and
 one colour (black) were mostly used accross the website's design.   
 Different shades of grey colour and shadows allow us to create clean and neat backgrounds and volume effect accross the website.   
  
-![Color Palette](https://github.com/grisselfaura/Gris_MS4_project/blob/master/static/urbano_palette.png) 
+![Color Palette](https://github.com/grisselfaura/Gris_MS4_project/blob/master/documentation/urbano_palette.png) 
 #### Typography
 Original wireframes can be found [here](https://github.com/grisselfaura/Gris_MS4_project/blob/master/templates/includes/fonts.html).
 
@@ -110,7 +110,7 @@ Icons are used widely, as they are good attention grabbers. They help users to f
 
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
-Original desktop wireframes can be found [here](https://github.com/grisselfaura/Gris_MS4_project/tree/master/static/wireframes) which were modified accordingly for mobile views.
+Original desktop wireframes can be found [here](https://github.com/grisselfaura/Gris_MS4_project/tree/master/documentation/wireframes) which were modified accordingly for mobile views.
 **Note:** The website was changed and evolved through the development process and several improvements were applied.
 The wireframes served as guidelines but some details such as positioning, placement of images, buttons and other refinements diverge from the original wireframes.   
 
