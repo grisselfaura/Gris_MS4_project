@@ -210,9 +210,10 @@
     $(function () {
         $('#datetimepicker-demo').datetimepicker({
         timeZone:'',
-        // date format
-        format:"MMMM Do YYYY, h:mm a",
-        dayViewHeaderFormat:'MMMM YYYY',
+        // date format (YYYY-MM-dd hh:mm:ss.sss) 
+        format:"DD-MM-YYYY HH:mm:ss a",
+        //format:"MMMM Do YYYY, h:mm a", // working
+        //dayViewHeaderFormat:'MMMM YYYY',
         extraFormats:false,
 
         // step size

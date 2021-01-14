@@ -2,7 +2,6 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
-from datetime import datetime
 from django_countries.fields import CountryField
 
 from products.models import Service
@@ -83,11 +82,3 @@ class OrderLineItem(models.Model):
     def __str__(self):
         return
         f'Service {self.service.name} on order {self.order.order_number}'
-
-# testing how to reformat date from datepicker
-# class ObjectSerializer(serializers.ModelSerializer):
-#     select_date = serializers.DateTimeField(format="YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]")
-
-#    class Meta:
-#       model = Object
-#       fields = '__all__'

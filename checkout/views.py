@@ -12,6 +12,7 @@ from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
 
+from datetime import datetime
 import stripe
 import json
 
@@ -68,18 +69,10 @@ def checkout(request):
                         order_line_item = OrderLineItem(
                             order=order,
                             service=service,
-                            select_date=select_date,
+                            select_date=datetime.strftime(select_date, '%Y-%m-%d %H:%M:%S'),
                             quantity=quantity,
                         )
                         order_line_item.save()
-                    # service = Service.objects.get(id=item_id)
-                    # if isinstance(item_data, int):
-                    #     order_line_item = OrderLineItem(
-                    #         order=order,
-                    #         service=service,
-                    #         quantity=item_data,
-                    #     )
-                    #     order_line_item.save()
 
                 except Service.DoesNotExist:
                     messages.error(request, (

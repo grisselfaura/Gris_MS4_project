@@ -19,3 +19,13 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+# class DateForm(forms.Form):
+#     date = forms.DateTimeField(
+#         input_formats=['%d/%m/%Y %H:%M'],
+#         widget=forms.DateTimeInput(attrs={
+#             'class': 'form-control datetimepicker-input',
+#             'data-target': '#datetimepicker1'
+#         })
+#     )
