@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,11 +80,11 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media', # required for pulling media images
-                'bag.contexts.bag_contents', # available to any template across the entire site
+                'django.template.context_processors.media',  # required for pulling media images
+                'bag.contexts.bag_contents',  # available to any template across the entire site
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -159,7 +160,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = False #added to getrid of
+USE_TZ = False  # added to getrid of timezone issue
 
 
 # Static files (CSS, JavaScript, Images)
