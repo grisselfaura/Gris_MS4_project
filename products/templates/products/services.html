@@ -20,7 +20,7 @@
             <div class="col text-center mt-3">
                 <hr>
                 <h2 class="logo-font">Services</h2>
-                {% for c in current_categories %}
+                {% for c in current_categories %} 
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
@@ -82,7 +82,7 @@
                     <div class="thumbnail card">
                         <div class="img-event card-img">
                             {% if instance.image %}
-                                <img class="img-fluid list-group-image img-height-service" src="{% static instance.image %}" alt="{{ service.name }}"> 
+                                <img class="img-fluid list-group-image img-height-service" src="{% static '' %}{{ instance.image }}" alt="{{ service.name }}"> 
                             {% elif instance.image_url %}
                                 <img class="img-fluid list-group-image img-height-service" src="{{ instance.image_url }}" alt="{{ instance.name }}">    
                             {% else %}

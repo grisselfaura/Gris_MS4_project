@@ -92,7 +92,6 @@
                     <div class="carousel-inner">
                         {% for portfolio in portfolios %}
                             <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"> 
-                                {% comment %} <img class="d-block img-fluid img-height" src="{{ MEDIA_URL }}{{ portfolio.image_cover }}" alt="{{ portfolio.name_client }}"> {% endcomment %}
                                 <img class="d-block img-fluid img-height" src="{% static '' %}{{ portfolio.image_cover }}" alt="{{ portfolio.name_client }}">
                                 <div class="carousel-caption d-none d-md-block">
                                     <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
