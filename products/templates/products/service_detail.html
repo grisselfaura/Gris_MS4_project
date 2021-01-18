@@ -42,7 +42,9 @@
                     {% elif service.image_url %}
                         <img class="img-polaroid img-fluid image-size" src="{{ service.image_url }}" alt="{{ service.name }}">    
                     {% else %}
-                        <img class="img-polaroid img-fluid image-size" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ service.name }}">
+                        {% comment %} <img class="img-polaroid img-fluid image-size" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ service.name }}"> {% endcomment %}
+                        <img class="img-polaroid img-fluid image-size" src="{{ STATIC_URL }}images/services/sorrynoimage.jpg" alt="{{ service.name }}">
+                        
                     {% endif %}
                 </div>
             </div>

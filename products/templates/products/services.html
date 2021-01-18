@@ -86,6 +86,7 @@
                             {% elif instance.image_url %}
                                 <img class="img-fluid list-group-image img-height-service" src="{{ instance.image_url }}" alt="{{ instance.name }}">    
                             {% else %}
+                                {% comment %} <img class="img-fluid list-group-image img-height-service" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ instance.name }}"> {% endcomment %}
                                 <img class="img-fluid list-group-image img-height-service" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ instance.name }}">
                             {% endif %}
                         </div>
