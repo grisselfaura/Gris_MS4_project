@@ -81,19 +81,14 @@
                 <div class="item col-xs-4 col-lg-4 mb-3">
                     <div class="thumbnail card">
                         <div class="img-event card-img">
-                            {% if != instance.image %}
-                                <img class="img-fluid list-group-image img-height-service" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ instance.name }}">
-                            {% elif instance.image %}
-                                <img class="img-fluid list-group-image img-height-service" src="{% static '' %}{{ instance.image }}" alt="{{ service.name }}"> 
-                            {% endif %}
-                            {% comment %} {% if instance.image %}
+                            {% if instance.image %}
                                 <img class="img-fluid list-group-image img-height-service" src="{% static '' %}{{ instance.image }}" alt="{{ service.name }}"> 
                             {% elif instance.image_url %}
                                 <img class="img-fluid list-group-image img-height-service" src="{{ instance.image_url }}" alt="{{ instance.name }}">    
                             {% else %}
                                 <img class="img-fluid list-group-image img-height-service" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ instance.name }}">
                                 <img class="img-fluid list-group-image img-height-service" src="{{ STATIC }}images/services/sorrynoimage.jpg" alt="{{ instance.name }}">
-                            {% endif %} {% endcomment %}
+                            {% endif %}
                         </div>
                         <div class="caption card-body mx-auto">
                             <h4 class="group card-title inner list-group-item-heading service-title mt-1">{{ instance.name }}</h4>
