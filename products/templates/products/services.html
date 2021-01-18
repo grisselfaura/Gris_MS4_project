@@ -81,7 +81,7 @@
                 <div class="item col-xs-4 col-lg-4 mb-3">
                     <div class="thumbnail card">
                         <div class="img-event card-img">
-                            {% if no instance.image %}
+                            {% if != instance.image %}
                                 <img class="img-fluid list-group-image img-height-service" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ instance.name }}">
                             {% elif instance.image %}
                                 <img class="img-fluid list-group-image img-height-service" src="{% static '' %}{{ instance.image }}" alt="{{ service.name }}"> 
