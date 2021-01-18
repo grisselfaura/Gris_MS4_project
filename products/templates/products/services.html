@@ -81,15 +81,13 @@
                 <div class="item col-xs-4 col-lg-4 mb-3">
                     <div class="thumbnail card">
                         <div class="img-event card-img">
-                             <img class="img-fluid list-group-image img-height-service" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ instance.name }}">
                             {% if instance.image %}
                                 <img class="img-fluid list-group-image img-height-service" src="{% static '' %}{{ instance.image }}" alt="{{ service.name }}"> 
                             {% elif instance.image_url %}
                                 <img class="img-fluid list-group-image img-height-service" src="{{ instance.image_url }}" alt="{{ instance.name }}">    
                             {% else %}
-                                <img class="img-fluid list-group-image img-height-service" src="{{ STATIC }}images/services/sorrynoimage.jpg" alt="{{ instance.name }}">
+                                {% comment %} <img class="img-fluid list-group-image img-height-service" src="{{ STATIC }}images/services/sorrynoimage.jpg" alt="{{ instance.name }}"> {% endcomment %}
                                 <img class="img-fluid list-group-image img-height-service" src="{% static 'images/services/sorrynoimage.jpg' %}" alt="{{ instance.name }}">
-                                <img src="{% static 'images/brands/Logos_8.jpg' %}" class="img-fluid-brand px-3" alt="brand_logo">
                             {% endif %}
                         </div>
                         <div class="caption card-body mx-auto">
