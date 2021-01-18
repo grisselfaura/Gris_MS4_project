@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
 import os
 import dj_database_url
 
@@ -26,10 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['gris-ms4-project.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['gris-ms4-project.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -207,12 +205,12 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-DEFAULT_FROM_EMAIL = 'order@urban-designer.com'
+
 
 # Temporary log the conf. emails to the console to get the confirmation links
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'artoftea@test.com'
+    DEFAULT_FROM_EMAIL = 'order@urban-designer.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
