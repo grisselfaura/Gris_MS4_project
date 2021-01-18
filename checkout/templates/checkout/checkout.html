@@ -51,7 +51,7 @@
                         <div class="col-2 mb-3">
                             <a href="{% url 'service_detail' item.service.id %}">
                                 {% if item.service.image %}
-                                    <img class="w-100" src="{% static item.service.image %}" alt="{{ item.service.name }}">
+                                    <img class="w-100" src="{% static '' %}{{ item.service.image }}" alt="{{ item.service.name }}">
                                 {% elif item.service.image_url %}
                                     <img class="w-100" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
                                 {% else %}

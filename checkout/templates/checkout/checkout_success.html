@@ -158,7 +158,7 @@
                     <div class="row">
                         <div class="col-12 offset-2 col-sm-3 offset-sm-0">
                             {% if item.service.image %}
-                                <img class="img-fluid rounded" src="{% static item.service.image %}" alt="{{ item.service.name }}">
+                                <img class="img-fluid rounded" src="{% static '' %}{{ item.service.image }}" alt="{{ item.service.name }}">
                             {% elif item.service.image_url %}
                                 <img class="img-fluid rounded" src="{{ item.service.image_url }}" alt="{{ item.service.name }}">
                             {% else %}
