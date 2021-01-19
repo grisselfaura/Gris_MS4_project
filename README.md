@@ -202,17 +202,17 @@ Blog app requested from client. Pending to implement for this project due to tim
 - [Psycopg2](https://pypi.org/project/psycopg2/) - to enable the PostgreSQL database to function with Django.
 - [Stripe](https://stripe.com/ie) - to handle financial transactions.
 - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - to style Django forms.
+- [MATH and datetime] were also used for basic math operations and datetime 
 
 ### Tools
 - [GitPod](https://www.gitpod.io/) - an online IDE for developing this project.
+- [GitHub] provides the hosting for software development control version using Git.
+- [Am I Responsive] to test responsiveness and to create the images portrait in this readme file.
 - [PIP](https://pip.pypa.io/en/stable/installing/) - for installation of necessary tools.
 - [AWS S3 Bucket](https://aws.amazon.com/) -  to store static and media files in prodcution.
-- [WhiteNoise](http://whitenoise.evans.io/en/stable/) - to store static files during develompment.
 - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for compatibility with AWS.
 - [Travis](https://travis-ci.org/) - for integration testing.
-- [TinyPng](https://tinypng.com/) - for compressing images.
 - [ImgBB](https://imgbb.com/) - to host images used in README and also services/products images to provide URLs.
-- [GIMP2](https://www.gimp.org/) - for editing and resizing images.
 - [Balsamiq](https://balsamiq.com/) - to create wireframes.
 - [Coolors.co](https://coolors.co/) - to create colour palette used in the README.
 
@@ -232,7 +232,94 @@ Blog app requested from client. Pending to implement for this project due to tim
 
 ---
 ## Testing
-Testing information can be found in a separate [TESTING.md](https://github.com/irinatu17/Art-of-Tea/blob/master/TESTING.md) file
+### Validation
+HTML: I have used https://validator.w3.org/ in order to validate the HTML code.
+
+CSS: I have used https://jigsaw.w3.org/css-validator/ in order to validate the CSS code & CSS prefixes were checked against with https://autoprefixer.github.io/
+
+JavaScript: I have used https://jshint.com/ in order to check the JavaScript code.
+
+[PEP8 Online]: (http://pep8online.com/) was used to validate Python.
+
+# Manual Testing
+By clicking on the links in the navbar, the background effect will confirm to the user which tab has been selected. All tabs can be independently accessed without having to go 
+back to the HOME tab. 
+*The social media links are pending to be developed (future construction) as for the purpose of this project they will not add any further skills. 
+
+ * **REGISTER** 
+I've created my own account, and 3 other accounts to confirm that the authentication and validation for creating account worked as expected.
+
+* **LOG IN AND LOG OUT** * Logging To An Existing Account
+The accounts created were tested by attempting log in and out. No issues found or expected. Using a non-existing user or incorrect password yield errors. Flash messages confirmed
+the user if attempts to log in/out were successful.
+
+* **Add | View | Edit | Delete a Recipe**
+I've created more than 30 recipes from 4 different accounts in order to:
+    Show the application functionality.
+    Test pagination displaying 6 cards for page from allrecipes and myrecipes. Test the prev and next pagination buttons.
+    Test share_recipe button and search database.
+    The data validation in the add recipe form is solid and only accepts input in the correct format.
+    * Recipes has been modified in several ocassion to test the functionality of updating/deleting a recipe to the database and for a user-friendly display. 
+    Tested edit and delete recipe buttons were available for the owner of the recipes, and disabled for non-owners (message display via tooltips). 
+    To prevent user from deleting a card mistake extra checks were added. When the delete button is pressed, a modal asks the owner to confirm deletion. 
+    If the recipe_owner selects cancel, they are taken back to all the recipes and recipe_owner selects confirm the recipe gets deleted.
+
+**Known Issues**
+
+Pagination - Pagination was not working from the search result. For setting the pagination for search result and the recipes, my mentor Guido guided me and
+together we solved the pagination issues using the pdb debugger.
+
+All the social links will open in a new tab using 'target="_blank". 
+All links have been manually tested to ensure that they are pointing to the correct destination.
+
+-This site was tested across multiple browsers (Chrome, Safari, Internet Explorer, FireFox) and on multiple mobile devices (iPhone 4, 5, 7: Chrome and Safari, iPad, Samsung Galaxy) 
+to ensure compatibility and responsiveness. 
+In addition, the site  was tested via  http://ami.responsivedesign.is/ to review how the project looks and works on different screen sizes.
+
+Tabs and sections with interesting bugs or problems discovered during testing:
+- images size were uploaded in different sizes and responsiveness was out of proportion.
+- Colors styling to match mobile and desktop view after test-user feedback. 
+- Homogenize colors for primary/secondary btns across different tabs and for nav. 
+- Nav and Mobile-Top-header invading the main div in small screen sizes. Corrected via media queries.
+- Nav active feature implemented with if statement with the help of mentor.
+- About section: Implemented bootsrap slider for about me, reviews and portafolio.
+- About landing image fitted as hero-img css.
+- About me section implemented as per client's feedback.
+- About contact form implemented. Connected with Email.js. Difficulties implementing the code as the tutorial from the course is not updated. Load.gif was achieve using }{% static%}
+- Services grid/list implemented from online example when client want to add more products/services.
+- Service json files added rating feature from the terminal to text how to do it. 
+For future to add rating to the service card information generated by reviewers.
+- Service detail card original layout restyled as per UX design received feedback.
+- Quantity btn resize for small screen using media queris.
+- Implemented datepicker function using boostrap instead of materialize and connect with back end.
+- Bag view: add to bag and adjusted bag working. Implemented if/else logic for adding a service without duplicating date selection during session(bag shop) and preventing same service double purchase error.
+Fixed issue generated by targetting wrong element via javascript and by splitting all the bag form elements into small html files componenents.
+For future a calendar database should be implemented to avoid other clients booking on occupied timeslots.
+- PENDING datapicker for other apps: checkout Bag.
+- Shopping bag restyle as per test user feedback for user friendlyness. Idea to use boostrap dnone to hide/show views depending on sizes, together with redistributions of code snip to different sections.
+- Admin: defensive modal installed to prevent edit/delete a service by mistake using boostrap.
+- Admin: Date(Timestamp) and select_date(book_date) added to the Admin view. 
+- Services images if conditioned improved to search for image in static folder, url_link or non-available image. Fixed feature across all apps.
+Discovered instrinsice property When images are uploaded from url-link which lowers the resolution of the image. For this reason prefered chooice to upload images from Folder.
+Improved image resolution and responsiveness.
+- My profile: implemented full name value pre-fill feature to the checkout order.
+- Portafolio full page vertical slider implemented with bootstrap instead of horizontal customized to fit between the NAV or footer.
+- PENDING: Portafolio images are quite heavy pending to reduce this.
+- Portafolio images uploaded to Portafolio database json. Solved issue getting a DeserializationError when trying to load data from JSON to DB
+- Portafolio json file loaded, registered within the Admin view, model, url implemented for automatization.
+- Portafolio detail slider view and url implemented for automatization.
+For the purpose of this exercise i did not add all the 27 images to the slider as it was getting to long. Considering to swap for a scroll bar to be discussed with client.
+- PENDING to implement a dinamic way to generate the slider with less conditional code.
+-The following error was observed  after heroku deployment via S3: expected str, bytes or os.PathLike object, not ImageFieldFile. 
+First solution was achieved with help of mentor by using the following code to pull images from the models {% static '' %}{{ file image name }}. 
+On a second approach those set of images were move from the static folder to the media folder both in gitpod and s3 and pulled {{ MEDIA_URL}}{{ file image name }}.
+-Pending Default full name pending to pull information from profile during purchase. 
+- Blog app requested from client. Pending to implement for this project due to timelines. 
+- Allauth templates customized for this project.
+- All images relocated to the correct folder of static as per mentor's feedback.
+*Images provided by Client and for the service part obtain from google images for the purpose of this exercise. 
+
+Automatic Testing information can be found in a separate [TESTING.md](https://github.com/xxxxxx) file
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
@@ -241,8 +328,8 @@ Testing information can be found in a separate [TESTING.md](https://github.com/i
 ---
 
 ## Deployment
-The Art of Tea project was developed using the [GitPod](https://www.gitpod.io/) online IDE and
-using Git & GitHub for version control. It is hosted on the [Heroku](https://heroku.com/) platform, with static files on WhiteNoise and user-uploaded images being hosted in AWS S3 Basket.
+The URBAN Designer project was developed using the [GitPod](https://www.gitpod.io/) online IDE and
+using Git & GitHub for version control. It is hosted on the [Heroku](https://heroku.com/) platform, with static files on Gitpod and user-uploaded images being hosted in AWS S3 Basket.
 ### Local Deployment
 To be able to run this project, the following tools have to be installed:
 - An IDE of your choice (I used [GitPod](https://www.gitpod.io/) for creating this project)
@@ -257,7 +344,7 @@ Apart from that, you also need to create accounts with the following services:
 
 #### Directions
 1. You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:   
-`git clone https://github.com/irinatu17/Art-of-Tea`    
+`git clone https://github.com/grisselfaura/Gris_MS4_project`    
 Alternatively, you can save a copy of this repository by clicking the green button **Clone or download** , then **Download Zip** button, and after extract the Zip file to your folder.      
 In the terminal window of your local IDE change the directory (CD) to the correct file location (directory that you have just created).       
 
@@ -275,8 +362,7 @@ In this it was done using the following way:
     os.environ["SECRET_KEY"] = "<Your Secret key>"    
     os.environ["STRIPE_PUBLIC_KEY"] = "<Your Stripe Public key>"    
     os.environ["STRIPE_SECRET_KEY"] = "<Your Stripe Secret key>"    
-    os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH_Secret key>"    
-    os.environ["GOOGLE_MAP_KEY"] = "<Your Google Map key>" 
+    os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH_Secret key>"     
      ```
        
 Read more about how to set up the Stripe keys in the [Stripe Documentation](https://stripe.com/docs/keys)
@@ -286,7 +372,7 @@ Read more about how to set up the Stripe keys in the [Stripe Documentation](http
 4. In the terminal in your IDE migrate the models to crete a database using the following commands:    
 `python3 manage.py makemigrations`     
 `python3 manage.py migrate`     
-5. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**, **events**) in that order into the database using the following command:    
+5. Load the data fixtures(**categories**, **services**, **portfolio**) in that order into the database using the following command:    
 `python3 manage.py loaddata <fixture_name>`        
 6. Create a superuser to have an access to the the admin panel(you need to follow the instructions then and insert username,email and password):    
 `python3 manage.py createsuperuser`   
@@ -300,12 +386,12 @@ To deploy the project to [Heroku](https://heroku.com/) the following steps need 
 1. Create a **requirement.txt** file, which contains a list of the dependencies, using the following command in the terminal:    
 `pip3 freeze > requirements.txt`    
 2. Create a **Procfile**, in order to tell Heroku how to run the project, using the following command in the terminal:      
-`web: gunicorn art_of_tea.wsgi:application`    
+`web: gunicorn MS4_Project.wsgi:application`    
 3. `git add`, `git commit` and `git push` these files to GitHub repository.     
-NOTE: these 1-3 steps already done in this project and included in the GitHub repository, but illistrated here as they are required for the successfull deployment to Heroku.        
+NOTE: these 1-3 steps already done in this project and included in the GitHub repository, but ilustrated here as they are required for the successfull deployment to Heroku.        
 As well as that, other things that are required for the Heroku deployment and have to be installed: **gunicorn** (WSGI HTTP Server), **dj-database-url** for database connection and **Psycopg** (PostgreSQL driver for Python). All of the mentioned above are *already installed* in this project in the requirements.txt file.     
-4. On the [Heroku](https://heroku.com/) website you need to create a **new app**, assigne a name (must be unique),set a region to the closest to you(for my project I set Europe) and click **Create app**.   
-5. Go to **Resources** tab in Heroku, then in the **Add-ons** search bar look for **Heorku Postgres**(you can type `postgres`), select **Hobby Dev — Free** and click **Provision** button to add it to your project.     
+4. On the [Heroku](https://heroku.com/) website you need to create a **new app**, assign a name (must be unique),set a region to the closest to you(for my project I set Europe) and click **Create app**.   
+5. Go to **Resources** tab in Heroku, then in the **Add-ons** search bar look for **Heroku Postgres**(you can type `postgres`), select **Hobby Dev — Free** and click **Provision** button to add it to your project.     
 6. In Heroku **Settings** click on **Reveal Config Vars**.   
 7. Set the following config variables there:     
 
@@ -372,63 +458,36 @@ In order to send real emails from the application, you need to connect it to you
 - [Stack Overflow](https://stackoverflow.com/) was extremely helpful and useful during the process of building this project, credits for the certain solutions are given in the comments.
 - I also constantly referred to the following documentation sources during the development: [Django](https://docs.djangoproject.com/en/3.1/), [Stripe](https://stripe.com/docs).
 ### Content and Media
-- 
+- Most of the text was provided by Franco Faura and translated by me. This version is only an educational exercise.
+- Portfolio Images provided by Client and the service images were obtained from google images for the purpose of this exercise, as this is only an educational requirement. 
+
 
 ### Acknowledgements
 I would like to thank everyone who has helped me throughout the development of this project:      
 - **My mentor** [Guido] for his guidance, very useful tips and advice!         
-- **Code Institute tutors** Tim, Michael, Miklos, Stephen, Anna, Samantha, Haley and others for their help to debug issues, assistance and support!    
+- **Code Institute tutors** Michael, Tim, Johan, Stephen, Miklos, Cormac, Igor and others for their help to debug issues, assistance and support!   
+Special thanks to Michael for helping me out during the long code working shift at midnight. 
 - Many thanks to my fellow students, **Slack community** and, of course, **my friends** and **my family** for the time, patience, help and support!         
+For the project itself I received inspiration from bouticado and my tututor and also from other students via Slack. 
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
 
 ---
+## Contribution
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. 
 
 ## Disclaimer
 This site is made for **educational purposes** only.        
 
-## Issues
-- Colors styling to match mobile and desktop view after test-user feedback. 
-- Homogenize colors for primary/secondary btns across different tabs and for nav. 
-- Nav and Mobile-Top-header invading the main div in small screen sizes. Corrected via media queries.
-- Nav active feature implemented with if statement with the help of mentor.
-- About section: Implemented bootsrap slider for about me, reviews and portafolio.
-- About landing image fitted as hero-img css.
-- About me section implemented as per client's feedback.
-- About contact form implemented. Connected with Email.js. Difficulties implementing the code as the tutorial from the course is not updated. Load.gif was achieve using }{% static%}
-- Services grid/list implemented from online example when client want to add more products/services.
-- Service json files added rating feature from the terminal to text how to do it. 
-For future to add rating to the service card information generated by reviewers.
-- Service detail card original layout restyled as per UX design received feedback.
-- Quantity btn resize for small screen using media queris.
-- Implemented datepicker function using boostrap instead of materialize and connect with back end.
-- Bag view: add to bag and adjusted bag working. Implemented if/else logic for adding a service without duplicating date selection during session(bag shop) and preventing same service double purchase error.
-Fixed issue generated by targetting wrong element via javascript and by splitting all the bag form elements into small html files componenents.
-For future a calendar database should be implemented to avoid other clients booking on occupied timeslots.
-- PENDING datapicker for other apps: checkout Bag.
-- Shopping bag restyle as per test user feedback for user friendlyness. Idea to use boostrap dnone to hide/show views depending on sizes, together with redistributions of code snip to different sections.
-- Admin: defensive modal installed to prevent edit/delete a service by mistake using boostrap.
-- Admin: Date(Timestamp) and select_date(book_date) added to the Admin view. 
-- Services images if conditioned improved to search for image in static folder, url_link or non-available image. Fixed feature across all apps.
-Discovered instrinsice property When images are uploaded from url-link which lowers the resolution of the image. For this reason prefered chooice to upload images from Folder.
-Improved image resolution and responsiveness.
-- My profile: implemented full name value pre-fill feature to the checkout order.
-- Portafolio full page vertical slider implemented with bootstrap instead of horizontal customized to fit between the NAV or footer.
-- PENDING: Portafolio images are quite heavy pending to reduce this.
-- Portafolio images uploaded to Portafolio database json. Solved issue getting a DeserializationError when trying to load data from JSON to DB
-- Portafolio json file loaded, registered within the Admin view, model, url implemented for automatization.
-- Portafolio detail slider view and url implemented for automatization.
-For the purpose of this exercise i did not add all the 27 images to the slider as it was getting to long. Considering to swap for a scroll bar to be discussed with client.
-- Pending to implement a dinamic way to generate the slider with less conditional code.
-- Blog app requested from client. Pending to implement for this project due to timelines. 
-- Allauth templates customized for this project.
-- All images relocated to the correct folder of static as per mentor's feedback.
-*Images provided by Client and for the service part obtain from google images for the purpose of this exercise. 
+
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
 
 ---
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
