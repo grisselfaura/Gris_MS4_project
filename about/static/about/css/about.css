@@ -1,17 +1,32 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* About page */
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
+
+
 .side {
-  flex: 30%;
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
   background-color: #f1f1f1;
   padding: 20px 50px;
 }
 
+
 /* Main column */
 .main-slider {
-  flex: 70%;
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
   background-color: rgb(0, 0, 0);
 }
+
 
 .about-side-image {
     padding-bottom: 25px;
@@ -89,7 +104,7 @@
         width: 100%;
     }
     .brand-logo {
-        padding: auto;
+        padding: 0px 20px;
         margin: 0;
     }
 }
@@ -148,6 +163,7 @@
     }
 }
 
+
 /* Portafolio page */
 .bg-color {
   background-color: rgb(0, 0, 0);
@@ -171,8 +187,11 @@
   display: block;
   width: 100%;
   height: auto;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
   transition: .5s ease;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .portafolio-slide {
@@ -182,10 +201,10 @@
     bottom: 5%;
     text-align: center;
     display: none;
+    -webkit-transition: .5s ease;
+    -o-transition: .5s ease;
     transition: .5s ease;
     opacity: 0;
-    /* transform: translate(5%, -50%);
-    -ms-transform: translate(5%, -50%); */
 }
 
 .portafolio-slide a {
@@ -200,11 +219,9 @@
   opacity: 1;
 }
 
+
 /* portfolio details testing css */
-
-
 .bg-portfolio-slide {
-    background-repeat: no repeat;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -214,45 +231,49 @@
 .carousel-indicators li {
     width:15px!important;
 }
-.carousel-indicators li{display:block; margin-bottom:5px; border:1px solid #00a199; }
-.carousel-indicators li.active{margin-bottom:5px; background:#00a199;} */
 
-.portfolio-img {
-    height: 50vh!important;
+.carousel-indicators li {
+    display:block; 
+    margin-bottom:5px; 
+    border:1px solid #00a199; 
 }
 
-/* Connect page */
+.carousel-indicators li.active {
+    margin-bottom:5px; 
+    background:#00a199;
+} 
+
 .portfolio-bg {
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 0px;
+    margin-left: 0px;
     overflow: hidden;
 }
 
+/* Connect page */
 .connect-bg-image {
     background-image: url('/static/images/homepage_background_color.jpg');
-    /* min-height: 380px; */
     min-height: 680px;
-    /* Center and scale the image nicely */
     background-position: 50% 0%; 
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+        -ms-transform: scale(1,1);
+            transform: scale(1,1);
 }
 
 .connect-form-container {
     position: absolute;
-    left: 50;
+    left: 1px;
     margin: 40px;
     max-width: 500px;
     padding: 16px;
     background-color: white;
-    /* background-attachment: scroll; */
 }
 
 /* Full-width input fields */
-.connect-input-fields{
-    margin: 5px 0 22px 0;
+.connect-input-fields {
+    margin: 5px 0px 22px 0px;
     background: #f1f1f1;
 }
 
