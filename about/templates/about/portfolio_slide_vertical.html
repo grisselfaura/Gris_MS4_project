@@ -67,7 +67,7 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner mb-2">
                     <div class="carousel-item active"> 
-                        <img class="img-fluid portfolio-img" src="{% static '' %}{{ portfolio.image_cover }}" alt="{{ portfolio.name_client }}">
+                        <img class="img-fluid portfolio-img" src="{{ MEDIA_URL }}{{ portfolio.image_cover }}" alt="{{ portfolio.name_client }}">
                     </div>
                     {% if portfolio.image_slide_1 %}
                         <div class="carousel-item">
