@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-
 from .models import Portfolio
 
 
@@ -42,5 +41,3 @@ def portfolio_detail(request, portfolio_id):
     }
 
     return render(request, 'about/portfolio_slide_vertical.html', context)
-
-

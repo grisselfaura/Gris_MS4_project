@@ -4,8 +4,10 @@ from django.db import models
 class Portfolio(models.Model):
     name = models.CharField(max_length=254)
     name_client = models.CharField(max_length=254)
-    likes = models.DecimalField(max_digits=6, decimal_places=0, null=True, blank=True)
-    views = models.DecimalField(max_digits=6, decimal_places=0, null=True, blank=True)
+    likes = models.DecimalField(max_digits=6,
+                                decimal_places=0, null=True, blank=True)
+    views = models.DecimalField(max_digits=6,
+                                decimal_places=0, null=True, blank=True)
     image_cover = models.ImageField(null=True, blank=True)
     image_slide_1 = models.ImageField(null=True, blank=True)
     image_slide_2 = models.ImageField(null=True, blank=True)
@@ -34,7 +36,6 @@ class Portfolio(models.Model):
     image_slide_25 = models.ImageField(null=True, blank=True)
     image_slide_26 = models.ImageField(null=True, blank=True)
     image_slide_27 = models.ImageField(null=True, blank=True)
-
 
     def __str__(self):
         return self.name
