@@ -53,19 +53,19 @@
 {% include 'products/includes/quantity_increase_decrease_btns_script.html' %}
 
 <!--Javascript inspired by CI Boutique Ado module-->
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         let form = $(this).prev('.update-form'); 
         console.log("testing the script"); 
         form.submit();
-    })
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
         let csrfToken = "{{ csrf_token }}";
         let itemId = $(this).attr('id').split('remove_')[1];
-        console.log(itemId)
+        console.log(itemId);
         let url = `/bag/remove/${itemId}/`;
         let data = {'csrfmiddlewaretoken': csrfToken};
 
@@ -73,6 +73,6 @@
          .done(function() {
              location.reload();
          });
-    })
+    });
 </script>
 {% endblock %}

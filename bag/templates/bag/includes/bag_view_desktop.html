@@ -3,7 +3,7 @@
 <div class="d-none d-md-flex">
     <div class="table-responsive rounded">
         <table class="table table-sm table-borderless">
-            <thead class="text-black">
+            {% comment %} <thead class="text-black">
                 <tr>
                     <th scope="col"></th>
                     <th scope="col"></th>  
@@ -11,7 +11,7 @@
                     <th scope="col"></th>  
                     <th scope="col"></th>    
                 </tr>
-            </thead>
+            </thead> {% endcomment %}
             <tbody>
                 {% for item in bag_items %}
                     <tr class= "bag-item-line">

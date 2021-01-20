@@ -241,6 +241,7 @@ JavaScript: I have used https://jshint.com/ in order to check the JavaScript cod
 
 [PEP8 Online]: (http://pep8online.com/) was used to validate Python.
 
+Errors not handled: missing href: The href attribute on a and area elements is not required; when those elements do not have href attributes they do not create hyperlinks.
 
 # Manual Testing
 By clicking on the links in the navbar, the background effect will confirm to the user which tab has been selected. All tabs can be independently accessed without having to go 
