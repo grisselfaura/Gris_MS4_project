@@ -241,7 +241,9 @@ JavaScript: I have used https://jshint.com/ in order to check the JavaScript cod
 
 [PEP8 Online]: (http://pep8online.com/) was used to validate Python.
 
-Errors not handled: missing href: The href attribute on a and area elements is not required; when those elements do not have href attributes they do not create hyperlinks.
+Errors not handled: 
+- Missing href: The href attribute on a and area elements is not required; when those elements do not have href attributes they do not create hyperlinks.
+- An exception to PEP 8 is our rules on line lengths. Don’t limit lines of code to 79 characters if it means the code looks significantly uglier or is harder to read. We allow up to 119 characters as this is the width of GitHub code review.
 
 # Manual Testing
 By clicking on the links in the navbar, the background effect will confirm to the user which tab has been selected. All tabs can be independently accessed without having to go 

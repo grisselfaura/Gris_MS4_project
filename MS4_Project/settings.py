@@ -81,11 +81,14 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',  # required by allauth
+                'django.template.context_processors.request',
+                # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',  # required for pulling media images
-                'bag.contexts.bag_contents',  # available to any template across the entire site
+                'django.template.context_processors.media',
+                # required for pulling media images
+                'bag.contexts.bag_contents',
+                # available to any template across the entire site
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -218,4 +221,3 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
