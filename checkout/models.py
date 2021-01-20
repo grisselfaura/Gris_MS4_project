@@ -82,4 +82,3 @@ class OrderLineItem(models.Model):
     def __str__(self):
         return f'Service {self.service.name} \
             on order {self.order.order_number}'
-
