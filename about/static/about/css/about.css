@@ -155,14 +155,23 @@
        height: 200px;
        width: 100%;
     }
+    .special-margin {
+        margin: 8px;
+    }
 }
 
 @media(max-width:315px) {
     .main-slider {
         display: none;
     }
+    .special-margin {
+        margin: 8px;
+    }
 }
 
+.bg-white{
+    background-color: white;
+}
 
 /* Portafolio page */
 .bg-color {
@@ -220,7 +229,7 @@
 }
 
 
-/* portfolio details testing css */
+/* portfolio details slider css */
 .bg-portfolio-slide {
     background-position: center;
     background-repeat: no-repeat;
@@ -247,6 +256,10 @@
     margin-right: 0px;
     margin-left: 0px;
     overflow: hidden;
+}
+
+h2.hidden {
+    display: none;
 }
 
 /* Connect page */

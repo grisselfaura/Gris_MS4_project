@@ -94,7 +94,7 @@
                             <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"> 
                                 <img class="d-block img-fluid img-height" src="{{ MEDIA_URL }}{{ portfolio.image_cover }}" alt="{{ portfolio.name_client }}">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <button type="button" class="btn btn-light"><a href="{% url 'my_portafolio' %}">Learn More</a></button>
+                                    <a href="{% url 'my_portafolio' %}" class="btn btn-outline-dark bg-white" role="button">Learn More</a>
                                 </div>
                             </div>
                         {% endfor %}
@@ -152,7 +152,7 @@
     <script type="text/javascript">        
         $('.carousel').carousel({
             interval: 2000
-        })
+        });
     </script> 
     
 {% endblock %}
