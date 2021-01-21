@@ -258,10 +258,6 @@
     overflow: hidden;
 }
 
-h2.hidden {
-    display: none;
-}
-
 /* Connect page */
 .connect-bg-image {
     background-image: url('/static/images/homepage_background_color.jpg');

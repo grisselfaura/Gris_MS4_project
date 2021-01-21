@@ -3,6 +3,10 @@ html {
     height: 100%;
 }
 
+h2.hidden {
+    display: none;
+}
+
 /* -------------------------------- Nav */
 .nav-item.active > a {
     color: rgb(255,0,0,1)!important;
@@ -35,13 +39,6 @@ html {
 .main-logo-link {
     width: fit-content;
 }
-
-/* check where this is used */
-/* .shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
-} */
 
 .btn-black {
     background: black;
@@ -456,26 +453,6 @@ main {
     }
 }
 
-/* when doing this section this should be given different name */
-/* i {
-    background-color: rgb(223, 56, 89);
-    padding: 1.4rem
-} */
-
-/* @media(max-width:767px) {
-    i {
-        padding: 0.8rem
-    }
-} */
-
-/* .carousel-control-prev {
-    justify-content: flex-start
-}
-
-.carousel-control-next {
-    justify-content: flex-end
-} */
-
 .carousel-control-prev,
 .carousel-control-next {
     transition: none;
@@ -599,18 +576,6 @@ main {
 .item.list-group-item:after{
     clear: both;
 }
-
-/* check if affecting sg else before deleting */
-/* @media(max-width:343px) {
-    .btn-space {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .btn {
-        font-size: .7rem;
-        margin: 0.1rem;
-    }
-} */
 
 /*Service detail*/
 
