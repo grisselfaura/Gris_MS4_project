@@ -48,27 +48,28 @@
             </div>
         {% if request.user.is_superuser %}
             <div class="col-2 mt-5">
-                <p class="float-right">
+                <div class="float-right">
                     <small class="mr-3 mt-3 mb-0">
                         <a href="{% url 'edit_product' service.id %}">Edit</a> | 
                         <!--Defensive Programming Bootstraap for User to reconfirm DELETE action-->
                         <a href="" class="text-danger btn modal-trigger txt-size-modal"
                             data-toggle="modal" data-target="#exampleModal"> Delete</a>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-circle text-danger"></i>
-                                            Do you want to delete this <br/><span class="font-weight-bold">{{ service.name }}</span>?</h5>
-                                        <br>
-                                        <a href="{% url 'delete_product' service.id %}" class="btn btn-danger btn-small red modal-close">Delete</a>
-                                        <a href="#" class="btn btn-small btn-dark" data-dismiss="modal">Cancel</a>
-                                    </div>
+                    </small>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-circle text-danger"></i>
+                                        Do you want to delete this <br/><span class="font-weight-bold">{{ service.name }}</span>?</h5>
+                                    <br>
+                                    <a href="{% url 'delete_product' service.id %}" class="btn btn-danger btn-small red modal-close">Delete</a>
+                                    <a href="#" class="btn btn-small btn-dark" data-dismiss="modal">Cancel</a>
                                 </div>
                             </div>
                         </div>
-                    </small>
-                </p>    
+                    </div>
+                    
+                </div>    
             </div>
         {% endif %}  
         </div>
@@ -203,15 +204,13 @@
 <!-- Date picker  inspired on https://www.jqueryscript.net/time-clock/Bootstrap-4-Date-Time-Picker.html -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous"></script>
-<script type="text/javascript">
+<script>
     // Generates a date picker from the date after today
     let tomorrow = moment().add(1, 'days');
     let disabledDate = ['2021-03-29', '2021-07-28', '2021-07-29','2021-12-25'];
     $(function () {
         $('#datetimepicker-demo').datetimepicker({
-        //timeZone:'',
         format: 'DD-MMM-YYYY HH:mm A',
-        //format: 'DD-MM-YYYY HH:mm',
         dayViewHeaderFormat:'MMMM YYYY',
         extraFormats:false,
 
@@ -219,7 +218,7 @@
         stepping: 60,
 
         // min/max dates
-        minDate: moment(),
+        minDate: tomorrow,
         disabledDates: disabledDate,
         daysOfWeekDisabled:[0,6],
         disabledTimeIntervals: [
@@ -227,7 +226,6 @@
             [moment().hour(20), moment().hour(24)]
         ],
         sideBySide: true,
-        // disables dates before today
         });
     });
 </script>

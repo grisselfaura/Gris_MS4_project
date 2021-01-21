@@ -120,20 +120,20 @@
                                     <!--Defensive Programming Bootstraap for User to reconfirm DELETE action-->
                                     <a href="" class="text-danger btn modal-trigger txt-size-modal"
                                         data-toggle="modal" data-target="#exampleModal"> Delete</a>
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-circle text-danger"></i>
-                                                        Do you want to delete this <br/><span class="font-weight-bold">{{ instance.name }}</span>?</h5>
-                                                    <br>
-                                                    <a href="{% url 'delete_product' instance.id %}" class="btn btn-danger btn-small red modal-close">Delete</a>
-                                                    <a href="#" class="btn btn-small btn-dark" data-dismiss="modal">Cancel</a>
-                                                </div>
+                                </small>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-circle text-danger"></i>
+                                                    Do you want to delete this <br/><span class="font-weight-bold">{{ instance.name }}</span>?</h5>
+                                                <br>
+                                                <a href="{% url 'delete_product' instance.id %}" class="btn btn-danger btn-small red modal-close">Delete</a>
+                                                <a href="#" class="btn btn-small btn-dark" data-dismiss="modal">Cancel</a>
                                             </div>
                                         </div>
                                     </div>
-                                </small>
+                                </div>
                             </div>
                         </div>
                         {% endif %}         
@@ -148,7 +148,7 @@
 {% block postloadjs %}
     {{ block.super }}
     <!-- Code from https://bootsnipp.com/snippets/35OOB -->
-    <script type="text/javascript">
+    <script>
         // Generates a list or grid view when the respective buttons are clicked
         $(document).ready(function() {
             $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
@@ -156,7 +156,7 @@
         });
     </script>
     <!--Javascript inspired by CI Boutique Ado module-->
-    <script type="text/javascript">
+    <script>
         $('#sort-selector').change(function() {
             let selector = $(this);
             let currentUrl = new URL(window.location);
@@ -176,6 +176,6 @@
 
                 window.location.replace(currentUrl);
             }
-        })
+        });
     </script>
 {% endblock %}
