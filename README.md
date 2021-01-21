@@ -129,36 +129,80 @@ Database relationship can be found [here]().
 ---
 
 ## Features
-URBANO D'sign website is composed by eight applications: `landing`, `about`, `Portafolio`, `Blog`, `services`, `shopping bag`, `checkout`, `profiles`.
+URBANO D'sign website is composed by eight applications: `home`, `about`, `portafolio`, `blog`, `services`, `shopping bag`, `checkout`, `profiles`.
 
-### Existing Features     TO BE MODIFIED
-#### Navbar
-- **logo**, that is clickable and redirects to the landing page and also a small paragraph about the company
-- **quick links** to the main pages
-- **contact information** that contains address, phone number and email
-
-#### Landing (home) pag
-
-The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality (book services). 
+### Existing Features     
 The application consists of 6 apps, 1 extra pending to develop and 9 sections:
+#### Home Page - serves as the initial landing page for all users
+- **Navigation bar (mobile top header)** - - The navbar links vary depending on whether the user is logged in or not. When the user is logged in the 'Profile'and 'Logout' links are shown.
+- **Search** - The search function allows the user to search by service title, or filtered by category.
+- **logo**, that is clickable and redirects to the landing page and also a small paragraph about the company
+- **Main-nav with quick links** to the main pages: 'home', 'about me', 'portfolio', 'services' and 'blog'.
+
+The landing page serves to attract new users to the business, to give a clear overview of the freelancer services and to attract users to use the website's functionality (UK design services). 
+
 #### About page
-#### Portafolio page
+- Promote client experience displaying showcase portafolio and cv and redirect link to conect form.
+- Show different portfolios slide and view able to open in more detail.
+- Connect form to allow contact with interested clients.
+
 #### Login/Register page
+- Allow new user to register for an account and allow existing users to login to their account.
+- **Register** - User must provide a unique username and email address, which are checked against existing entries in the database. An email address and password is required, which must be entered twice to check it has been input correctly.
+- **Message** - On successfully registering the user will be redirected to the home page. An alert message will notify the user that the account has been created and they are now logged in.
+- The login page only requires the user to input there username and password. There is a link to the register page so a user can create an account, and a password reset link if a user has forgotten or lost their password and remember checkbox to store logging details.
+
 #### Services packages page
+- All users are able to view this page, display general information about all the available services.
+- Services can be vew using grid or list posibility.
+- Services count number informs the user the current services total.
+- Sort box functionality added to filter by price.
+- Individual services can be added to the bag or further information can be seen via the read more button.
+
 #### Service details page
+- All users are able to view this page, display more information about the selected service
+- **Service details** - displays the service title, description, price, category, and what is included.
+- **Add to cart** - via this button will add the selected service to the shopping cart and redirects the user to bag summary view.
+- **Quantity** - via this button user can select amounts.
+- **Date picker** - via this button user can select when contact should be make.
+
 #### Shopping bag page
+- **Your items** - Display a summary of the services in the bag with each service showing the an image, title, quantity and price.
+- **Edit quantity** - User can amend the quantity of the services by clicking the '-' or '+' to increasing or decreasing the quantity in bag.
+- **Remove from shopping bag** - Allows the user to remove the service from the bag.
+- **Continue shopping** - Redirects the user back to the browse all services page to continue shopping.
+
 #### Checkout page
+- **Order summary** - Display a summary of the services in the bag with each service showing the an image, title, quantity and price.
+- **Pay with card** - Allows the user to make a card payment.
+- **Stripe** - Allows the user to pay securely using Stripe payment
+- **Purchase Form** - This form connects to the Stripe API to process a user's card details. No card details are stored locally or on the server, they are only sent to Stripe and then discarded.
+
 #### Checkout Success page
+- **Thank You page** - User receives confirmation that the order has been placed and is given a order reference number.
+- **Email** - User receives email confirmation there order has been placed and receives a order summary.
+- **Order summary** - Display an order summary listing each service showing the an image, title, quantity, date and price. Besides of the shipping information.
+- **Message** - confirmation that the order was placed.
+- Back to services buttons in case user wants to buy more services.
+
 #### Profile page
-#### Order History
-#### Admin product managment
+- Only available to logged in user
+- Billing information can be updated from this view.
+- **Order History**- Users are able to view a summary of their previous orders placed. Users can click on the hovered order number link which provides a detail view of the selected order. 
+Users can click Back to Profile to go backwards.
+- Users can log out from this tab.
+
+#### Admin service managment
+- Only available to logged admin user
+* **Add | View | Edit | Delete a Service** admin can log in to add new service or edit and delete available services.
+- Admin: defensive modal installed to prevent edit/delete a service by mistake using boostrap.
+- Admin: Date(Timestamp) and select_date(book_date) added to the Admin view when using 'website-name'/admin. 
+
 #### Django-allauth features
-##### Sign Up
-##### Login
-##### Forgot password
-##### Logout
+- Allauth templates customized for this project.
+
 #### 404 and 500 error pages
-Custom 404 and 500 pages contain heading, short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
+Custom 404 and 500 pages contain  error messages and error handlers to catch these errors. My custom messages allow the user to redirect back to the home page.
 
 ### Features Left to Implement
 #### Blog app and posibility to add ratings and Reviews
@@ -170,13 +214,13 @@ Automatic counting forThis will be the first priority feature I would like to im
 This feature allows users to login using social networks accounts, Google and Facebook, that would enhance user experience and make the login process easier.
 
 Other small features are also considered to be implemented in feature:
-
-For future display added rating to the service card information generated by reviewers.
-For future a calendar database should be implemented to avoid other clients booking on occupied timeslots.
-Portafolio images are quite heavy pending to reduce this.
-Slider images carrousel indicators considering to swap for a scroll bar to be discussed with client.
-Pending to implement a dinamic way to generate the slider with less conditional code.
-Blog app requested from client. Pending to implement for this project due to timelines. 
+-Display rating to the service card generated by reviewers (avergage number).
+-Portafolio images sizes should be reduce to improve loading speed. 
+-Slider images carrousel indicators considering to swap for a scroll bar to be discussed with client.
+-Improve the portafolio slider code by using less conditional if statement code.
+-Blog app requested from client. Pending to implement for this project due to timelines. 
+-Depending on number of services to be display a pagination could be implemented.
+-Footnote Links to the Page has been not been implemented yet.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
@@ -247,88 +291,20 @@ Errors not handled:
 - Ignore avoid using null=True on string-based fields such CharField.cornf  for the non-required address formats.
 
 # Manual Testing
-By clicking on the links in the navbar, the background effect will confirm to the user which tab has been selected. All tabs can be independently accessed without having to go 
-back to the HOME tab. 
-*The social media links are pending to be developed (future construction) as for the purpose of this project they will not add any further skills. 
+Testing information can be found in a separate [MANUAL_TESTING.md]
+# Automatic Testing
+The [Coverage](https://pypi.org/project/coverage/) library was used throughout testing to help keep track of how much of my code was covered by the tests.
+The tests provide an overall coverage of XX%.
 
- * **REGISTER** 
-I've created my own account, and 3 other accounts to confirm that the authentication and validation for creating account worked as expected.
+To generate your own coverage report install the package using `pip install coverage`
+- Run `coverage run manage.py test`
+- Then `coverage html` to generate the report
+- The report can be viewed in a browser by opening the `index.html` file from inside the `htmlcov` folder.
 
-* **LOG IN AND LOG OUT** * Logging To An Existing Account
-The accounts created were tested by attempting log in and out. No issues found or expected. Using a non-existing user or incorrect password yield errors. Django messages confirmed
-the user if attempts to log in/out were successful.
+Testing information can be found in a separate [AUTOMATIC_TESTING.md]
 
-* **Add | View | Edit | Delete a Service**
-I've created 3 services (loaded from the json file) and 1 test service created directly from the admin account in order to:
-    Show the application functionality.
-    Tested grid/list view btn and search database.
-    The data validation in the add service form  is solid and only accepts input in the correct format.
-    * Services has been modified in several ocassion to test the functionality of updating/deleting a service to the 2 database (local and for deployment) and for a user-friendly display. 
-    Tested edit and delete service buttons are available for the admin of the services, and hidden for non-owners. 
-    To prevent admin from deleting aservice card by mistake modal checks were added. When the delete button is pressed, a modal asks the admin to confirm deletion. 
-    If the admin selects cancel, they are taken back to all the recipes and recipe_owner selects confirm the recipe gets deleted.
-
-* **Add | View | Edit | Delete a Portfolios**
-I've created 1 porfolio (loaded from the json file) and edited/deleted via the admin in order to:
-    Show the application functionality.
-    Porfolio displaying 6 cards for page and then their respective portfolio slides. Tested the different carrousel for review and portfolio. Including the prev and next pagination buttons.
-
-* **Connect form and checking out shop form**
- The data validation in both forms are solid and only accepts input in the correct format.
-
-**Known Issues**
-All the social links will open in a new tab using 'target="_blank". 
-All links have been manually tested to ensure that they are pointing to the correct destination.
-Images from S3 not loading - For fixing this unknown error, my mentor Guido guided me and
-together we solved the issue using 2 different approachs. Finally we choose the solution best fitting the documentation for S3.
-
--This site was tested across multiple browsers (Chrome, Safari, Internet Explorer, FireFox) and on multiple mobile devices (iPhone 4, 5, 7: Chrome and Safari, iPad, Samsung Galaxy) 
-to ensure compatibility and responsiveness. 
-In addition, the site  was tested via  http://ami.responsivedesign.is/ to review how the project looks and works on different screen sizes.
-
-Tabs and sections with interesting bugs or problems discovered during testing:
-- images size were uploaded in different sizes and responsiveness was out of proportion.
-- Colors styling to match mobile and desktop view after test-user feedback. 
-- Homogenize colors for primary/secondary btns across different tabs and for nav. 
-- Nav and Mobile-Top-header invading the main div in small screen sizes. Corrected via media queries.
-- Nav active feature implemented with if statement with the help of mentor.
-- About section: Implemented bootsrap slider for about me, reviews and portafolio.
-- About landing image fitted as hero-img css.
-- About me section implemented as per client's feedback.
-- About contact form implemented. Connected with Email.js. Difficulties implementing the code as the tutorial from the course is not updated. Load.gif was achieve using }{% static%}
-- Services grid/list implemented from online example when client want to add more products/services.
-- Service json files added rating feature from the terminal to text how to do it. 
-For future to add rating to the service card information generated by reviewers.
-- Service detail card original layout restyled as per UX design received feedback.
-- Quantity btn resize for small screen using media queris.
-- Implemented datepicker function using boostrap instead of materialize and connect with back end.
-- Bag view: add to bag and adjusted bag working. Implemented if/else logic for adding a service without duplicating date selection during session(bag shop) and preventing same service double purchase error.
-Fixed issue generated by targetting wrong element via javascript and by splitting all the bag form elements into small html files componenents.
-For future a calendar database should be implemented to avoid other clients booking on occupied timeslots.
-- Shopping bag restyle as per test user feedback for user friendlyness. Idea to use boostrap dnone to hide/show views depending on sizes, together with redistributions of code snip to different sections.
-- Admin: defensive modal installed to prevent edit/delete a service by mistake using boostrap.
-- Admin: Date(Timestamp) and select_date(book_date) added to the Admin view. 
-- Services images if conditioned improved to search for image in static folder, url_link or non-available image. Fixed feature across all apps.
-Discovered instrinsice property When images are uploaded from url-link which lowers the resolution of the image. For this reason prefered chooice to upload images from Folder.
-Improved image resolution and responsiveness.
-- My profile: implemented full name value pre-fill feature to the checkout order.
-- Portafolio full page vertical slider implemented with bootstrap instead of horizontal customized to fit between the NAV or footer.
-- PENDING: Portafolio images are quite heavy pending to reduce this.
-- Portafolio images uploaded to Portafolio database json. Solved issue getting a DeserializationError when trying to load data from JSON to DB
-- Portafolio json file loaded, registered within the Admin view, model, url implemented for automatization.
-- Portafolio detail slider view and url implemented for automatization.
-For the purpose of this exercise i did not add all the 27 images to the slider as it was getting to long. Considering to swap for a scroll bar to be discussed with client.
-- PENDING to implement a dinamic way to generate the slider with less conditional code.
--The following error was observed  after heroku deployment via S3: expected str, bytes or os.PathLike object, not ImageFieldFile. 
-First solution was achieved with help of mentor by using the following code to pull images from the models {% static '' %}{{ file image name }}. 
-On a second approach those set of images were move from the static folder to the media folder both in gitpod and s3 and pulled {{ MEDIA_URL}}{{ file image name }}.
--Pending Default full name pending to pull information from profile during purchase. 
-- Blog app requested from client. Pending to implement for this project due to timelines. 
-- Allauth templates customized for this project.
-- All images relocated to the correct folder of static as per mentor's feedback.
-*Images provided by Client and for the service part obtain from google images for the purpose of this exercise. 
-
-Automatic Testing information can be found in a separate [TESTING.md](https://github.com/xxxxxx) file
+### Travis Continuous Integration
+In addition to the automated testing files, I used Travis CI for Continuous Integration testing of my code.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
