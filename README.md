@@ -221,6 +221,7 @@ Other small features are also considered to be implemented in feature:
 -Blog app requested from client. Pending to implement for this project due to timelines. 
 -Depending on number of services to be display a pagination could be implemented.
 -Footnote Links to the Page has been not been implemented yet.
+-Investigate if code for the Edit/Delete modal code could be refactor.  
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
