@@ -288,7 +288,8 @@ JavaScript: I have used https://jshint.com/ in order to check the JavaScript cod
 Errors not handled: 
 - Missing href: The href attribute on a and area elements is not required; when those elements do not have href attributes they do not create hyperlinks.
 - An exception to PEP 8 is our rules on line lengths. Don’t limit lines of code to 79 characters if it means the code looks significantly uglier or is harder to read. We allow up to 119 characters as this is the width of GitHub code review.
-- Ignore avoid using null=True on string-based fields such CharField.cornf  for the non-required address formats.
+- Ignore avoid using null=True on string-based fields such CharField.cornf for the non-required address formats.
+- Ignore avoid using null=True on string-based fields such URLField and ImageField for the images.
 
 # Manual Testing
 Testing information can be found in a separate [MANUAL_TESTING.md]

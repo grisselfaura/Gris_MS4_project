@@ -18,7 +18,8 @@ class Category(models.Model):
 
 
 class Service(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()
     research = models.BooleanField(default=True)
@@ -27,7 +28,9 @@ class Service(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=1,
                                 validators=[MinValueValidator(0.01)])
     is_a_service = models.BooleanField(default=False)
-    rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True) #not used in the database(testing adding to field at a later stage)
+    rating = models.DecimalField(max_digits=6, decimal_places=1, null=True,
+                                 blank=True)
+    # not used in the database(testing adding to field at a later stage)
     duration = models.TextField()
     revision = models.TextField()
     image_url = models.URLField(max_length=1024, null=True, blank=True)

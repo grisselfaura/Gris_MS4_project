@@ -14,13 +14,15 @@ def all_services(request):
     """ A view to show all services, including sorting and search queries """
 
     all_services = Service.objects.all()
-    # query and categories will be set to empty when page is first load to avoid errors
+    # query and categories will be set to empty when page is first load to
+    # avoid errors
     query = None
     categories = None
     sort = None
     direction = None
 
-    # When more services are added by the website owner this functionality will help the end users.
+    # When more services are added by the website owner this functionality
+    # will help the end users.
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -44,12 +46,14 @@ def all_services(request):
     if request.GET:
         if 'q' in request.GET:
             query = request.GET['q']
-            # if the query is blank, the following error message will be displayed
+            # if the query is blank, the following error message
+            # will be displayed
             if not query:
                 messages.error(request, "You didn't enter any search words!")
                 return redirect(reverse('products'))
 
-            # if query is not blank -> by using q we can search by name OR description
+            # if query is not blank -> by using q we can search by
+            # name OR description
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             # pass the query to the filter method in order to filter products
             all_services = all_services.filter(queries)
@@ -91,7 +95,8 @@ def add_product(request):
             messages.success(request, 'Service added successfully!')
             return redirect(reverse('service_detail', args=[service.id]))
         else:
-            messages.error(request, 'Failed to add service. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add service. \
+                            Please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -118,7 +123,8 @@ def edit_product(request, service_id):
             messages.success(request, 'Successfully updated service!')
             return redirect(reverse('service_detail', args=[service.id]))
         else:
-            messages.error(request, 'Failed to update service. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update service. \
+                            Please ensure the form is valid.')
     else:
         form = ProductForm(instance=service)
         messages.info(request, f'You are editing {service.name}')
@@ -138,7 +144,7 @@ def delete_product(request, service_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     service = get_object_or_404(Service, pk=service_id)
     service.delete()
     messages.success(request, 'Service deleted!')
