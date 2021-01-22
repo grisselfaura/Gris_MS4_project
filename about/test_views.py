@@ -1,6 +1,5 @@
 from django.test import TestCase
-from django.shortcuts import get_object_or_404
-from .models import Portfolio
+
 
 class TestAboutViews(TestCase):
 
@@ -27,4 +26,3 @@ class TestAboutViews(TestCase):
     #     response = self.client.get("/about/1/")
     #     self.assertEqual(response.status_code, 200)
     #     self.assertTemplateUsed(response, "about/portfolio_slide_vertical.html")
-
