@@ -258,6 +258,31 @@
     overflow: hidden;
 }
 
+@media screen and (max-width: 376px) {
+    .position {
+        display: none!important;
+    }
+} 
+
+@media (min-width: 376px) and (max-width: 515px) {
+    .position {
+        margin-right: -5rem!important;
+        margin-top: 8rem!important;
+    }
+}
+
+@media (min-width: 516px) and (max-width: 968px) {
+    .position {
+        margin-right: -5rem!important;
+    }
+}
+
+@media (min-width: 516px) and (max-width: 968px) {
+    .position {
+        margin-right: -3rem!important;
+    }
+}
+
 /* Connect page */
 .connect-bg-image {
     background-image: url('/static/images/homepage_background_color.jpg');

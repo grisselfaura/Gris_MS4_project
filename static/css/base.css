@@ -257,11 +257,18 @@ input[name='q']::placeholder {
     }
 }
 
-@media screen and (max-width: 353px) {
+@media (min-width: 271px) and (max-width: 353px) {
+    .header-container {
+        padding-top: 100px;
+    }
+}
+
+@media screen and (max-width: 270px) {
     .header-container {
         padding-top: 170px;
     }
 }
+
 /* --------------------------------  Footer */
 /*sticky footer*/
 
@@ -633,6 +640,12 @@ th, td {
   padding: 8px;
 }
 
+@media (min-width: 249px) and (max-width: 349px) {
+    .size {
+        margin-right: -1.5rem;
+    }
+}
+
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -733,4 +746,10 @@ th, td {
 
 .update-link {
     color: white!important;
+}
+
+@media screen and (max-width: 353px) {
+    .space {
+        margin-bottom: 1rem;
+    }
 }

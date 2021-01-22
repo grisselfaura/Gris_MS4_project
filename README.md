@@ -1,6 +1,8 @@
 # URBAN Designer
 
-The live website can be viewed [here](https://xxxx.com/)      
+The live website can be viewed [here](https://gris-ms4-project.herokuapp.com/)     
+[Responsive mockup](http://ami.responsivedesign.is/?url=https://8000-b1cf53cc-2b25-469b-af3b-7158f95cb3fc.ws-eu03.gitpod.io/)!
+
 <img src="xxxxx" alt="mockup" target="_blank" rel="noopener" width="850">
 
 ---
