@@ -1,22 +1,35 @@
-from django.test import TestCase, Client
-from django.urls import reverse
-from profiles.models import UserProfile, create_or_update_user_profile
-import json
-# from django.contrib.auth.models import User, AnonymousUser
-# from django.shortcuts import get_object_or_404
-# from accounts.views import register, login, logout, profile
+from django.test import TestCase, RequestFactory
+from profiles.models import UserProfile
+from django.shortcuts import get_object_or_404
+from profiles.views import profile, order_history
 
 
-class TestViews(TestCase):
+# class TestProfilesViews(TestCase):
 
-    def setUp(self):
-        self.client = Client()
+#     def test_get_profile_page(self):
+        # """
+        # Tests that the user can view the profile page when user is logged in
+        # """
+        # self.client.login(username='userprofileName', password='userprofilePassword')
+        # response = self.client.get('/profiles/profile/')
+        # self.assertEqual(response.status_code, 200)
 
-    def test_profile_page_GET(self):
-        """
-        Tests that the login page view renders the login template
-        """
-        response = self.client.get(reverse('profile'))
+    # def test_get_order_history_page(self):
+    #     """
+    #     Tests that the login page view renders the login template
+    #     """
+    #     response = self.client.get('/checkout/checkout_success/')
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertTemplateUsed(response, 'checkout/checkout_success.html')
 
-        self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'profiles/profile.html')
+    # def setUp(self):
+    #     self.client = Client()
+
+    # def test_profile_page_GET(self):
+    #     """
+    #     Tests that the login page view renders the login template
+    #     """
+    #     response = self.client.get(reverse('profile'))
+
+    #     self.assertEquals(response.status_code, 200)
+    #     self.assertTemplateUsed(response, 'profiles/profile.html')
