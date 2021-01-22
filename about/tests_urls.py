@@ -3,7 +3,7 @@ from django.urls import reverse, resolve
 from about.views import about, portfolio, connect, portfolio_detail
 
 
-class TestUrls(SimpleTestCase):
+class TestAboutUrls(SimpleTestCase):
 
     def test_about_url_resolves(self):
         url = reverse('about')
