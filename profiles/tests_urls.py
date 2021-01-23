@@ -3,7 +3,7 @@ from django.urls import reverse, resolve
 from profiles.views import profile, order_history
 
 
-class TestUrls(SimpleTestCase):
+class TestProfilesUrls(SimpleTestCase):
 
     def test_profile_url_resolves(self):
         url = reverse('profile')

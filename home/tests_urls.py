@@ -3,7 +3,7 @@ from django.urls import reverse, resolve
 from home.views import index
 
 
-class TestUrls(SimpleTestCase):
+class TestHomeUrls(SimpleTestCase):
 
     def test_home_url_resolves(self):
         url = reverse('home')

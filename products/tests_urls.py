@@ -4,7 +4,7 @@ from products.views import all_services, add_product, \
  service_detail, edit_product, delete_product
 
 
-class TestUrls(SimpleTestCase):
+class TestServiceUrls(SimpleTestCase):
 
     def test_all_services_url_resolves(self):
         url = reverse('products')

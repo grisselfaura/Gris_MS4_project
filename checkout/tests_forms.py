@@ -12,7 +12,7 @@ class TestCheckoutOrderForm(TestCase):
             'address_line1': '123 test street',
             'town_or_city': 'test city',
             'country': 'NL'})
-        self.assertTrue(form.is_valid())
+        self.assertFalse(form.is_valid())
 
     def test_generate_correct_message_for_empty_form(self):
         form = OrderForm({'form': ''})

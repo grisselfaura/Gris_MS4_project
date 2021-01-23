@@ -1,7 +1,7 @@
 # from django.test import TestCase, RequestFactory
 # from profiles.models import UserProfile
 
-# class TestModels(TestCase):
+# class TestProfilesModels(TestCase):
 
 #     def setUp(self):
 #         self.client = Client()

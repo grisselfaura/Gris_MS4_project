@@ -1,4 +1,5 @@
 from django.test import TestCase
+from .models import Portfolio
 
 
 class TestAboutViews(TestCase):
@@ -22,7 +23,10 @@ class TestAboutViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "about/portfolio.html")
 
-    # def test_get_portfolio_slider_page(self):
-    #     response = self.client.get("/about/1/")
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertTemplateUsed(response, "about/portfolio_slide_vertical.html")
+    def test_get_portfolio_slider_page(self):
+        portfolios = Portfolio(name="Test Portafolio works", likes=35,
+                               views=99, image_cover="test_cover_img_1.jpg",
+                               image_slide_1="test_slide_1.jpg")
+        portfolios.save()
+        response = self.client.get("/about/1/")
+        self.assertEqual(response.status_code, 200)

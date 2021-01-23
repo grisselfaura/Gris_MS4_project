@@ -2,7 +2,7 @@ from django.test import TestCase
 from .models import Service, Category
 
 
-class TestProductModel(TestCase):
+class TestServiceModel(TestCase):
 
     def test_service_default_to_false(self):
         service = Service.objects.create(name="Test service",
