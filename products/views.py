@@ -54,7 +54,8 @@ def all_services(request):
 
             # if query is not blank -> by using q we can search by
             # name OR description
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | \
+                Q(description__icontains=query)
             # pass the query to the filter method in order to filter products
             all_services = all_services.filter(queries)
 

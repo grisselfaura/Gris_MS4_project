@@ -27,23 +27,22 @@ class TestCheckoutOrderModel(TestCase):
         self.assertEqual(order.email, 'testmode@gmail.com')
 
 
-# class TestCheckoutOrderLineItem(TestCase):
+class TestCheckoutOrderLineItem(TestCase):
 
-#     def test_check_order_exists(self):
-#         order_number = Order(id=1, order_total=699.00)
-#         order_number.save()
-#         service_detail = Service(name="Test service")
-#         service_detail.save()
-#         orderLineItem = OrderLineItem(service='service.name',
-#                                       select_date='25-Jan-2021 23:00',
-#                                       quantity=1, lineitem_total=699.00,
-#                                       order=order_number)
+    def test_check_order_exists(self):
+        order_number = Order(id=1, order_total=699.00)
+        order_number.save()
+        service_detail = Service(name="Test service", price=699.00)
+        service_detail.save()
+        orderLineItem = OrderLineItem(service=service_detail,
+                                      select_date='2021-12-10 22:00',
+                                      quantity=1, order=order_number)
 
-#         orderLineItem.save()
-#         self.assertEqual(orderLineItem.service, 'service.name')
-#         self.assertEqual(orderLineItem.select_date, '25-Jan-2021 23:00')
-#         self.assertEqual(orderLineItem.quantity, 1)
-#         self.assertEqual(orderLineItem.lineitem_total, 699.00)
+        orderLineItem.save()
+        self.assertEqual(orderLineItem.service, service_detail)
+        self.assertEqual(orderLineItem.select_date, '2021-12-10 22:00')
+        self.assertEqual(orderLineItem.quantity, 1)
+        self.assertEqual(orderLineItem.lineitem_total, 699.00)
 
     # def test_price_by_quantiy(self):
     #     order_number = Order(id=1, order_total=49.00)
@@ -51,4 +50,4 @@ class TestCheckoutOrderModel(TestCase):
     #     lineitem_total = OrderLineItem(quantity=2,
     #                                    order=order_number)
     #     lineitem_total.save()
-    #     self.assertEqual(lineitem_total.self.price * lineitem_total.quantity, 98.00)
+    #     self.assertEqual(lineitem_total.self.price * lineitem_total.quantity,98.00)

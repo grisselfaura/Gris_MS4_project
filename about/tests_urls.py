@@ -17,11 +17,8 @@ class TestAboutUrls(SimpleTestCase):
         url = reverse('lets_connect')
         self.assertEquals(resolve(url).func, connect)
 
-    # def test_portfolio_detail_url_resolves(self):
-    #     url = reverse('my_portfolio_slider', args=int('portfolio'))
-    #     self.assertEquals(resolve(url).func, portfolio_detail)
-
-    # def test_portfolio_detail_url_resolves(self):
-    #     url = reverse('my_portfolio_slider', args=[int(portfolio)])
-    #     self.assertEquals(resolve(url).func, portfolio_detail)
-#path('<int:portfolio_id>/', views.portfolio_detail, name='my_portfolio_slider')
+    def test_portfolio_detail_url_resolves(self):
+        portfolio_id = 1000
+        url = reverse('my_portfolio_slider', args=(portfolio_id,))
+        print(resolve(url).func, portfolio_detail)
+        self.assertEquals(resolve(url).func, portfolio_detail)
