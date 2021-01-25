@@ -4,7 +4,6 @@
 
 The live website can be viewed [here](https://gris-ms4-project.herokuapp.com/)     
 [Responsive mockup](http://ami.responsivedesign.is/?url=https://8000-b1cf53cc-2b25-469b-af3b-7158f95cb3fc.ws-eu03.gitpod.io/)
-![Responsive mockup](https://i.ibb.co/gVPZMqJ/Home.png "Responsive mockup")
 
 <img src="https://i.ibb.co/gVPZMqJ/Home.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
@@ -270,7 +269,9 @@ Other small features are also considered to be implemented in feature:
 - [SQlite3](https://www.sqlite.org/index.html) - a development database.
 - [PostgreSQL](https://www.postgresql.org/) - a production database.
 
-
+Dtabase relationship:
+<img src="https://github.com/grisselfaura/Gris_MS4_project/blob/master/documentation/Database_relationship_many-to-many.png" 
+alt="mockup" target="_blank" rel="noopener" width="850">
 
 ### Version Control
 - [**GitHub**](https://github.com/) - as a remote repository to push and store the committed changes to my project from Git.
