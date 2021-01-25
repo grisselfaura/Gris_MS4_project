@@ -4,8 +4,9 @@
 
 The live website can be viewed [here](https://gris-ms4-project.herokuapp.com/)     
 [Responsive mockup](http://ami.responsivedesign.is/?url=https://8000-b1cf53cc-2b25-469b-af3b-7158f95cb3fc.ws-eu03.gitpod.io/)
+![Responsive mockup](https://i.ibb.co/gVPZMqJ/Home.png "Responsive mockup")
 
-<img src="xxxxx" alt="mockup" target="_blank" rel="noopener" width="850">
+<img src="https://i.ibb.co/gVPZMqJ/Home.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 ---
 ## Table of Contents
@@ -269,6 +270,8 @@ Other small features are also considered to be implemented in feature:
 - [SQlite3](https://www.sqlite.org/index.html) - a development database.
 - [PostgreSQL](https://www.postgresql.org/) - a production database.
 
+
+
 ### Version Control
 - [**GitHub**](https://github.com/) - as a remote repository to push and store the committed changes to my project from Git.
 
@@ -297,7 +300,7 @@ Errors not handled:
 - Ignore avoid using null=True on string-based fields such URLField and ImageField for the images.
 
 # Manual Testing
-Testing information can be found in a separate [MANUAL_TESTING.md]
+Testing information can be found in a separate (https://github.com/grisselfaura/Gris_MS4_project/blob/master/MANUAL_TESTING.md)
 # Automatic Testing
 The [Coverage](https://pypi.org/project/coverage/) library was used throughout testing to help keep track of how much of my code was covered by the tests.
 The tests provide an overall coverage of XX%.
@@ -311,6 +314,11 @@ Testing information can be found in a separate [AUTOMATIC_TESTING.md]
 
 ### Travis Continuous Integration
 In addition to the automated testing files, I used Travis CI for Continuous Integration testing of my code.
+
+- Feature work
+Test coverage percent validation based on threshold for the development process. 
+Developers create a feature branch and then they push the code to the remote branch for review but an automatic 
+process check that the result of running the coverage process flood-fill the set requirements. 
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
