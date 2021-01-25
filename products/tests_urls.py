@@ -18,10 +18,10 @@ class TestServiceUrls(SimpleTestCase):
         url = reverse('service_detail', args=('1',))
         self.assertEquals(resolve(url).func, service_detail)
 
-    # def test_edit_url_resolves(self):
-    #     url = reverse('edit_product', args=int('service'))
-    #     self.assertEquals(resolve(url).func, edit_product)
+    def test_edit_url_resolves(self):
+        url = reverse('edit_product', args=('2'))
+        self.assertEquals(resolve(url).func, edit_product)
 
-    # def test_delete_url_resolves(self):
-    #     url = reverse('delete_product', args=int('service'))
-    #     self.assertEquals(resolve(url).func, delete_product)
+    def test_delete_url_resolves(self):
+        url = reverse('delete_product', args=('3'))
+        self.assertEquals(resolve(url).func, delete_product)
