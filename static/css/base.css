@@ -770,3 +770,20 @@ th, td {
         height: auto;
     }
 }
+
+@media (min-width: 161px) and (max-width: 350px) {
+    .far {
+        font-size: 5rem;;
+    }
+    .msg {
+        font-size: 1.3rem;
+    }
+    .err,.err2 {
+        font-size: 9rem;
+    }
+}
+
+@media screen and (max-width: 160px) {
+    .hidden {
+        display: none;
+    }
