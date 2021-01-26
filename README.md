@@ -320,19 +320,19 @@ Errors not handled:
 
 # Manual Testing
 Testing information can be found in a separate (https://github.com/grisselfaura/Gris_MS4_project/blob/master/MANUAL_TESTING.md)
+
 # Automatic Testing
+### Travis Continuous Integration
+In addition to the manual testing, I used Travis CI for Continuous Integration testing of my code. So far 40 tests had been implemented.
+
+
 The [Coverage](https://pypi.org/project/coverage/) library was used throughout testing to help keep track of how much of my code was covered by the tests.
-The tests provide an overall coverage of XX%.
+The tests provide an overall coverage of 45%.
 
 To generate your own coverage report install the package using `pip install coverage`
 - Run `coverage run manage.py test`
 - Then `coverage html` to generate the report
 - The report can be viewed in a browser by opening the `index.html` file from inside the `htmlcov` folder.
-
-Testing information can be found in a separate [AUTOMATIC_TESTING.md]
-
-### Travis Continuous Integration
-In addition to the automated testing files, I used Travis CI for Continuous Integration testing of my code.
 
 - Feature work
 Test coverage percent validation based on threshold for the development process. 
