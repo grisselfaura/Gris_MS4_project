@@ -8,8 +8,8 @@ def index(request):
 
 
 def view_404(request, exception):
-    return render(request, 'templates/404.html')
+    return render(request, '404.html')
 
 
 def view_500(request):
-    return render(request, 'templates/500.html')
+    return render(request, '500.html')
