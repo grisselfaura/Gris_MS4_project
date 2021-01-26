@@ -761,3 +761,12 @@ th, td {
         margin-bottom: 1rem;
     }
 }
+
+/* 404 page responsiveness  and head space */
+@media screen and (max-width: 991px) {
+    .resize-page {
+        padding-top: 90px;
+        max-width: 100%; 
+        height: auto;
+    }
+}
