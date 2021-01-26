@@ -61,43 +61,18 @@
         a:hover {
             text-decoration: underline;
         }
-        
-        /* 404 page responsiveness  and head space */
-        @media screen and (max-width: 991px) {
-            .resize-page {
-                padding-top: 90px;
-                max-width: 100%; 
-                height: auto;
-            }
-        }
-
-        @media (min-width: 161px) and (max-width: 350px) {
-            .far {
-                font-size: 5rem;;
-            }
-            .msg {
-                font-size: 1.3rem;
-            }
-            .err,.err2 {
-                font-size: 9rem;
-            }
-        }
-
-        @media screen and (max-width: 160px) {
-            .hidden {
-                display: none;
-            }
-        }
     </style>
     <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="mainbox resize-page">
-        <div class="err hidden">4</div>
-        <i class="far fa-question-circle fa-spin hidden"></i>
-        <div class="err2 hidden">4</div>
-        <div class="msg hidden">Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first place?
-            <p>Let's go <a href="{% url 'home' %}">home</a> and try from there.</p>
+        <div class="img-fluid">
+            <div class="err hidden">4</div>
+            <i class="far fa-question-circle fa-spin hidden"></i>
+            <div class="err2 hidden">4</div>
+            <div class="msg hidden">Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first place?
+                <p>Let's go <a href="{% url 'home' %}">home</a> and try from there.</p>
+            </div>
         </div>
         <br>
     </div>
