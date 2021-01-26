@@ -1,20 +1,8 @@
-from django.test import TestCase, RequestFactory
+from django.test import TestCase
 from .models import UserProfile
 
 
 class TestProfilesModels(TestCase):
-
-    # def setUp(self):
-    #     self.client = Client()
-
-    # def test_profile_page_GET(self):
-    #     """
-    #     Tests that the login page view renders the login template
-    #     """
-    #     response = self.client.get(reverse('profile'))
-
-    #     self.assertEquals(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'profiles/profile.html')
 
     def test_profile_default(self):
         profile = UserProfile(default_full_name='Test Billing Name',
@@ -30,8 +18,3 @@ class TestProfilesModels(TestCase):
         self.assertEqual(profile.default_town_or_city, 'Test City')
         self.assertEqual(profile.default_postcode, 'Test Postcode')
         self.assertEqual(profile.default_country, 'Test Country')
-
-    # def test_request_fullname(self):
-    #     profile = UserProfile(default_full_name='Test New User Name')
-    #     profile.save()
-    #     self.assertEqual(profile.default_full_name, 'Test New User Name')

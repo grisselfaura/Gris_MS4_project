@@ -20,5 +20,4 @@ class TestAboutUrls(SimpleTestCase):
     def test_portfolio_detail_url_resolves(self):
         portfolio_id = 1000
         url = reverse('my_portfolio_slider', args=(portfolio_id,))
-        print(resolve(url).func, portfolio_detail)
         self.assertEquals(resolve(url).func, portfolio_detail)

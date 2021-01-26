@@ -18,4 +18,4 @@ class TestCheckoutOrderForm(TestCase):
         form = OrderForm({'form': ''})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['full_name'],
-                            [u'This field is required.'])
+                         [u'This field is required.'])

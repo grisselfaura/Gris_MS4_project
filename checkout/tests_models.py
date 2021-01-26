@@ -43,11 +43,3 @@ class TestCheckoutOrderLineItem(TestCase):
         self.assertEqual(orderLineItem.select_date, '2021-12-10 22:00')
         self.assertEqual(orderLineItem.quantity, 1)
         self.assertEqual(orderLineItem.lineitem_total, 699.00)
-
-    # def test_price_by_quantiy(self):
-    #     order_number = Order(id=1, order_total=49.00)
-    #     order_number.save()
-    #     lineitem_total = OrderLineItem(quantity=2,
-    #                                    order=order_number)
-    #     lineitem_total.save()
-    #     self.assertEqual(lineitem_total.self.price * lineitem_total.quantity,98.00)
