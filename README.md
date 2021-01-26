@@ -142,19 +142,26 @@ The application consists of 6 apps, 1 extra pending to develop and 9 sections:
 - **Search** - The search function allows the user to search by service title, or filtered by category.
 - **logo**, that is clickable and redirects to the landing page and also a small paragraph about the company
 - **Main-nav with quick links** to the main pages: 'home', 'about me', 'portfolio', 'services' and 'blog'.
-
+<img src="https://i.ibb.co/6NkDpn3/Nav-search.png" alt="mockup" target="_blank" rel="noopener" width="850">
 The landing page serves to attract new users to the business, to give a clear overview of the freelancer services and to attract users to use the website's functionality (UK design services). 
+<img src="https://i.ibb.co/gVPZMqJ/Home.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### About page
+<img src="https://i.ibb.co/Bw9BRPS/About.png" alt="mockup" target="_blank" rel="noopener" width="850">
 - Promote client experience displaying showcase portafolio and cv and redirect link to conect form.
+<img src="https://i.ibb.co/j4YNwt8/Portafolio.png" alt="mockup" target="_blank" rel="noopener" width="850">
 - Show different portfolios slide and view able to open in more detail.
+<img src="https://i.ibb.co/hmNBkZM/Portafolio-slider.png" alt="mockup" target="_blank" rel="noopener" width="850">
 - Connect form to allow contact with interested clients.
+<img src="https://i.ibb.co/fHQ0129/Connect.png" alt="mockup" target="_blank" rel="noopener" width="850">    
 
 #### Login/Register page
 - Allow new user to register for an account and allow existing users to login to their account.
 - **Register** - User must provide a unique username and email address, which are checked against existing entries in the database. An email address and password is required, which must be entered twice to check it has been input correctly.
+<img src="https://i.ibb.co/HpkQH7n/Register.png" alt="mockup" target="_blank" rel="noopener" width="850">
 - **Message** - On successfully registering the user will be redirected to the home page. An alert message will notify the user that the account has been created and they are now logged in.
 - The login page only requires the user to input there username and password. There is a link to the register page so a user can create an account, and a password reset link if a user has forgotten or lost their password and remember checkbox to store logging details.
+<img src="https://i.ibb.co/prdyC6Q/SignIn.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### Services packages page
 - All users are able to view this page, display general information about all the available services.
@@ -162,32 +169,40 @@ The landing page serves to attract new users to the business, to give a clear ov
 - Services count number informs the user the current services total.
 - Sort box functionality added to filter by price.
 - Individual services can be added to the bag or further information can be seen via the read more button.
+<img src="https://i.ibb.co/hsywLx9/Services.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### Service details page
 - All users are able to view this page, display more information about the selected service
+<img src="https://i.ibb.co/hVqxPVv/Service-details.png" alt="mockup" target="_blank" rel="noopener" width="850">
+
 - **Service details** - displays the service title, description, price, category, and what is included.
 - **Add to cart** - via this button will add the selected service to the shopping cart and redirects the user to bag summary view.
 - **Quantity** - via this button user can select amounts.
 - **Date picker** - via this button user can select when contact should be make.
+<img src="https://i.ibb.co/N7dGW1p/Date-picker.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### Shopping bag page
 - **Your items** - Display a summary of the services in the bag with each service showing the an image, title, quantity and price.
 - **Edit quantity** - User can amend the quantity of the services by clicking the '-' or '+' to increasing or decreasing the quantity in bag.
 - **Remove from shopping bag** - Allows the user to remove the service from the bag.
 - **Continue shopping** - Redirects the user back to the browse all services page to continue shopping.
+<img src="https://i.ibb.co/t4DhTt6/Shopping-bag.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### Checkout page
 - **Order summary** - Display a summary of the services in the bag with each service showing the an image, title, quantity and price.
 - **Pay with card** - Allows the user to make a card payment.
 - **Stripe** - Allows the user to pay securely using Stripe payment
 - **Purchase Form** - This form connects to the Stripe API to process a user's card details. No card details are stored locally or on the server, they are only sent to Stripe and then discarded.
+<img src="https://i.ibb.co/bd9Dp7C/Checkout.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### Checkout Success page
 - **Thank You page** - User receives confirmation that the order has been placed and is given a order reference number.
 - **Email** - User receives email confirmation there order has been placed and receives a order summary.
+<img src="https://i.ibb.co/qkQXXrg/Email.png" alt="mockup" target="_blank" rel="noopener" width="850">
 - **Order summary** - Display an order summary listing each service showing the an image, title, quantity, date and price. Besides of the shipping information.
 - **Message** - confirmation that the order was placed.
 - Back to services buttons in case user wants to buy more services.
+<img src="https://i.ibb.co/kBF7tN3/Order-Confirmation.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### Profile page
 - Only available to logged in user
@@ -195,18 +210,21 @@ The landing page serves to attract new users to the business, to give a clear ov
 - **Order History**- Users are able to view a summary of their previous orders placed. Users can click on the hovered order number link which provides a detail view of the selected order. 
 Users can click Back to Profile to go backwards.
 - Users can log out from this tab.
+<img src="https://i.ibb.co/Kwn5DGB/My-Profile.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### Admin service managment
 - Only available to logged admin user
 * **Add | View | Edit | Delete a Service** admin can log in to add new service or edit and delete available services.
 - Admin: defensive modal installed to prevent edit/delete a service by mistake using boostrap.
 - Admin: Date(Timestamp) and select_date(book_date) added to the Admin view when using 'website-name'/admin. 
+    <img src="https://i.ibb.co/d5GMrPD/Service-management.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 #### Django-allauth features
 - Allauth templates customized for this project.
 
 #### 404 and 500 error pages
 Custom 404 and 500 pages contain  error messages and error handlers to catch these errors. My custom messages allow the user to redirect back to the home page.
+    <img src="https://i.ibb.co/68J306T/404-page.png" alt="404-page" alt="mockup" target="_blank" rel="noopener" width="850">
 
 ### Features Left to Implement
 #### Blog app and posibility to add ratings and Reviews
@@ -269,7 +287,7 @@ Other small features are also considered to be implemented in feature:
 - [SQlite3](https://www.sqlite.org/index.html) - a development database.
 - [PostgreSQL](https://www.postgresql.org/) - a production database.
 
-Dtabase relationship:
+Database relationship:
 <img src="https://github.com/grisselfaura/Gris_MS4_project/blob/master/documentation/Database_relationship_many-to-many.png" 
 alt="mockup" target="_blank" rel="noopener" width="850">
 
