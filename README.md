@@ -224,7 +224,7 @@ Users can click Back to Profile to go backwards.
 
 #### 404 and 500 error pages
 Custom 404 and 500 pages contain  error messages and error handlers to catch these errors. My custom messages allow the user to redirect back to the home page.
-    <img src="https://i.ibb.co/68J306T/404-page.png" alt="404-page" alt="mockup" target="_blank" rel="noopener" width="850">
+    <img src="https://i.ibb.co/GvktnZj/404-page.png" alt="404-page" alt="mockup" target="_blank" rel="noopener" width="850">
 
 ### Features Left to Implement
 #### Blog app and posibility to add ratings and Reviews

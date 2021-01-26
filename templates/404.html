@@ -61,6 +61,33 @@
         a:hover {
             text-decoration: underline;
         }
+        
+        /* 404 page responsiveness  and head space */
+        @media screen and (max-width: 991px) {
+            .resize-page {
+                padding-top: 90px;
+                max-width: 100%; 
+                height: auto;
+            }
+        }
+
+        @media (min-width: 161px) and (max-width: 350px) {
+            .far {
+                font-size: 5rem;;
+            }
+            .msg {
+                font-size: 1.3rem;
+            }
+            .err,.err2 {
+                font-size: 9rem;
+            }
+        }
+
+        @media screen and (max-width: 160px) {
+            .hidden {
+                display: none;
+            }
+        }
     </style>
     <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
 </head>
