@@ -76,7 +76,6 @@ h2.hidden {
     }
 }
 
-
 @media (min-width: 767px) and (max-width: 992px) {
     .resize-btns{
         text-align: center;
