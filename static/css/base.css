@@ -68,6 +68,15 @@ h2.hidden {
     }
 } 
 
+@media screen  and (max-width: 342px) {
+    .left-space{
+        -webkit-padding-start: 10px!important;
+            padding-inline-start: 10px!important;
+
+    }
+}
+
+
 @media (min-width: 767px) and (max-width: 992px) {
     .resize-btns{
         text-align: center;
