@@ -30,5 +30,5 @@ sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
 sphinxcontrib-spelling==7.1.0
-sqlparse==0.4.1
+sqlparse==0.4.2
 stripe==2.55.1
